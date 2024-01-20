@@ -68,4 +68,3 @@ print "Exporting faction data..."
 save_python_header()
 relations = compile_relations()
 save_factions(relations)
-  

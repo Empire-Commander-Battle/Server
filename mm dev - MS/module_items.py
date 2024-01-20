@@ -46,7 +46,7 @@ imodbits_horse_good = imodbit_spirited|imodbit_heavy
 imodbits_good   = imodbit_sturdy | imodbit_thick | imodbit_hardened | imodbit_reinforced
 imodbits_bad    = imodbit_rusty | imodbit_chipped | imodbit_tattered | imodbit_ragged | imodbit_cracked | imodbit_bent
 # Replace winged mace/spiked mace with: Flanged mace / Knobbed mace?
-# Fauchard (majowski glaive) 
+# Fauchard (majowski glaive)
 items = [
 # item_name, mesh_name, item_properties, item_capabilities, slot_no, cost, bonus_flags, weapon_flags, scale, view_dir, pos_offset
  ["no_item","INVALID ITEM", [("invalid_item",0)], itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_longsword, 3,weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(16,blunt)|thrust_damage(10,blunt),imodbits_none],
@@ -85,43 +85,43 @@ items = [
 ["british_pistol", "Pistol", [("new_land_pattern_pistol",0)], itp_type_pistol|itp_merchandise|itp_primary|itp_cant_reload_while_moving_mounted ,itcf_shoot_pistol|itcf_reload_pistol|itcf_carry_pistol_front_left , 230 , weight(1.5)|difficulty(0)|spd_rtng(30) | shoot_speed(200) | thrust_damage(60 ,pierce)|max_ammo(1)|accuracy(25),imodbits_none, #patch1115 27/1 begin
  []],
 
- 
+
 # Carabines
 # French
-["french_mousquiton", "Cavalry Carbine", [("french_mousquiton",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["french_mousquiton", "Cavalry Carbine", [("french_mousquiton",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(27) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(65),imodbits_none,[]],
 ["french_mousquiton_melee", "Cavalry Carbine", [("french_mousquiton",0)], itp_has_upper_stab|itp_type_polearm |itp_primary|itp_no_blur|itp_offset_musket,itc_musket_melee|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(86) | weapon_length(76)|swing_damage(23 , blunt) | thrust_damage(12,  blunt),imodbits_none ],
-["french_mousquiton_ai", "Cavalry Carbine", [("french_mousquiton",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["french_mousquiton_ai", "Cavalry Carbine", [("french_mousquiton",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(27) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(65),imodbits_none,[]],
 
-["french_mousquiton_light", "Light Cavalry Carbine", [("french_mousquiton_light",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["french_mousquiton_light", "Light Cavalry Carbine", [("french_mousquiton_light",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(27) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(65),imodbits_none,[]],
 ["french_mousquiton_light_melee", "Light Cavalry Carbine", [("french_mousquiton_light",0)], itp_has_upper_stab|itp_type_polearm |itp_primary|itp_no_blur|itp_offset_musket,itc_musket_melee|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(86) | weapon_length(76)|swing_damage(23 , blunt) | thrust_damage(12,  blunt),imodbits_none ],
-["french_mousquiton_light_ai", "Light Cavalry Carbine", [("french_mousquiton_light",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["french_mousquiton_light_ai", "Light Cavalry Carbine", [("french_mousquiton_light",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(27) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(65),imodbits_none,[]],
 
-["french_dragoon_musket", "Cavalry Musket", [("french_dragoon_musket",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["french_dragoon_musket", "Cavalry Musket", [("french_dragoon_musket",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(25) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(72),imodbits_none,[]],
 ["french_dragoon_musket_melee", "Cavalry Musket", [("french_dragoon_musket",0)], itp_has_upper_stab|itp_type_polearm |itp_primary|itp_no_blur|itp_offset_musket,itc_musket_melee|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(86) | weapon_length(115)|swing_damage(20 , blunt) | thrust_damage(12,  blunt),imodbits_none ],#patch1115 48/1
-["french_dragoon_musket_ai", "Cavalry Musket", [("french_dragoon_musket",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["french_dragoon_musket_ai", "Cavalry Musket", [("french_dragoon_musket",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(25) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(72),imodbits_none,[]],
 
 # Russian
-["russian_dragoon_musket", "Cavalry Musket", [("Russian_dragoon_musket",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["russian_dragoon_musket", "Cavalry Musket", [("Russian_dragoon_musket",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(25) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(72),imodbits_none,[]],
 # [(ti_on_weapon_attack, [(store_trigger_param_1,":user_agent"),(call_script, "script_server_fire_musket", ":user_agent", firearm_type_carabine)])]],
 ["russian_dragoon_musket_melee", "Cavalry Musket", [("Russian_dragoon_musket",0)], itp_has_upper_stab|itp_type_polearm |itp_primary|itp_no_blur|itp_offset_musket,itc_musket_melee|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(86) | weapon_length(115)|swing_damage(20 , blunt) | thrust_damage(12,  blunt),imodbits_none ],
-["russian_dragoon_musket_ai", "Cavalry Musket", [("Russian_dragoon_musket",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["russian_dragoon_musket_ai", "Cavalry Musket", [("Russian_dragoon_musket",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(25) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(72),imodbits_none,[]],
 
-["russian_cavalry_stutzer_1803", "Short Carbine", [("Russian_cavalry_stutzer_1803",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving|itp_cant_reload_while_moving_mounted ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["russian_cavalry_stutzer_1803", "Short Carbine", [("Russian_cavalry_stutzer_1803",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving|itp_cant_reload_while_moving_mounted ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(29) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(40),imodbits_none,[]],
 # [(ti_on_weapon_attack, [(store_trigger_param_1,":user_agent"),(call_script, "script_server_fire_musket", ":user_agent", firearm_type_carabine)])]],
-["russian_gusarskiy_karabin", "Musketoon", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["russian_gusarskiy_karabin", "Musketoon", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(18) | shoot_speed(180) | thrust_damage(70 ,pierce)|max_ammo(1)|accuracy(54),imodbits_none,
  [(ti_on_weapon_attack, [
   (this_or_next|multiplayer_is_server),
@@ -143,7 +143,7 @@ items = [
   ])]],
 ["russian_gusarskiy_karabin_melee", "Musketoon", [("Russian_gusarskiy_karabin",0)], itp_has_upper_stab|itp_type_polearm |itp_primary|itp_no_blur|itp_offset_musket,itc_musket_melee|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(86) | weapon_length(58)|swing_damage(22 , blunt) | thrust_damage(12,  blunt),imodbits_none ],
-["russian_gusarskiy_karabin_ai", "Musketoon", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["russian_gusarskiy_karabin_ai", "Musketoon", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(18) | shoot_speed(180) | thrust_damage(70 ,pierce)|max_ammo(1)|accuracy(54),imodbits_none,
  [(ti_on_weapon_attack, [
   (this_or_next|multiplayer_is_server),
@@ -165,33 +165,33 @@ items = [
   ])]],
 
 # British
-["british_carbine", "Cavalry Carbine", [("paget_carabine",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["british_carbine", "Cavalry Carbine", [("paget_carabine",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(27) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(65),imodbits_none,[]],
 ["british_carbine_melee", "Cavalry Carbine", [("paget_carabine",0)], itp_has_upper_stab|itp_type_polearm |itp_primary|itp_no_blur|itp_offset_musket,itc_musket_melee|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(86) | weapon_length(50)|swing_damage(23 , blunt) | thrust_damage(12,  blunt),imodbits_none ],
-["british_carbine_ai", "Cavalry Carbine", [("paget_carabine",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["british_carbine_ai", "Cavalry Carbine", [("paget_carabine",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_while_moving_mounted|itp_cant_reload_while_moving ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(27) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(65),imodbits_none,[]],
 
 # Rifles
 # Russian
-["russian_rifle_1805", "Rifle", [("Russian_rifle_1805",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["russian_rifle_1805", "Rifle", [("Russian_rifle_1805",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(18) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(87),imodbits_none,[]],
 # [(ti_on_weapon_attack, [(store_trigger_param_1,":user_agent"),(call_script, "script_server_fire_musket", ":user_agent", firearm_type_rifle)])]],
 ["russian_rifle_1805_melee", "Rifle", [("Russian_rifle_1805",0)], itp_has_upper_stab|itp_type_polearm |itp_primary|itp_no_blur|itp_offset_musket|itp_can_knock_down,itc_musket_melee|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(74)|swing_damage(23 , blunt) | thrust_damage(22 ,  blunt),imodbits_none ],
 
 # British
-["british_baker_rifle", "Rifle", [("baker_rifle",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["british_baker_rifle", "Rifle", [("baker_rifle",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(18) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(87),imodbits_none,[]],
 # [(ti_on_weapon_attack, [(store_trigger_param_1,":user_agent"),(call_script, "script_server_fire_musket", ":user_agent", firearm_type_rifle)])]],
 ["british_baker_rifle_melee", "Rifle", [("baker_rifle",0)], itp_has_upper_stab|itp_type_polearm |itp_primary|itp_no_blur|itp_offset_musket|itp_can_knock_down,itc_musket_melee|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(85)|swing_damage(23 , blunt) | thrust_damage(22 ,  blunt),imodbits_none ],
 
 #Cheat
-["sniper_rifle", "Sniper Rifle", [("Russian_rifle_1805",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_musket|itcf_reload_pistol|itcf_carry_crossbow_back, 
+["sniper_rifle", "Sniper Rifle", [("Russian_rifle_1805",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_musket|itcf_reload_pistol|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(300) | shoot_speed(250) | thrust_damage(300 ,pierce)|max_ammo(40)|accuracy(100),imodbits_none,[]],
 # [(ti_on_weapon_attack, [(store_trigger_param_1,":user_agent"),(call_script, "script_server_fire_musket", ":user_agent", firearm_type_rifle)])]],
-["blunderbluss", "Blunderbluss", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["blunderbluss", "Blunderbluss", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(150) | shoot_speed(200) | thrust_damage(300 ,pierce)|max_ammo(1)|accuracy(75),imodbits_none,
  [(ti_on_weapon_attack, [
   (this_or_next|multiplayer_is_server),
@@ -211,22 +211,22 @@ items = [
     (add_missile, ":agent_id", pos23, ":bullet_speed", "itm_cannon_canister_dummy", 0, "itm_canister_ammo", 0),
   (try_end),
   ])]],
-  
-  ["sniper_rifle_ball", "Sniper Rifle", [("Russian_rifle_1805",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_musket|itcf_reload_pistol|itcf_carry_crossbow_back, 
+
+  ["sniper_rifle_ball", "Sniper Rifle", [("Russian_rifle_1805",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed ,itcf_shoot_musket|itcf_reload_pistol|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(300) | shoot_speed(250) | thrust_damage(300 ,pierce)|max_ammo(40)|accuracy(100),imodbits_none,
  [(ti_on_weapon_attack, [
   (this_or_next|multiplayer_is_server),
   (neg|game_in_multiplayer_mode),
   (store_trigger_param_1,":agent_id"),
   (eq,":agent_id",":agent_id"), # fix compiler bug warning.
-  
+
    (set_fixed_point_multiplier, 100),
    (init_position,pos9), # pos9 holds new pos for cannonball
    (position_copy_origin,pos9,pos1),
    (position_get_rotation_around_x,":x_rot",pos1),
    (position_get_rotation_around_z,":z_rot",pos1),
-   
-   
+
+
    (val_add,":z_rot",90),
    (assign,":y_rot",":x_rot"),
    (try_begin),
@@ -234,28 +234,28 @@ items = [
      (val_sub,":y_rot",360),
    (try_end),
    (val_mul,":y_rot",-1),
-   
+
    (position_rotate_z,pos9,":z_rot"),
-   
+
    (assign,":init_vel",45), # 45 meters per 0.5 seconds = 90m/s
    (assign,":ammo_size","spr_mm_cannonball_code_only_12pd"),
    (assign,":flight_sound_id","snd_cannonball_loop"),
- 
+
    (set_fixed_point_multiplier, 1000),
    # make rotation fixed point.
    (val_mul,":y_rot",1000),
-   
+
    # x += Speed * Math.Cos(angle);
    (store_cos, ":cos_of_angle", ":y_rot"),
    (store_mul,":init_x_vel",":cos_of_angle",":init_vel"),
    (val_div,":init_x_vel",10),
-   
+
    # z += speed * Math.Sin(angle);
    (store_sin, ":sin_of_angle", ":y_rot"),
    (store_mul,":init_z_vel",":sin_of_angle",":init_vel"),
    (val_div,":init_z_vel",10),
    (val_mul,":init_z_vel",-1),
-   
+
    (set_fixed_point_multiplier, 100),
    (copy_position,pos49,pos9), # pos49 is prop pos.
    (call_script, "script_find_or_create_scene_prop_instance", ":ammo_size", 0, 0, 0),
@@ -269,138 +269,138 @@ items = [
    (scene_prop_set_slot,":ball_instance_id", scene_prop_slot_bounces, 0),
    (scene_prop_set_slot,":ball_instance_id", scene_prop_slot_user_agent, ":agent_id"),
    (scene_prop_set_slot,":ball_instance_id", scene_prop_slot_ammo_type, cannon_ammo_type_round),
-   
+
    (call_script,"script_multiplayer_handle_prop_effect",":ball_instance_id",prop_effect_type_sound,":flight_sound_id",prop_effect_handle_start),
   ])]],
 
 
   # cannon dummy for canister
-["cannon_ball_dummy", "{!}cannon_ball_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(1),itcf_shoot_musket|itcf_carry_crossbow_back, 
+["cannon_ball_dummy", "{!}cannon_ball_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(1),itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(150) | shoot_speed(200) | thrust_damage(300 ,pierce)|max_ammo(100)|accuracy(75),imodbits_none,
  []],
-["cannon_canister_dummy", "{!}cannon_canister_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(2),itcf_shoot_musket|itcf_carry_crossbow_back, 
+["cannon_canister_dummy", "{!}cannon_canister_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(2),itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(150) | shoot_speed(200) | thrust_damage(300 ,pierce)|max_ammo(100)|accuracy(75),imodbits_none,
  []],
-["cannon_explosion_dummy", "{!}cannon_ball_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(3),itcf_shoot_musket|itcf_carry_crossbow_back, 
+["cannon_explosion_dummy", "{!}cannon_ball_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(3),itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(150) | shoot_speed(200) | thrust_damage(300 ,pierce)|max_ammo(100)|accuracy(75),imodbits_none,
  []],
-["drown_dummy", "{!}cannon_ball_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(4),itcf_shoot_musket|itcf_carry_crossbow_back, 
+["drown_dummy", "{!}cannon_ball_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(4),itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(150) | shoot_speed(200) | thrust_damage(300 ,pierce)|max_ammo(100)|accuracy(75),imodbits_none,
  []],
-["admin_kill_dummy", "{!}cannon_ball_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(5),itcf_shoot_musket|itcf_carry_crossbow_back, 
+["admin_kill_dummy", "{!}cannon_ball_dummy", [("Russian_gusarskiy_karabin",0)], itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|custom_kill_info(5),itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.0)|difficulty(0)|spd_rtng(150) | shoot_speed(200) | thrust_damage(300 ,pierce)|max_ammo(100)|accuracy(75),imodbits_none,
  []],
 
- 
+
 #Muskets
 # French
-["french_charleville", "Infantry Musket", [("french_charleville",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["french_charleville", "Infantry Musket", [("french_charleville",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.5)|difficulty(0)|spd_rtng(23) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(75),imodbits_none,[]],
 # [(ti_on_weapon_attack, [(store_trigger_param_1,":user_agent"),(call_script, "script_server_fire_musket", ":user_agent", firearm_type_musket),])]],
 ["french_charleville_melee", "Infantry Musket", [("french_charleville",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
-["french_versailles", "Infantry Musket", [("french_versailles",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["french_versailles", "Infantry Musket", [("french_versailles",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.5)|difficulty(0)|spd_rtng(23) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(75),imodbits_none,[]],
 # [(ti_on_weapon_attack, [(store_trigger_param_1,":user_agent"),(call_script, "script_server_fire_musket", ":user_agent", firearm_type_musket),])]],
 ["french_versailles_melee", "Infantry Musket", [("french_versailles",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], #patch1115 fix 28/4
 
 # British
-["british_brown_bess", "Infantry Musket", [("brown_bess_musket",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["british_brown_bess", "Infantry Musket", [("brown_bess_musket",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.5)|difficulty(0)|spd_rtng(23) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(75),imodbits_none,[]],
 ["british_brown_bess_melee", "Infantry Musket", [("brown_bess_musket",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_crossbow_back,
-180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], 
+180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 
 # Russian
-["russian_musket_1808", "Infantry Musket", [("Russian_musket_1808",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["russian_musket_1808", "Infantry Musket", [("Russian_musket_1808",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.5)|difficulty(0)|spd_rtng(23) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(75),imodbits_none,[]],
 # [(ti_on_weapon_attack, [(store_trigger_param_1,":user_agent"),(call_script, "script_server_fire_musket", ":user_agent", firearm_type_musket),])]],
 ["russian_musket_1808_melee", "Infantry Musket", [("Russian_musket_1808",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], #patch1115 fix 28/3
 
 # Austrian
-["austrian_musket", "Infantry Musket", [("austrian_musket",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["austrian_musket", "Infantry Musket", [("austrian_musket",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.5)|difficulty(0)|spd_rtng(23) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(75),imodbits_none,[]],
 ["austrian_musket_melee", "Infantry Musket", [("austrian_musket",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], #patch1115 fix 28/2
 
 # Prussian
-["prussian_potsdam", "Infantry Musket", [("potsdam_musket",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["prussian_potsdam", "Infantry Musket", [("potsdam_musket",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.5)|difficulty(0)|spd_rtng(23) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(75),imodbits_none,[]],
 ["prussian_potsdam_melee", "Infantry Musket", [("potsdam_musket",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_crossbow_back,
 180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], #patch1115 fix 28/1
 
 # Rhine
-["prussian_musket_1806", "Infantry Musket", [("prussian_kuhfuss",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back, 
+["prussian_musket_1806", "Infantry Musket", [("prussian_kuhfuss",0)], itp_cant_use_on_horseback|itp_type_crossbow |itp_merchandise|itp_primary|itp_two_handed|itp_cant_reload_on_horseback|itp_cant_reload_while_moving|itp_next_item_as_melee ,itcf_shoot_musket|itcf_carry_crossbow_back,
 683 , weight(3.5)|difficulty(0)|spd_rtng(23) | shoot_speed(250) | thrust_damage(100 ,pierce)|max_ammo(1)|accuracy(75),imodbits_none,[]],
 ["prussian_musket_1806_melee", "Infantry Musket", [("prussian_kuhfuss",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_crossbow_back,
-180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], 
+180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 
 
  # Swords
 # French
- ["french_art_off_sword","Artillery Officer Sword", [("Artillery_officer_sword",0),("Artillery_officer_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_art_off_sword","Artillery Officer Sword", [("Artillery_officer_sword",0),("Artillery_officer_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(92) | weapon_length(108)|swing_damage(32 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
- ["french_carabineer_sword","Heavy Cavalry Sword", [("Carabineer_sword",0),("Carabineer_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_carabineer_sword","Heavy Cavalry Sword", [("Carabineer_sword",0),("Carabineer_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(3.0)|difficulty(0)|spd_rtng(91) | weapon_length(111)|swing_damage(36 , cut) | thrust_damage(32 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/4
- ["french_briquet_garde","Guard Sabre Briquet", [("Garde_briquet",0),("Guard_briquet_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_briquet_garde","Guard Sabre Briquet", [("Garde_briquet",0),("Guard_briquet_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(77)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["french_light_cav_sabre_garde","Light Cavalry Sabre", [("Garde_light_cav_sabre",0),("Garde_light_cav_sabre_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_light_cav_sabre_garde","Light Cavalry Sabre", [("Garde_light_cav_sabre",0),("Garde_light_cav_sabre_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(2.0)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(33 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/9
- ["french_heavy_cav_sabre_garde","Heavy Cavalry Sabre", [("Guard_heavy_cavalry_sabre",0),("Guard_heavy_cavalry_sabre_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_heavy_cav_sabre_garde","Heavy Cavalry Sabre", [("Guard_heavy_cavalry_sabre",0),("Guard_heavy_cavalry_sabre_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(3.0)|difficulty(0)|spd_rtng(91) | weapon_length(111)|swing_damage(36 , cut) | thrust_damage(32 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/8
- ["french_inf_off_sabre_garde","Imperial Guard Officer Sabre", [("Guard_infantry_officer_sabre",0),("Guard_infantry_officer_sabre_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_inf_off_sabre_garde","Imperial Guard Officer Sabre", [("Guard_infantry_officer_sabre",0),("Guard_infantry_officer_sabre_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(95) | weapon_length(97)|swing_damage(32 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
- ["french_heavy_cav_off_sabre","Heavy Cavalry Sabre", [("Officer_heavy_cavalry_sword",0),("Officer_heavy_cavalry_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_heavy_cav_off_sabre","Heavy Cavalry Sabre", [("Officer_heavy_cavalry_sword",0),("Officer_heavy_cavalry_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(3.0)|difficulty(0)|spd_rtng(91) | weapon_length(111)|swing_damage(36 , cut) | thrust_damage(32 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/5
- ["french_inf_off_sabre","Infantry Sabre", [("Infantry_officer_sword",0),("Infantry_officer_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_inf_off_sabre","Infantry Sabre", [("Infantry_officer_sword",0),("Infantry_officer_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(95) | weapon_length(100)|swing_damage(32 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
- ["french_light_cav_off_sabre","Light Cavalry Sabre", [("Officer_light_cav_sabre",0),("Officer_light_cav_sabre_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_light_cav_off_sabre","Light Cavalry Sabre", [("Officer_light_cav_sabre",0),("Officer_light_cav_sabre_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(2.0)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(33 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/6
- ["french_light_inf_off_sabre","Light Infantry Sabre", [("Saber_voltigeur",0),("Saber_voltigeur_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_light_inf_off_sabre","Light Infantry Sabre", [("Saber_voltigeur",0),("Saber_voltigeur_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(95) | weapon_length(97)|swing_damage(32 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
  ["french_line_cav_sabre","Line Cavalry Sabre", [("Line_cav_ANXIII",0),("Line_cav_ANXIII_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(3.0)|difficulty(0)|spd_rtng(91) | weapon_length(111)|swing_damage(36 , cut) | thrust_damage(32 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/7
- ["french_briquet","Sabre Briquet", [("Sabre_briquet_french",0),("Sabre_briquet_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_briquet","Sabre Briquet", [("Sabre_briquet_french",0),("Sabre_briquet_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["french_light_cav_sabre","Light Cavalry Sabre", [("Sabre_cavalerie_legere",0),("Sabre_cavalerie_legere_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_light_cav_sabre","Light Cavalry Sabre", [("Sabre_cavalerie_legere",0),("Sabre_cavalerie_legere_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(2.0)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(33 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ],
- ["french_sappeur_sword","Sapper Sword", [("Sappeur_sword",0),("Sappeur_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_sappeur_sword","Sapper Sword", [("Sappeur_sword",0),("Sappeur_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(72)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
 
 # Russian
- ["russian_sabre_1798","Light Cavalry Sabre", [("Russian_sabre_1798",0),("Russian_sabre_1798_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_sabre_1798","Light Cavalry Sabre", [("Russian_sabre_1798",0),("Russian_sabre_1798_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(2.0)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(33 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/11
- ["russian_sabre_1809","Light Cavalry Sabre", [("Russian_sabre_1809",0),("Russian_sabre_1809_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_sabre_1809","Light Cavalry Sabre", [("Russian_sabre_1809",0),("Russian_sabre_1809_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(2.0)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(33 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/10
- ["russian_sword_1810","Dragoon Sword", [("Russian_sword_1810",0),("Russian_sword_1810_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_sword_1810","Dragoon Sword", [("Russian_sword_1810",0),("Russian_sword_1810_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(2.0)|difficulty(0)|spd_rtng(91) | weapon_length(111)|swing_damage(33 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/3
- ["russian_guard_sword_1799","Heavy Cavalry Sword", [("Russian_guard_sword_1799",0),("Russian_guard_sword_1799_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_guard_sword_1799","Heavy Cavalry Sword", [("Russian_guard_sword_1799",0),("Russian_guard_sword_1799_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(3.0)|difficulty(0)|spd_rtng(91) | weapon_length(111)|swing_damage(36 , cut) | thrust_damage(32 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/1
- ["russian_briquet_1807","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_briquet_1807","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["russian_jaeger_bayonet","Sword Bayonet", [("Russian_jaeger_bayonet",0),("Kortik_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_jaeger_bayonet","Sword Bayonet", [("Russian_jaeger_bayonet",0),("Kortik_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["russian_jaeger_bayonet_jaeger","Sword Bayonet", [("Russian_jaeger_bayonet",0),("Kortik_jaeger_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_jaeger_bayonet_jaeger","Sword Bayonet", [("Russian_jaeger_bayonet",0),("Kortik_jaeger_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["russian_officer_sword","Officer Sword", [("Russian_officer_sword",0),("Russian_officer_sword_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_officer_sword","Officer Sword", [("Russian_officer_sword",0),("Russian_officer_sword_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(95) | weapon_length(100)|swing_damage(32 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
- ["russian_officer_sword_jaeger","Officer Sword", [("Russian_officer_sword",0),("jaeger_officer_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_officer_sword_jaeger","Officer Sword", [("Russian_officer_sword",0),("jaeger_officer_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(95) | weapon_length(100)|swing_damage(32 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
  ["russian_peasant_axe", "Hand Axe", [("Russian_peasant_axe",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield|itp_wooden_parry, itc_scimitar|itcf_carry_sword_left_hip,
 87 , weight(1.5)|difficulty(9)|spd_rtng(90) | weapon_length(50)|swing_damage(33 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],#patch1115 56/2
  ["brokenbottle","Broken Vodka Bottle", [("Russian_vodka_bottle",0)], itp_type_thrown|itp_merchandise|itp_next_item_as_melee,itcf_throw_stone,
 360, weight(1)|difficulty(0)|spd_rtng(90) | shoot_speed(16) | thrust_damage(33,cut)|max_ammo(1)|weapon_length(33),imodbits_none,
  [(ti_on_missile_hit, [(this_or_next|multiplayer_is_server),(neg|game_in_multiplayer_mode),(particle_system_burst, "psys_bottle_break", pos1, 10),(copy_position,pos56,pos1),(call_script,"script_multiplayer_server_play_sound_at_position","snd_glass_break"),])]],
- ["brokenbottle_melee", "Broken Vodka Bottle", [("Russian_vodka_bottle",0)], itp_type_one_handed_wpn|itp_primary|itp_no_parry, itc_dagger, 
+ ["brokenbottle_melee", "Broken Vodka Bottle", [("Russian_vodka_bottle",0)], itp_type_one_handed_wpn|itp_primary|itp_no_parry, itc_dagger,
 210 , weight(1)|difficulty(0)|spd_rtng(95) | weapon_length(29)|swing_damage(22, blunt)| thrust_damage(20 ,  pierce),imodbits_sword_high ],
  ["russian_kindjal","Cossack Knife", [("Russian_kindjal",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary|itp_secondary|itp_no_parry, itc_dagger|itcf_carry_dagger_front_left,
 210 , weight(1)|difficulty(0)|spd_rtng(96) | weapon_length(45)|swing_damage(18 , cut) | thrust_damage(18 ,  pierce),imodbits_sword_high ],
- ["russian_guard_off_sword","Officer Sword", [("Russian_guard_off_sword",0),("Russian_guard_off_sword_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_guard_off_sword","Officer Sword", [("Russian_guard_off_sword",0),("Russian_guard_off_sword_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(95) | weapon_length(100)|swing_damage(33 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
- ["russian_sappeur_dagger","Short Sword", [("Russian_sappeur_dagger",0),("Sappeur_dagger_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_sappeur_dagger","Short Sword", [("Russian_sappeur_dagger",0),("Sappeur_dagger_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(64)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["russian_sappeur_dagger_invis","Short Sword", [("Russian_sappeur_dagger",0),("mm_invisible",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_sappeur_dagger_invis","Short Sword", [("Russian_sappeur_dagger",0),("mm_invisible",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(64)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
  ["russian_peasant_knife","Knife", [("Russian_peasant_knife",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary|itp_secondary|itp_no_parry, itc_dagger|itcf_carry_dagger_front_left,
 210 , weight(1)|difficulty(0)|spd_rtng(96) | weapon_length(27)|swing_damage(18 , cut) | thrust_damage(18 ,  pierce),imodbits_sword_high ],
@@ -408,39 +408,39 @@ items = [
 210 , weight(1)|difficulty(0)|spd_rtng(96) | weapon_length(35)|swing_damage(18 , cut) | thrust_damage(0 ,  pierce),imodbits_sword_high ],
 
 # British
- ["british_highlander_officer_sword","Highlander Officer Sword", [("scottish_broadsword",0),("scottish_broadsword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["british_highlander_officer_sword","Highlander Officer Sword", [("scottish_broadsword",0),("scottish_broadsword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(95) | weapon_length(95)|swing_damage(32 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
- ["british_heavy_cav_sword","Heavy Cavalry Sword", [("1796_heavy_cavalry_sword",0),("1796_heavy_cavalry_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["british_heavy_cav_sword","Heavy Cavalry Sword", [("1796_heavy_cavalry_sword",0),("1796_heavy_cavalry_sword_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(3.0)|difficulty(0)|spd_rtng(91) | weapon_length(111)|swing_damage(36 , cut) | thrust_damage(32 ,  pierce),imodbits_sword_high ],
  ["british_light_cav_sabre","Light Cavalry Sabre", [("1796_light_cavalry_saber",0),("1796_light_cavalry_saber_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(2.0)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(33 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high ], #patch1115 fix 44/2
- ["british_baker_bayonet","Sword Bayonet", [("British_baker_bayonet",0),("British_baker_bayonet_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["british_baker_bayonet","Sword Bayonet", [("British_baker_bayonet",0),("British_baker_bayonet_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["british_musician_sword","Short Sword", [("British_musician_sword",0),("British_musician_sword_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["british_musician_sword","Short Sword", [("British_musician_sword",0),("British_musician_sword_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["british_musician_sword_invis","Short Sword", [("British_musician_sword",0),("mm_invisible",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["british_musician_sword_invis","Short Sword", [("British_musician_sword",0),("mm_invisible",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["british_officer_sword","Officer Sword", [("Russian_officer_sword",0),("British_officer_sword_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["british_officer_sword","Officer Sword", [("Russian_officer_sword",0),("British_officer_sword_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(1.5)|difficulty(0)|spd_rtng(95) | weapon_length(100)|swing_damage(32 , cut) | thrust_damage(29 ,  pierce),imodbits_sword_high ],
- 
- 
+
+
 #Austrian
- ["austrian_infantry_briquet","Sword Bayonet", [("Austrian_infantry_briquet",0),("Austrian_infantry_briquet_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["austrian_infantry_briquet","Sword Bayonet", [("Austrian_infantry_briquet",0),("Austrian_infantry_briquet_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["austrian_infantry_briquet_black","Sword Bayonet", [("Austrian_infantry_briquet",0),("Austrian_infantry_briquet_black_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["austrian_infantry_briquet_black","Sword Bayonet", [("Austrian_infantry_briquet",0),("Austrian_infantry_briquet_black_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["austrian_jaeger_bayonet","Sword Bayonet", [("Austrian_jaeger_bayonet",0),("Austrian_jaeger_bayonet_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["austrian_jaeger_bayonet","Sword Bayonet", [("Austrian_jaeger_bayonet",0),("Austrian_jaeger_bayonet_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["austrian_jaeger_bayonet_invis","Sword Bayonet", [("Austrian_jaeger_bayonet",0),("mm_invisible",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["austrian_jaeger_bayonet_invis","Sword Bayonet", [("Austrian_jaeger_bayonet",0),("mm_invisible",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
 
 
 # Prussia
- ["russian_briquet_1807_black","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_black_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_briquet_1807_black","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_black_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["russian_briquet_1807_black_blackbelt","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_black_blackbelt_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_briquet_1807_black_blackbelt","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_black_blackbelt_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["russian_briquet_1807_landwehr","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_landwehr_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_briquet_1807_landwehr","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_landwehr_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(95) | weapon_length(63)|swing_damage(22 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
  ["russian_peasant_axe_landwehr", "Hand Axe", [("Russian_peasant_axe",0),("Axe_landwehr_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield|itp_wooden_parry, itc_scimitar|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 87 , weight(0)|difficulty(9)|spd_rtng(90) | weapon_length(50)|swing_damage(33 , cut) | thrust_damage(0 ,  pierce),imodbits_axe ],#patch1115 56/1
@@ -455,23 +455,23 @@ items = [
 #end training weapons
 
 # fake stuff for stupid bots
- ["french_briquet_garde_fake","Sabre Briquet", [("Garde_briquet",0),("Guard_briquet_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_briquet_garde_fake","Sabre Briquet", [("Garde_briquet",0),("Guard_briquet_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(1) | weapon_length(1)|swing_damage(1 , cut) | thrust_damage(1 ,  pierce),imodbits_sword_high ],
- ["french_briquet_fake","Sabre Briquet", [("Sabre_briquet_french",0),("Sabre_briquet_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["french_briquet_fake","Sabre Briquet", [("Sabre_briquet_french",0),("Sabre_briquet_in_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(1) | weapon_length(1)|swing_damage(1 , cut) | thrust_damage(1 ,  pierce),imodbits_sword_high ],
- ["russian_briquet_1807_fake","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_briquet_1807_fake","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(1) | weapon_length(1)|swing_damage(1 , cut) | thrust_damage(1 ,  pierce),imodbits_sword_high ],
- ["russian_briquet_1807_black_fake","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_black_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_briquet_1807_black_fake","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_black_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(1) | weapon_length(1)|swing_damage(1 , cut) | thrust_damage(1 ,  pierce),imodbits_sword_high ],
- ["russian_briquet_1807_black_blackbelt_fake","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_black_blackbelt_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_briquet_1807_black_blackbelt_fake","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_black_blackbelt_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(1) | weapon_length(1)|swing_damage(1 , cut) | thrust_damage(1 ,  pierce),imodbits_sword_high ],
- ["russian_briquet_1807_landwehr_fake","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_landwehr_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["russian_briquet_1807_landwehr_fake","Sabre Briquet", [("Russian_briquet_1807",0),("Tesak_landwehr_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(1) | weapon_length(1)|swing_damage(1 , cut) | thrust_damage(1 ,  pierce),imodbits_sword_high ],
  ["russian_peasant_axe_landwehr_fake", "Hand Axe", [("Russian_peasant_axe",0),("Axe_landwehr_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield|itp_wooden_parry, itc_scimitar|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 87 , weight(0)|difficulty(0)|spd_rtng(1) | weapon_length(1)|swing_damage(1 , cut) | thrust_damage(1 ,  pierce),imodbits_axe ],
- ["austrian_infantry_briquet_fake","Sword Bayonet", [("Austrian_infantry_briquet",0),("Austrian_infantry_briquet_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn, 
+ ["austrian_infantry_briquet_fake","Sword Bayonet", [("Austrian_infantry_briquet",0),("Austrian_infantry_briquet_scabbard",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise|itp_primary, itc_longsword|itcf_carry_sword_left_hip|itcf_show_holster_when_drawn,
 210 , weight(0)|difficulty(0)|spd_rtng(1) | weapon_length(1)|swing_damage(1 , cut) | thrust_damage(1 ,  pierce),imodbits_sword_high ],
- 
+
 
 # admin toy
 ["banhammer", "Banhammer", [("ban_hammer",0)], itp_crush_through|itp_type_polearm|itp_offset_lance|itp_can_knock_down| itp_primary|itp_two_handed|itp_wooden_parry, itc_nodachi,
@@ -481,25 +481,25 @@ items = [
 # Instruments
  ["drumstick_right","Drum", [("drumstick_right",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_quiver_right_vertical, #patch1115 45/1 begin
 210 , weight(1.5)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(3 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["flute","Flute", [("mm_fife",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_quiver_front_right, 
+ ["flute","Flute", [("mm_fife",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_quiver_front_right,
 210 , weight(1.5)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(3 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["horn","Horn", [("horn",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_sword_left_hip, 
+ ["horn","Horn", [("horn",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_sword_left_hip,
 210 , weight(1.5)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(3 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["trumpet","Trumpet", [("trumpet",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_sword_left_hip, 
+ ["trumpet","Trumpet", [("trumpet",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_sword_left_hip,
 210 , weight(1.5)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(3 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["bugle","Bugle", [("bugle",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_sword_left_hip, 
+ ["bugle","Bugle", [("bugle",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_sword_left_hip,
 210 , weight(1.5)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(3 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],
- ["bagpipe","Bagpipes", [("mm_invisible",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_sword_left_hip, 
+ ["bagpipe","Bagpipes", [("mm_invisible",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary|itp_no_pick_up_from_ground, itcf_carry_sword_left_hip,
 210 , weight(1.5)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(3 , cut) | thrust_damage(20 ,  pierce),imodbits_sword_high ],  #patch1115 45/1 end
 
- 
+
  #Ammo
 ["bullets","Cartridges", [("cartridge_box_mesh",0),("bullet_projectile",ixmesh_flying_ammo),("cartridge_a",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_default_ammo|itp_can_penetrate_shield, 0, 64,weight(2.0)|abundance(100)|weapon_length(1)|thrust_damage(1,pierce)|max_ammo(30),imodbits_missile,
  [(ti_on_missile_hit, [(copy_position,pos63,pos1),(store_trigger_param_2, ":collision_type"),(call_script, "script_mm_on_bullet_hit",":collision_type")])]],
 ["pistol_ammo","Pistol Cartridges", [("cartridge_box_mesh",0),("bullet_projectile",ixmesh_flying_ammo),("cartridge_a",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_can_penetrate_shield, 0, 200,weight(1.0)|abundance(100)|weapon_length(1)|thrust_damage(1,pierce)|max_ammo(18),imodbits_missile,
  [(ti_on_missile_hit, [(copy_position,pos63,pos1),(store_trigger_param_2, ":collision_type"),(call_script, "script_mm_on_bullet_hit",":collision_type")])]],
 
-#Only called in scripts 
+#Only called in scripts
 ["canister_ammo","Cartridges", [("cartridge_a",0),("bullet_projectile",ixmesh_flying_ammo)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield, 0, 64,weight(2.0)|abundance(100)|weapon_length(1)|thrust_damage(100,pierce)|max_ammo(1),imodbits_missile,
  [(ti_on_missile_hit, [(copy_position,pos63,pos1),(store_trigger_param_2, ":collision_type"),(call_script, "script_mm_on_bullet_hit",":collision_type")])]],
 ["shell_fragment","Shell Fragments", [("cartridge_a",0),("prtcl_dust_e",ixmesh_flying_ammo)], itp_type_bolts|itp_merchandise|itp_can_penetrate_shield, 0, 64,weight(2.0)|abundance(100)|weapon_length(3)|thrust_damage(500,pierce)|max_ammo(1),imodbits_missile,
@@ -517,7 +517,7 @@ items = [
     (copy_position,pos47,pos1),
     (call_script,"script_explosion_at_position",":thrower_agent",500,500), # Input: shooter_agent_no, max_damage points, range in cm
    ]),]],
- 
+
 # cannon ammo
 ["cannon_cartridge_round", "Round Shot", [("cannonball_cartridge",0)], itp_type_thrown |itp_merchandise,0,
  360, weight(5)|difficulty(0)|spd_rtng(70) | shoot_speed(0) | thrust_damage(1,blunt)|max_ammo(1)|weapon_length(5),imodbits_none],
@@ -529,8 +529,8 @@ items = [
  360, weight(5)|difficulty(0)|spd_rtng(70) | shoot_speed(0) | thrust_damage(1,blunt)|max_ammo(1)|weapon_length(5),imodbits_none],
 ["rockets", "Rockets", [("rocket",0)], itp_type_thrown |itp_merchandise,0,
  360, weight(5)|difficulty(0)|spd_rtng(70) | shoot_speed(0) | thrust_damage(1,blunt)|max_ammo(100)|weapon_length(5),imodbits_none],
- 
- 
+
+
  #Lances and other polearms
 #French
 ["french_lance", "Lance", [("Lance_french",0)], itp_has_upper_stab|itp_couchable|itp_type_polearm|itp_offset_lance|itp_no_parry| itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_is_pike|itp_no_blur, itc_lance,
@@ -542,12 +542,12 @@ items = [
 
 #Austrian
 ["austrian_lance", "Lance", [("lance_austria",0)],itp_has_upper_stab| itp_couchable|itp_type_polearm|itp_offset_lance|itp_no_parry| itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_is_pike|itp_no_blur, itc_lance,
- 180 , weight(2.5)|difficulty(0)|spd_rtng(76) | weapon_length(185)|swing_damage(25 ,  pierce) | thrust_damage(30 ,  pierce),imodbits_polearm ], 
- 
+ 180 , weight(2.5)|difficulty(0)|spd_rtng(76) | weapon_length(185)|swing_damage(25 ,  pierce) | thrust_damage(30 ,  pierce),imodbits_polearm ],
+
 #Rhine
 ["saxon_lance", "Lance", [("saxon_ulan_pike",0)],itp_has_upper_stab| itp_couchable|itp_type_polearm|itp_offset_lance|itp_no_parry| itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_is_pike|itp_no_blur, itc_lance,
- 180 , weight(2.5)|difficulty(0)|spd_rtng(76) | weapon_length(185)|swing_damage(25 ,  pierce) | thrust_damage(30 ,  pierce),imodbits_polearm ], 
- 
+ 180 , weight(2.5)|difficulty(0)|spd_rtng(76) | weapon_length(185)|swing_damage(25 ,  pierce) | thrust_damage(30 ,  pierce),imodbits_polearm ],
+
 #Russian
 ["russian_cossack_pike", "Lance", [("Russian_cossack_pike",0)], itp_has_upper_stab|itp_couchable|itp_type_polearm|itp_offset_lance|itp_no_parry| itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_is_pike|itp_no_blur, itc_lance,
  180 , weight(2.5)|difficulty(0)|spd_rtng(76) | weapon_length(185)|swing_damage(25 ,  pierce) | thrust_damage(30 ,  pierce),imodbits_polearm ],
@@ -613,22 +613,22 @@ items = [
 180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 
 ["french_versailles_melee_gf", "Infantry Musket", [("french_versailles",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_spear,
-180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], 
+180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 
 ["british_brown_bess_melee_gf", "Infantry Musket", [("brown_bess_musket",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_spear,
-180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], 
+180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 
 ["russian_musket_1808_melee_gf", "Infantry Musket", [("Russian_musket_1808",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_spear,
-180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], 
+180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 
 ["austrian_musket_melee_gf", "Infantry Musket", [("austrian_musket",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_spear,
-180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], 
+180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 
 ["prussian_potsdam_melee_gf", "Infantry Musket", [("potsdam_musket",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_spear,
-180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], 
+180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 
 ["prussian_musket_1806_melee_gf", "Infantry Musket", [("prussian_kuhfuss",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm |itp_primary|itp_is_pike|itp_no_blur,itc_spear|itcf_carry_spear,
-180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ], 
+180 , weight(0)|difficulty(0)|spd_rtng(85) | weapon_length(138)|swing_damage(40 ,  pierce) | thrust_damage(45 ,  pierce),imodbits_none ],
 #end GF maps #patch1115 60/12
 #training weapons
 ["training_musket", "Training Musket", [("training_musket",0)], itp_cant_use_on_horseback|itp_has_upper_stab|itp_type_polearm|itp_primary|itp_is_pike|itp_wooden_attack|itp_wooden_parry|itp_no_blur, itc_spear|itcf_carry_spear,
@@ -742,15 +742,15 @@ items = [
  390 , weight(0.5)|difficulty(0)|spd_rtng(50) | weapon_length(320)|swing_damage(1 , cut) | thrust_damage(0 ,  pierce),imodbits_none ],
 
 # Artillery tools
-["cannon_lighter","Cannon Lighter", [("lighter",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_merchandise|itp_primary, itc_scimitar|itcf_carry_quiver_front_right, 
+["cannon_lighter","Cannon Lighter", [("lighter",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_merchandise|itp_primary, itc_scimitar|itcf_carry_quiver_front_right,
 210 , weight(1.6)|difficulty(0)|spd_rtng(95) | weapon_length(58)|swing_damage(10 , blunt) | thrust_damage(0 ,  pierce),imodbits_sword_high ],
 ["ramrod", "Ramrod", [("ramrod",0)], itp_has_upper_stab|itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_wooden_parry, itc_spear|itcf_carry_spear,
  85 , weight(3.0)|difficulty(0)|spd_rtng(81) | weapon_length(135)|swing_damage(10 , blunt) | thrust_damage(12 ,  blunt),imodbits_polearm ],
 ["rocket_placement", "Rocket Launcher", [("rocket_launcher_folded",0)], itp_type_polearm|itp_offset_lance|itp_merchandise| itp_primary|itp_wooden_parry, itcf_carry_spear,
  85 , weight(15)|difficulty(0)|spd_rtng(81) | weapon_length(135)|swing_damage(10 , blunt) | thrust_damage(12 ,  blunt),imodbits_polearm ],
- 
+
 #Spyglass
-["spyglass","Spyglass", [("spyglass",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary, 0, 
+["spyglass","Spyglass", [("spyglass",0)], itp_type_one_handed_wpn|itp_wooden_parry|itp_primary, 0,
 210 , weight(0)|difficulty(0)|spd_rtng(93) | weapon_length(102)|swing_damage(30 , cut) | thrust_damage(30 ,  pierce),imodbits_sword_high],
 
 #Misc item: Keys
@@ -780,14 +780,14 @@ items = [
  210, weight(1.0)|difficulty(0)|spd_rtng(95)|weapon_length(90)|swing_damage(10, blunt)|thrust_damage(10, blunt), imodbits_sword_high ],
 
 #Bandage # patch1115 surgeon
-["bandages","Bandages", [("bandage",0)], itp_type_one_handed_wpn|itp_primary|itp_no_parry, itc_dagger_no_stab|itcf_carry_pistol_front_left, 
+["bandages","Bandages", [("bandage",0)], itp_type_one_handed_wpn|itp_primary|itp_no_parry, itc_dagger_no_stab|itcf_carry_pistol_front_left,
 210 , weight(1.6)|difficulty(0)|spd_rtng(65) | weapon_length(25)|swing_damage(10 , blunt) | thrust_damage(0 ,  pierce),imodbits_sword_high ],
 
 
 # Admin Toys
 ["grenade", "Holy Handgrenade", [("hhg",0)], itp_type_thrown|itp_primary ,itcf_throw_stone, 1 , weight(4)|difficulty(0)|spd_rtng(97) | shoot_speed(30) | thrust_damage(11 ,  blunt)|max_ammo(100)|weapon_length(8),imodbit_large_bag,
 [
-  (ti_on_weapon_attack, 
+  (ti_on_weapon_attack,
   [
     (copy_position,pos56,pos1),
     (call_script,"script_multiplayer_server_play_sound_at_position","snd_holy_call"),
@@ -800,13 +800,13 @@ items = [
     (call_script,"script_explosion_at_position",":thrower_agent",500,500), # Input: shooter_agent_no, max_damage points, range in cm
    ]),
  ]],
- 
+
 #Sapper Items
 ["sapper_axe", "Sapper Axe", [("sapper_axe",0)], itp_type_polearm|itp_merchandise| itp_cant_use_on_horseback|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_two_handed|itp_bonus_against_shield, itc_cut_two_handed|itc_parry_polearm|itcf_carry_axe_back,
  125 , weight(2.7)|difficulty(0)|spd_rtng(70) | weapon_length(100)|swing_damage(40 , cut) | thrust_damage(0, pierce),imodbits_polearm ],
 ["sapper_axe_rus", "Sapper Axe", [("Russian_sappeur_axe",0)], itp_type_polearm|itp_merchandise| itp_cant_use_on_horseback|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_two_handed|itp_bonus_against_shield, itc_cut_two_handed|itc_parry_polearm|itcf_carry_axe_back,
  125 , weight(2.7)|difficulty(0)|spd_rtng(70) | weapon_length(100)|swing_damage(40 , cut) | thrust_damage(0, pierce),imodbits_polearm ],
-["construction_hammer", "Construction Hammer", [("sapper_hammer",0)], itp_type_one_handed_wpn|itp_no_parry|itp_merchandise|itp_primary, itc_scimitar|itcf_carry_quiver_right_vertical, 
+["construction_hammer", "Construction Hammer", [("sapper_hammer",0)], itp_type_one_handed_wpn|itp_no_parry|itp_merchandise|itp_primary, itc_scimitar|itcf_carry_quiver_right_vertical,
  210 , weight(1.5)|difficulty(0)|spd_rtng(92) | weapon_length(120)|swing_damage(4 , blunt) | thrust_damage(0 ,  pierce),imodbits_sword_high ],
 ["shovel", "Spade", [("shovel",0)], itp_has_upper_stab|itp_type_polearm|itp_merchandise| itp_cant_use_on_horseback|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_two_handed|itp_next_item_as_melee, itcf_carry_bow_back|itc_parry_polearm | itcf_thrust_onehanded_lance |itcf_thrust_onehanded_lance_horseback | itcf_thrust_polearm,
  125 , weight(2.5)|difficulty(0)|spd_rtng(75) | weapon_length(140)|swing_damage(6 , blunt) | thrust_damage(16, pierce),imodbits_polearm ],
@@ -819,8 +819,8 @@ items = [
    (store_trigger_param_1, ":user_agent"),
    (call_script, "script_multiplayer_server_construct_prop", ":user_agent", "spr_mm_french_barrel_explosive")
  ])]],
- 
- 
+
+
 #Uniforms
  #French
 ["french_voltigeur_body_officer", "French Voltigeur Uniform", [("french_voltigeur_body_officer",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
@@ -938,7 +938,7 @@ items = [
 ["french_surgeon", "Surgeon Outfit", [("french_surgeon",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  100 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
 
- 
+
  #British
 ["british_infantry_ranker", "British Infantry Uniform", [("british_infantry_ranker",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  100 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
@@ -1039,7 +1039,7 @@ items = [
 ["british_surgeon", "Surgeon Outfit", [("uk_surgeon",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  100 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
 
- 
+
  # Prussian
 ["prussian_infantry_ranker", "Prussian Infantry Uniform", [("prussian_8_infantry_ranker",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  100 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
@@ -1242,7 +1242,7 @@ items = [
 ["russian_surgeon", "Surgeon Outfit", [("russia_surgeon",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  100 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
 
- 
+
 # Austrian
 ["austrian_infantry", "Austrian Infantry Uniform", [("austrian_infantry",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  100 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
@@ -1477,7 +1477,7 @@ items = [
  # Character screen uniform
 ["character_uniform", "{!}Character Uniform Dummy", [("character_uniform",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs |itp_civilian,0,
  100 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
- 
+
 #Hats
 ["rus_pavlovsk_ranker", "Pavlovsk Ranker Mitras Cap", [("rus_pavlovsk_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["rus_kyiv_dragoons_all", "Russian Dragoon Helmet", [("rus_kyiv_dragoons_all",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
@@ -1535,124 +1535,124 @@ items = [
 ["french_vistula_shako_officer", "Infantry Shako", [("french_vistula_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_inf_shako_84_colours", "Infantry Shako", [("french_inf_shako_84_colours",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_inf_shako_84_ranker", "Infantry Shako", [("french_inf_shako_84_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-["french_inf_shako_84_officer", "Infantry Shako", [("french_inf_shako_84_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],  
+["french_inf_shako_84_officer", "Infantry Shako", [("french_inf_shako_84_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_voltigeur_shako_officer", "Voltigeur Shako", [("french_voltigeur_shako_captain",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-["french_voltigeur_shako_ranker", "Voltigeur Shako", [("french_voltigeur_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["french_voltigeur_shako_ranker", "Voltigeur Shako", [("french_voltigeur_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_ldlg_czapka_officer", "Guard Lancer Czapka", [("french_LdlG_officer_czapka",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_ldlg_czapka_ranker", "Guard Lancer Czapka", [("french_LdlG_ranker_czapka",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_ldlg_czapka_trumpeter", "Guard Lancer Czapka", [("french_LdlG_trumpeter_czapka",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_artillery_bearskin_officer", "Artillery Bearskin", [("french_artillery_captain_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-["french_artillery_bearskin_ranker", "Artillery Bearskin", [("french_artillery_ranker_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["french_artillery_bearskin_ranker", "Artillery Bearskin", [("french_artillery_ranker_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_gap_bearskin_officer", "Grenadiers a Pied Bearskin", [("french_GaP_officer_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-["french_gap_bearskin_colours", "Grenadiers a Pied Bearskin", [("french_GaP_flagcarrier_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["french_gap_bearskin_ranker", "Grenadiers a Pied Bearskin", [("french_GaP_ranker_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["french_sapper_bearskin", "Sappeur Bearskin", [("french_sapper_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["french_inf_bicorne_45_officer", "Infantry Bicorne", [("french_inf_bicorne_45_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["french_gap_bearskin_colours", "Grenadiers a Pied Bearskin", [("french_GaP_flagcarrier_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["french_gap_bearskin_ranker", "Grenadiers a Pied Bearskin", [("french_GaP_ranker_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["french_sapper_bearskin", "Sappeur Bearskin", [("french_sapper_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["french_inf_bicorne_45_officer", "Infantry Bicorne", [("french_inf_bicorne_45_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["french_hussar_bearskin_officer", "Hussar Bearskin", [("french_hussar_bearskin_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-["french_artillery_train_shako", "Artillery Train Shako", [("french_artillery_train_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["french_nappy_hat", "Napoleon's Bicorne", [("french_nappy_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["grach_bearskin_ranker", "Grenadiers a Cheval Bearskin", [("grach_bearskin_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["grach_bearskin_officer", "Grenadiers a Cheval Bearskin", [("grach_bearskin_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["grach_bearskin_trumpeter", "Grenadiers a Cheval Bearskin", [("grach_bearskin_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["french_captain_hat", "french_captain_hat", [("french_captain_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["french_marine_hat", "french_marine_hat", [("french_marine_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["french_seaman_hat", "french_seaman_hat", [("french_seaman_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["french_seaman_hat_2", "french_seaman_hat_2", [("french_seaman_hat_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["french_artillery_train_shako", "Artillery Train Shako", [("french_artillery_train_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["french_nappy_hat", "Napoleon's Bicorne", [("french_nappy_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["grach_bearskin_ranker", "Grenadiers a Cheval Bearskin", [("grach_bearskin_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["grach_bearskin_officer", "Grenadiers a Cheval Bearskin", [("grach_bearskin_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["grach_bearskin_trumpeter", "Grenadiers a Cheval Bearskin", [("grach_bearskin_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["french_captain_hat", "french_captain_hat", [("french_captain_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["french_marine_hat", "french_marine_hat", [("french_marine_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["french_seaman_hat", "french_seaman_hat", [("french_seaman_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["french_seaman_hat_2", "french_seaman_hat_2", [("french_seaman_hat_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
  #Austrian
-["aus_arty_bicorn", "Artillery Bicorne", [("aus_arty_bicorn",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_arty_cap_bicorn", "Artillery Bicorne", [("aus_arty_cap_bicorn",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_arty_train_hat", "Artillery Train Hat", [("aus_arty_train_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_cavalry_helmet_officer", "Cavalry Helmet", [("aus_cavalry_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_cavalry_helmet_ranker", "Cavalry Helmet", [("aus_cavalry_helmet_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_cavalry_helmet_trumpeter", "Cavalry Helmet", [("aus_cavalry_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_uhlan_czapka", "Uhlan Czapka", [("aus_uhlan_czapka",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_uhlan_czapka_officer", "Uhlan Czapka", [("aus_uhlan_czapka_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_uhlan_czapka_trumpeter", "Uhlan Czapka", [("aus_uhlan_czapka_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_shwarzenberg_bicorn", "Schwarzenberg's Bicorne", [("aus_shwarzenberg_bicorn",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_grenadier_bearskin", "Grenadier Bearskin", [("aus_grenadier_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_tyrol_hat", "Tyrol Hat", [("aus_tyrol_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_tyrol_hat_officer", "Tyrol Hat", [("aus_tyrol_hat_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_pioneer_hat", "Pioneer Hat", [("aus_pioneer_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_grenadier_bearskin_officer", "Grenadier Bearskin", [("aus_grenadier_bearskin_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_grenzer_officer", "Grenz Shako", [("aus_grenzer_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_grenzer_ranker", "Grenz Shako", [("aus_grenzer_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_infantry_nco", "Infantry Shako", [("aus_infantry_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_infantry_officer", "Infantry Shako", [("aus_infantry_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_infantry_ranker", "Infantry Shako", [("aus_infantry_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_hussard_shako_nco", "Hussar Shako", [("aus_hussard_shako_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_hussard_shako_officer", "Hussar Shako", [("aus_hussard_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_hussard_shako_ranker", "Hussar Shako", [("aus_hussard_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_hussard_shako_trumpeter", "Hussar Shako", [("aus_hussard_shako_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["aus_surgeon_hat", "Surgeon Hat", [("austria_surgeon_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["aus_arty_bicorn", "Artillery Bicorne", [("aus_arty_bicorn",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_arty_cap_bicorn", "Artillery Bicorne", [("aus_arty_cap_bicorn",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_arty_train_hat", "Artillery Train Hat", [("aus_arty_train_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_cavalry_helmet_officer", "Cavalry Helmet", [("aus_cavalry_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_cavalry_helmet_ranker", "Cavalry Helmet", [("aus_cavalry_helmet_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_cavalry_helmet_trumpeter", "Cavalry Helmet", [("aus_cavalry_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_uhlan_czapka", "Uhlan Czapka", [("aus_uhlan_czapka",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_uhlan_czapka_officer", "Uhlan Czapka", [("aus_uhlan_czapka_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_uhlan_czapka_trumpeter", "Uhlan Czapka", [("aus_uhlan_czapka_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_shwarzenberg_bicorn", "Schwarzenberg's Bicorne", [("aus_shwarzenberg_bicorn",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_grenadier_bearskin", "Grenadier Bearskin", [("aus_grenadier_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_tyrol_hat", "Tyrol Hat", [("aus_tyrol_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_tyrol_hat_officer", "Tyrol Hat", [("aus_tyrol_hat_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_pioneer_hat", "Pioneer Hat", [("aus_pioneer_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_grenadier_bearskin_officer", "Grenadier Bearskin", [("aus_grenadier_bearskin_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_grenzer_officer", "Grenz Shako", [("aus_grenzer_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_grenzer_ranker", "Grenz Shako", [("aus_grenzer_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_infantry_nco", "Infantry Shako", [("aus_infantry_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_infantry_officer", "Infantry Shako", [("aus_infantry_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_infantry_ranker", "Infantry Shako", [("aus_infantry_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_hussard_shako_nco", "Hussar Shako", [("aus_hussard_shako_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_hussard_shako_officer", "Hussar Shako", [("aus_hussard_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_hussard_shako_ranker", "Hussar Shako", [("aus_hussard_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_hussard_shako_trumpeter", "Hussar Shako", [("aus_hussard_shako_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["aus_surgeon_hat", "Surgeon Hat", [("austria_surgeon_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 #British
-["british_artillery_shako_officer", "Artillery Shako", [("british_artillery_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_artillery_shako_ranker", "Artillery Shako", [("british_artillery_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_rocket_tarleton", "Artillery Tarleton", [("british_rocket_tarleton",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_kgl_shako_officer", "KGL Shako", [("british_kgl_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_kgl_shako_ranker", "KGL Shako", [("british_kgl_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_light_shako_ranker", "Light Infantry Shako", [("british_light_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_light_shako_officer", "Light Infantry Shako", [("british_light_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_rifle_shako_officer", "Rifleman Shako", [("british_rifle_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_rifle_shako_ranker", "Rifleman Shako", [("british_rifle_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_rifle_beret", "Rifleman Beret", [("british_rifle_beret",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_rifle_beret_2", "Rifleman Beret", [("british_rifle_beret_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_highland_bonnet_ranker", "Highlander Bonnet", [("british_highland_bonnet_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_highland_bonnet_ensign", "Highlander Bonnet", [("british_highland_bonnet_ensign",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_highland_bonnet_officer", "Highlander Bonnet", [("british_highland_bonnet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_highland_bonnet_drummer", "Highlander Bonnet", [("british_highland_bonnet_drummer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_guard_shako_officer", "Guard Infantry Shako", [("british_guard_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_guard_shako_ranker", "Guard Infantry Shako", [("british_guard_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["33_stovepipe", "Infantry Shako", [("33_stovepipe",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_lightdragoon_shako_ranker", "Light Dragoon Shako", [("british_23rd_lightdragoon_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_lightdragoon_shako_officer", "Light Dragoon Shako", [("british_23rd_lightdragoon_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_lightdragoon_shako_trumpeter", "Light Dragoon Shako", [("british_23rd_lightdragoon_shako_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["british_artillery_shako_officer", "Artillery Shako", [("british_artillery_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_artillery_shako_ranker", "Artillery Shako", [("british_artillery_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_rocket_tarleton", "Artillery Tarleton", [("british_rocket_tarleton",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_kgl_shako_officer", "KGL Shako", [("british_kgl_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_kgl_shako_ranker", "KGL Shako", [("british_kgl_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_light_shako_ranker", "Light Infantry Shako", [("british_light_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_light_shako_officer", "Light Infantry Shako", [("british_light_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_rifle_shako_officer", "Rifleman Shako", [("british_rifle_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_rifle_shako_ranker", "Rifleman Shako", [("british_rifle_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_rifle_beret", "Rifleman Beret", [("british_rifle_beret",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_rifle_beret_2", "Rifleman Beret", [("british_rifle_beret_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_highland_bonnet_ranker", "Highlander Bonnet", [("british_highland_bonnet_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_highland_bonnet_ensign", "Highlander Bonnet", [("british_highland_bonnet_ensign",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_highland_bonnet_officer", "Highlander Bonnet", [("british_highland_bonnet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_highland_bonnet_drummer", "Highlander Bonnet", [("british_highland_bonnet_drummer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_guard_shako_officer", "Guard Infantry Shako", [("british_guard_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_guard_shako_ranker", "Guard Infantry Shako", [("british_guard_shako_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["33_stovepipe", "Infantry Shako", [("33_stovepipe",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_lightdragoon_shako_ranker", "Light Dragoon Shako", [("british_23rd_lightdragoon_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_lightdragoon_shako_officer", "Light Dragoon Shako", [("british_23rd_lightdragoon_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_lightdragoon_shako_trumpeter", "Light Dragoon Shako", [("british_23rd_lightdragoon_shako_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["british_iniskilling_helmet_ranker", "Dragoon Helmet", [("british_iniskilling_helmet_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair|itp_attach_armature  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["british_iniskilling_helmet_officer", "Dragoon Helmet", [("british_iniskilling_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair|itp_attach_armature  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["british_iniskilling_helmet_trumpeter", "Dragoon Helmet", [("british_iniskilling_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair|itp_attach_armature  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-["british_lifeguard_helmet_ranker", "Horse Guard Helmet", [("british_lifeguard_helmet_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_lifeguard_helmet_officer", "Horse Guard Helmet", [("british_lifeguard_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_lifeguard_helmet_trumpeter", "Horse Guard Helmet", [("british_lifeguard_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_kgl_hussar_bearskin", "KGL Hussar Helmet", [("KGL_hussar_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_kgl_hussar_officer_bearskin", "KGL Hussar Helmet", [("KGL_hussar_officer_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_kgl_hussar_bearskin_trumpeter", "KGL Hussar Helmet", [("KGL_hussar_bearskin_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_wellington_bicorne", "Wellington's Bicorne", [("british_wellington_bicorne",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_captain_hat", "british_captain_hat", [("british_captain_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_seaman_hat", "british_seaman_hat", [("british_seaman_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_seaman_hat_2", "british_seaman_hat_2", [("british_seaman_hat_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["royal_marine_beret", "royal_marine_beret", [("royal_marine_beret",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["royal_marine_hat", "royal_marine_hat", [("royal_marine_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["british_surgeon_bicorne", "Surgeon Bicorne", [("british_surgeon_bicorne",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["british_lifeguard_helmet_ranker", "Horse Guard Helmet", [("british_lifeguard_helmet_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_lifeguard_helmet_officer", "Horse Guard Helmet", [("british_lifeguard_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_lifeguard_helmet_trumpeter", "Horse Guard Helmet", [("british_lifeguard_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_kgl_hussar_bearskin", "KGL Hussar Helmet", [("KGL_hussar_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_kgl_hussar_officer_bearskin", "KGL Hussar Helmet", [("KGL_hussar_officer_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_kgl_hussar_bearskin_trumpeter", "KGL Hussar Helmet", [("KGL_hussar_bearskin_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_wellington_bicorne", "Wellington's Bicorne", [("british_wellington_bicorne",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_captain_hat", "british_captain_hat", [("british_captain_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_seaman_hat", "british_seaman_hat", [("british_seaman_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_seaman_hat_2", "british_seaman_hat_2", [("british_seaman_hat_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["royal_marine_beret", "royal_marine_beret", [("royal_marine_beret",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["royal_marine_hat", "royal_marine_hat", [("royal_marine_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["british_surgeon_bicorne", "Surgeon Bicorne", [("british_surgeon_bicorne",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 
 #Prussian
-["prussian_landwehr_hat", "Landwehr Hat", [("landwehr_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_landwehr_hat_2", "Landwehr Hat", [("landwehr_hat_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_landwehr_hat_3", "Landwehr Hat", [("landwehr_leather_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_shako", "Shako", [("prussian_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_shako_2", "Shako", [("prussian_shako_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_infantry_hat_officer", "Officer Cap", [("prussian_8th_officer_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_hussar_shako", "Hussar Shako", [("prussian_deadhussars_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_hussar_officer_shako", "Hussar Shako", [("prussian_hussar_officer_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_blucher_hat", "Blucher's Cap", [("prussian_bluecher_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_arty_shako_officer", "Artillery Shako", [("prussian_arty_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_arty_shako_ranker", "Artillery Shako", [("prussian_arty_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_dragoon_shako_officer", "Dragoon Shako", [("prussian_dragoon_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_dragoon_shako_ranker", "Dragoon Shako", [("prussian_dragoon_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_guard_musician_shako", "Guard Infantry Shako", [("prussian_guard_musician_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_guard_colours_shako", "Guard Infantry Shako", [("prussian_guard_NCO_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_guard_officer_shako", "Guard Infantry Shako", [("prussian_guard_officer_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_guard_ranker_shako", "Guard Infantry Shako", [("prussian_guard_ranker_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_inf_off_shako", "Infantry Shako", [("prussian_inf_off_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_jaeger_officer_shako", "Jaeger Shako", [("prussian_jaeger_officer_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_landwehr_cav_shako", "Landwehr Shako", [("prussian_landwer_cav",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_landwehr_cav_shako_officer", "Landwehr Shako", [("prussian_landwer_cav_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_pioneer_shako", "Pioneer Shako", [("prussian_pioneer_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_shako_colours", "Infantry Shako", [("prussian_shako_proper_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_shako_colours_2", "Infantry Shako", [("prussian_shako_style_2_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_cuirassier_helmet", "Cuirassier Helmet", [("prussian_cuirassier_helmet",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["prussian_cuirassier_helmet_trumpet", "Cuirassier Helmet", [("prussian_cuirassier_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["prussian_landwehr_hat", "Landwehr Hat", [("landwehr_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_landwehr_hat_2", "Landwehr Hat", [("landwehr_hat_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_landwehr_hat_3", "Landwehr Hat", [("landwehr_leather_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_shako", "Shako", [("prussian_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_shako_2", "Shako", [("prussian_shako_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_infantry_hat_officer", "Officer Cap", [("prussian_8th_officer_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_hussar_shako", "Hussar Shako", [("prussian_deadhussars_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_hussar_officer_shako", "Hussar Shako", [("prussian_hussar_officer_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_blucher_hat", "Blucher's Cap", [("prussian_bluecher_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_arty_shako_officer", "Artillery Shako", [("prussian_arty_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_arty_shako_ranker", "Artillery Shako", [("prussian_arty_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_dragoon_shako_officer", "Dragoon Shako", [("prussian_dragoon_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_dragoon_shako_ranker", "Dragoon Shako", [("prussian_dragoon_ranker",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_guard_musician_shako", "Guard Infantry Shako", [("prussian_guard_musician_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_guard_colours_shako", "Guard Infantry Shako", [("prussian_guard_NCO_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_guard_officer_shako", "Guard Infantry Shako", [("prussian_guard_officer_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_guard_ranker_shako", "Guard Infantry Shako", [("prussian_guard_ranker_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_inf_off_shako", "Infantry Shako", [("prussian_inf_off_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_jaeger_officer_shako", "Jaeger Shako", [("prussian_jaeger_officer_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_landwehr_cav_shako", "Landwehr Shako", [("prussian_landwer_cav",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_landwehr_cav_shako_officer", "Landwehr Shako", [("prussian_landwer_cav_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_pioneer_shako", "Pioneer Shako", [("prussian_pioneer_shako",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_shako_colours", "Infantry Shako", [("prussian_shako_proper_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_shako_colours_2", "Infantry Shako", [("prussian_shako_style_2_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_cuirassier_helmet", "Cuirassier Helmet", [("prussian_cuirassier_helmet",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["prussian_cuirassier_helmet_trumpet", "Cuirassier Helmet", [("prussian_cuirassier_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["prussian_freikorps_officer_hat", "Freikorps Hat", [("lutzov_off_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    #patch1115 25/1
 ["prussian_infantry2_hat", "Infantry Cap", [("23_fourage_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    #patch1115 25/2
 
@@ -1661,50 +1661,50 @@ items = [
 ["rus_opol_hat_officer", "Opolocheniye Hat", [("rus_opol_captain_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 #Rhine
-["bavarian_helmet_other_ranks", "bavarian_helmet_other_ranks", [("bavarian_helmet_other_ranks",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["bavarian_helmet_flagcarrier", "bavarian_helmet_flagcarrier", [("bavarian_helmet_flagcarrier",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["bavarian_helmet_officer", "bavarian_helmet_officer", [("bavarian_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["bavarian_jaeger_helmet_other_ranks", "Jaeger Helmet", [("bavarian_jaeger_helmet_other_ranks",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["bavarian_jaeger_helmet_officer", "Jaeger Helmet", [("bavarian_jaeger_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["bavarian_helmet_artillery", "Artillery Helmet", [("bavarian_helmet_artillery_other_ranks",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["bavarian_helmet_train", "Artillery Helmet", [("bavarian_helmet_train_other_ranks",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["bavarian_helmet_artillery_officer", "Artillery Helmet", [("bavarian_helmet_artillery_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_inf_shako_ranker", "Infantry Shako", [("saxon_infantry_shako_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_inf_shako_nco", "Infantry Shako", [("saxon_infantry_shako_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_inf_shako_officer", "Infantry Shako", [("saxon_infantry_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_uhlan_shako_ranker", "Cavalry Shako", [("saxon_ulan_shako_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_uhlan_shako_ranker_alt", "Cavalry Shako", [("saxon_ulan_shako_private_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_uhlan_shako_nco", "Cavalry Shako", [("saxon_ulan_shako_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_uhlan_shako_officer", "Cavalry Shako", [("saxon_ulan_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_uhlan_shako_trumpeter", "Cavalry Shako", [("saxon_ulan_shako_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["hessian_inf_shako_ranker", "Infantry Shako", [("hessen_infantry_shako_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["hessian_inf_shako_nco", "Infantry Shako", [("hessen_infantry_shako_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["hessian_inf_bicorne_officer", "Infantry Bicorne", [("hessen_infantry_officer_bicorn",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["rhine_surgeon_hat", "Surgeon Hat", [("rhine_surgeon_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["westphalian_hat_ranker", "Bearskin", [("west_gr_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["westphalian_hat_officer", "Bearskin", [("west_gr_off_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxonyking_hat", "Friedrich August Hat", [("saxonyking_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["nassau_jaeger_hat_ranker", "Bearskin", [("nassau_ranker_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["nassau_jaeger_hat_officer", "Bearskin", [("nassau_off_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["wurttemberg_helmet_other_ranks", "wurttemberg_helmet_other_ranks", [("wurttemberg_helmet_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["wurttemberg_helmet_flagcarrier", "wurttemberg_helmet_flagcarrier", [("wurttemberg_helmet_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["wurttemberg_helmet_officer", "wurttemberg_helmet_officer", [("wurttemberg_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["wurttemberg2_helmet_other_ranks", "wurttemberg_helmet_other_ranks", [("wurttemberg_helmet_grenadier",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["wurttemberg2_helmet_flagcarrier", "wurttemberg_helmet_flagcarrier", [("wurttemberg_helmet_grenadier_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["wurttemberg2_helmet_officer", "wurttemberg_helmet_officer", [("wurttemberg_helmet_grenadier_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["berg_pioneer_bearskin", "Bearskin", [("berg_pioneer_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_helmet_other_ranks", "saxon_helmet_other_ranks", [("helmet_garde_du_corps",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_helmet_flagcarrier", "saxon_helmet_flagcarrier", [("helmet_garde_du_corps_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_helmet_officer", "saxon_helmet_officer", [("helmet_garde_du_corps_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["saxon_helmet_trumpeter", "saxon_helmet_officer", [("helmet_garde_du_corps_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["westphalian_helmet_other_ranks", "westphalian_helmet_other_ranks", [("westphalian_cuirassier_helmet_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["westphalian_helmet_flagcarrier", "westphalian_helmet_flagcarrier", [("westphalian_cuirassier_helmet_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["westphalian_helmet_officer", "westphalian_helmet_officer", [("westphalian_cuirassier_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["westphalian_helmet_trumpeter", "westphalian_helmet_officer", [("westphalian_cuirassier_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["badner_helmet_flagcarrier", "badner_helmet_flagcarrier", [("baden_dragoon_helmet_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["badner_helmet_officer", "badner_helmet_officer", [("baden_dragoon_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["badner_helmet_ranker", "badner_helmet_officer", [("baden_dragoon_helmet_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
-["badner_helmet_trumpeter", "badner_helmet_officer", [("baden_dragoon_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],    
+["bavarian_helmet_other_ranks", "bavarian_helmet_other_ranks", [("bavarian_helmet_other_ranks",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["bavarian_helmet_flagcarrier", "bavarian_helmet_flagcarrier", [("bavarian_helmet_flagcarrier",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["bavarian_helmet_officer", "bavarian_helmet_officer", [("bavarian_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["bavarian_jaeger_helmet_other_ranks", "Jaeger Helmet", [("bavarian_jaeger_helmet_other_ranks",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["bavarian_jaeger_helmet_officer", "Jaeger Helmet", [("bavarian_jaeger_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["bavarian_helmet_artillery", "Artillery Helmet", [("bavarian_helmet_artillery_other_ranks",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["bavarian_helmet_train", "Artillery Helmet", [("bavarian_helmet_train_other_ranks",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["bavarian_helmet_artillery_officer", "Artillery Helmet", [("bavarian_helmet_artillery_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_inf_shako_ranker", "Infantry Shako", [("saxon_infantry_shako_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_inf_shako_nco", "Infantry Shako", [("saxon_infantry_shako_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_inf_shako_officer", "Infantry Shako", [("saxon_infantry_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_uhlan_shako_ranker", "Cavalry Shako", [("saxon_ulan_shako_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_uhlan_shako_ranker_alt", "Cavalry Shako", [("saxon_ulan_shako_private_2",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_uhlan_shako_nco", "Cavalry Shako", [("saxon_ulan_shako_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_uhlan_shako_officer", "Cavalry Shako", [("saxon_ulan_shako_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_uhlan_shako_trumpeter", "Cavalry Shako", [("saxon_ulan_shako_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["hessian_inf_shako_ranker", "Infantry Shako", [("hessen_infantry_shako_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["hessian_inf_shako_nco", "Infantry Shako", [("hessen_infantry_shako_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["hessian_inf_bicorne_officer", "Infantry Bicorne", [("hessen_infantry_officer_bicorn",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["rhine_surgeon_hat", "Surgeon Hat", [("rhine_surgeon_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["westphalian_hat_ranker", "Bearskin", [("west_gr_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["westphalian_hat_officer", "Bearskin", [("west_gr_off_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxonyking_hat", "Friedrich August Hat", [("saxonyking_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["nassau_jaeger_hat_ranker", "Bearskin", [("nassau_ranker_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["nassau_jaeger_hat_officer", "Bearskin", [("nassau_off_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["wurttemberg_helmet_other_ranks", "wurttemberg_helmet_other_ranks", [("wurttemberg_helmet_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["wurttemberg_helmet_flagcarrier", "wurttemberg_helmet_flagcarrier", [("wurttemberg_helmet_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["wurttemberg_helmet_officer", "wurttemberg_helmet_officer", [("wurttemberg_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["wurttemberg2_helmet_other_ranks", "wurttemberg_helmet_other_ranks", [("wurttemberg_helmet_grenadier",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["wurttemberg2_helmet_flagcarrier", "wurttemberg_helmet_flagcarrier", [("wurttemberg_helmet_grenadier_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["wurttemberg2_helmet_officer", "wurttemberg_helmet_officer", [("wurttemberg_helmet_grenadier_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["berg_pioneer_bearskin", "Bearskin", [("berg_pioneer_bearskin",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_helmet_other_ranks", "saxon_helmet_other_ranks", [("helmet_garde_du_corps",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_helmet_flagcarrier", "saxon_helmet_flagcarrier", [("helmet_garde_du_corps_nco",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_helmet_officer", "saxon_helmet_officer", [("helmet_garde_du_corps_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["saxon_helmet_trumpeter", "saxon_helmet_officer", [("helmet_garde_du_corps_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["westphalian_helmet_other_ranks", "westphalian_helmet_other_ranks", [("westphalian_cuirassier_helmet_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["westphalian_helmet_flagcarrier", "westphalian_helmet_flagcarrier", [("westphalian_cuirassier_helmet_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["westphalian_helmet_officer", "westphalian_helmet_officer", [("westphalian_cuirassier_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["westphalian_helmet_trumpeter", "westphalian_helmet_officer", [("westphalian_cuirassier_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["badner_helmet_flagcarrier", "badner_helmet_flagcarrier", [("baden_dragoon_helmet_NCO",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["badner_helmet_officer", "badner_helmet_officer", [("baden_dragoon_helmet_officer",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["badner_helmet_ranker", "badner_helmet_officer", [("baden_dragoon_helmet_private",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["badner_helmet_trumpeter", "badner_helmet_officer", [("baden_dragoon_helmet_trumpeter",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 
 #Pirate
 ["pirate_hat", "Pirate Hat", [("pirate_hat",0)], itp_merchandise| itp_type_head_armor |itp_civilian|itp_doesnt_cover_hair  ,0, 4 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
@@ -1760,8 +1760,8 @@ items = [
  10 , weight(4.5)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(36)|difficulty(0) ,imodbits_cloth ], #patch1115 23/2
  ["french_surgeon_pants", "Surgeon Pants", [("french_surgeon_pants",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  10 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth ],
- 
- 
+
+
  #Russian
  ["rus_infantry_pants1", "Infantry Gaiters", [("rus_musketeer_pants1",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  10 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth ],
@@ -1819,7 +1819,7 @@ items = [
  10 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth ],
  ["austrian_cavalry_boots", "Cavalry Boots", [("austrian_cavalry_boots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  10 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth ],
- 
+
  #British
  ["british_highland_kilt", "Kilt", [("british_highland_kilt",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  10 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth ],
@@ -1858,8 +1858,8 @@ items = [
  ["sailor_pants_female", "sailor_pants_female", [("sailor_pants_fem",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  10 , weight(4.25)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(36)|difficulty(0) ,imodbits_cloth ], #patch1115 23/4
 
- 
- 
+
+
  #Prussian
  ["prussian_infantry_pants", "Infantry Boots", [("prussian_infantry_pants",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  10 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth ],
@@ -1919,8 +1919,8 @@ items = [
  10 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth ],
  ["baden_dragoon_pants", "Cavalry Boots", [("baden_dragoon_pants",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  10 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(30)|difficulty(0) ,imodbits_cloth ],
- 
- 
+
+
 # Gloves
  ["officer_gloves","Officer Gloves", [("officer_gloves_L",0)], itp_merchandise|itp_type_hand_armor,0, 90, weight(0)|abundance(100)|body_armor(0)|difficulty(0),imodbits_cloth],
  ["drummer_gloves","Drummer Gloves", [("drummer_gloves_L",0)], itp_merchandise|itp_type_hand_armor,0, 90, weight(0)|abundance(100)|body_armor(0)|difficulty(0),imodbits_cloth],
@@ -1931,7 +1931,7 @@ items = [
  ["br_horseguard_gloves", "Gloves", [("hg_cavalry_glove_L",0)], itp_merchandise|itp_type_hand_armor,0, 90, weight(0)|abundance(100)|body_armor(0)|difficulty(0),imodbits_cloth],
  ["br_cavalry_gloves_short", "Gloves", [("white_cavalry_glove_short_L",0)], itp_merchandise|itp_type_hand_armor,0, 90, weight(0)|abundance(100)|body_armor(0)|difficulty(0),imodbits_cloth],
  ["br_horseguard_gloves_short", "Gloves", [("hg_cavalry_glove_short_L",0)], itp_merchandise|itp_type_hand_armor,0, 90, weight(0)|abundance(100)|body_armor(0)|difficulty(0),imodbits_cloth],
- 
+
 #Horses
  #French
  ["hussar_horse_french","Light Horse", [("french_hussards_horse",0)], itp_merchandise|itp_type_horse, 0, 400,abundance(70)|body_armor(6)|hit_points(80)|difficulty(3)|horse_speed(45)|horse_maneuver(50)|horse_charge(19)|horse_scale(104),imodbits_horse_basic|imodbit_champion],
@@ -2017,7 +2017,7 @@ items = [
  ["arty_horse_howitzer_russian","Artillery Horse", [("russian_dragoon_horse",0)], itp_merchandise|itp_type_horse|itp_is_carriage, 0, 600,abundance(60)|hit_points(200)|body_armor(10)|difficulty(1)|horse_speed(22)|horse_maneuver(10)|horse_charge(21)|horse_scale(116),imodbits_horse_basic|imodbit_champion],
  ["arty_horse_howitzer_austrian","Artillery Horse", [("austrian_hussard_horse",0)], itp_merchandise|itp_type_horse|itp_is_carriage, 0, 600,abundance(60)|hit_points(200)|body_armor(10)|difficulty(1)|horse_speed(22)|horse_maneuver(10)|horse_charge(21)|horse_scale(116),imodbits_horse_basic|imodbit_champion],
  ["arty_horse_howitzer_prussian","Artillery Horse", [("prussian_cuirassier_horse1",0)], itp_merchandise|itp_type_horse|itp_is_carriage, 0, 600,abundance(60)|hit_points(200)|body_armor(10)|difficulty(1)|horse_speed(22)|horse_maneuver(10)|horse_charge(21)|horse_scale(116),imodbits_horse_basic|imodbit_champion],
- 
+
 ####################
 ##  MM ITEMS End  ##
 ####################

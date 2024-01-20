@@ -476,5 +476,3 @@ snd_mission_narrator_2 = 474
 snd_mission_narrator_3 = 475
 snd_mission_narrator_4 = 476
 snd_sounds_end = 477
-
-

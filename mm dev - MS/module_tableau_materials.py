@@ -18,7 +18,7 @@ from module_constants import *
 #  9) Tableau mesh max y (int): divided by 1000 and used when a mesh is auto-generated using the tableau material
 #  10) Operations block (list): A list of operations. See header_operations.py for reference.
 #     The operations block is executed when the tableau is activated.
-# 
+#
 ####################################################################################################################
 
 #banner height = 200, width = 85 with wood, 75 without wood
@@ -106,9 +106,9 @@ tableaus = [
   ("game_troop_label_banner", 0, "tableau_with_transparency", 256, 256, -128, 0, 128, 256,
    [
        (store_script_param, ":banner_mesh", 1),
-       
+
        (is_between,":banner_mesh","mesh_meshes_begin","mesh_meshes_end"),
-       
+
        (cur_tableau_set_background_color, 0xFF888888),
        (set_fixed_point_multiplier, 100),
        (cur_tableau_set_camera_parameters, 0, 150, 150, 0, 100000),
@@ -117,12 +117,12 @@ tableaus = [
        (position_set_y, pos1, 75), #120
        (position_rotate_y, pos1, 180),
        (cur_tableau_add_mesh, ":banner_mesh", pos1, 120, 0),
-	   
+
        #(init_position, pos1),
        #(position_set_z, pos1, 10),
        #(cur_tableau_add_mesh, "mesh_troop_label_banner", pos1, 112, 0),
        ]),
-	  
+
   ("troop_note_alpha_mask", 0, "mat_troop_portrait_mask", 1024, 1024, 0, 0, 400, 400,
    [
        (store_script_param, ":troop_no", 1),
@@ -156,7 +156,7 @@ tableaus = [
        (cur_tableau_set_ambient_light, 10,11,15),
        (call_script, "script_add_troop_to_cur_tableau_for_character", ":troop_no"),
        ]),
-  
+
   ("troop_inventory_alpha_mask", 0, "mat_troop_portrait_mask", 1024, 1024, 0, 0, 400, 400,
    [
        (store_script_param, ":troop_no", 1),

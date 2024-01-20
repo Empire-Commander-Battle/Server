@@ -20,11 +20,11 @@ def compile_all_global_vars(variable_list,variable_uses, triggers, sentences, ga
   list_type = type(temp_list)
   for varb in reserved_variables:
     try:
-	  add_variable(varb, variable_list, variable_uses)
+          add_variable(varb, variable_list, variable_uses)
     except:
       print "Error in variable:"
       print variable
-  
+
   for trigger in triggers:
     try:
       compile_global_vars(trigger[3], variable_list,variable_uses),
@@ -41,7 +41,7 @@ def compile_all_global_vars(variable_list,variable_uses, triggers, sentences, ga
     except:
       print "Error in scene prop:"
       print scene_prop
-      
+
   for sentence in sentences:
     try:
       compile_global_vars(sentence[2], variable_list,variable_uses),

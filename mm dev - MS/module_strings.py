@@ -4,7 +4,7 @@ strings = [
   ("empty_string", " "),
   ("yes", "Yes."),
   ("no", "No."),
-# Strings before this point are hardwired.  
+# Strings before this point are hardwired.
   ("blank_string", " "),
   ("ERROR_string", "{!}ERROR!!!ERROR!!!!ERROR!!!ERROR!!!ERROR!!!ERROR!!!!ERROR!!!ERROR!!!!ERROR!!!ERROR!!!!ERROR!!!ERROR!!!!ERROR!!!ERROR!!!!ERROR!!!ERROR!!!!!"),
 
@@ -29,16 +29,16 @@ strings = [
   ("delivered_damage", "Delivered {reg60} damage."),
   ("archery_target_hit", "Distance: {reg61} meters. Score: {reg60}"),
 
-  
+
   ("cant_use_inventory_now","Can't access inventory now."),
- 
+
   ("give_up_fight", "Give up the fight?"),
 
   ("battle_won", "You have won the battle!"),
   ("battle_lost", "You have lost the battle!"),
 
 
-  
+
   # MM
   ("kingdom_1_adjective",                     "United Kingdom"),
   ("kingdom_2_adjective",                     "Empire Francais"),
@@ -46,7 +46,7 @@ strings = [
   ("kingdom_4_adjective",                     "Rossiyskaya Imperiya"),
   ("kingdom_5_adjective",                     "Osterreich"),
   ("kingdom_6_adjective",                     "Rhenish"),
-  
+
 
   ("credits_1", "Mount&Blade Warband: Napoleonic Wars Copyright 2008-2012 Taleworlds Entertainment"),
   ("credits_2", "Flying Squirrel Entertainment"),
@@ -404,18 +404,18 @@ operation partners and supporters, who are integral for our success.\
   ("mp_walloon_farm_night", "Wallonian Farm (Night)"),
   ("mp_wissaudorf", "Wissaudorf (Day)"),
   ("mp_testing_map", "Testing map"),
-  
+
   #Random
   ("random_multi_plain_medium", "Random Plains (Medium)"),
   ("random_multi_plain_large", "Random Plains (Large)"),
   ("random_multi_plain_medium_rain", "Random Plains (Medium) Raining"),
   ("random_multi_plain_large_rain", "Random Plains (Large) Raining"),
-  
+
   ("random_multi_steppe_medium", "Random Steppe (Medium)"),
   ("random_multi_steppe_large", "Random Steppe (Large)"),
   ("random_multi_steppe_forest_medium", "Random Steppe Forest (Medium)"),
   ("random_multi_steppe_forest_large", "Random Steppe Forest (Large)"),
-  
+
   ("random_multi_snow_medium", "Random Snow (Medium)"),
   ("random_multi_snow_medium_snow", "Random Snow (Medium) Snowing"),
   ("random_multi_snow_large", "Random Snow (Large)"),
@@ -424,17 +424,17 @@ operation partners and supporters, who are integral for our success.\
   ("random_multi_snow_forest_medium_snow", "Random Snow Forest (Medium) Snowing"),
   ("random_multi_snow_forest_large", "Random Snow Forest (Large)"),
   ("random_multi_snow_forest_large_snow", "Random Snow Forest (Large) Snowing"),
-  
+
   ("random_multi_desert_medium", "Random Desert (Medium)"),
   ("random_multi_desert_large", "Random Desert (Large)"),
   ("random_multi_desert_forest_medium", "Random Desert Forest (Medium)"),
   ("random_multi_desert_forest_large", "Random Desert Forest (Large)"),
-  
+
   ("random_multi_forest_medium", "Random Forest (Medium)"),
   ("random_multi_forest_medium_rain", "Random Forest (Medium) Raining"),
   ("random_multi_forest_large", "Random Forest (Large)"),
   ("random_multi_forest_large_rain", "Random Forest (Large) Raining"),
-  
+
   ("mp_custom_map_1", "custom_map_1"),
   ("mp_custom_map_2", "custom_map_2"),
   ("mp_custom_map_3", "custom_map_3"),
@@ -535,7 +535,7 @@ operation partners and supporters, who are integral for our success.\
   ("mp_custom_map_98", "custom_map_98"),
   ("mp_custom_map_99", "custom_map_99"),
   ("mp_custom_map_100", "custom_map_100"),
-  
+
   ("multi_scene_end", "multi_scene_end"),
 
 #multiplayer game type names
@@ -549,7 +549,7 @@ operation partners and supporters, who are integral for our success.\
   ("multi_game_type_8", "Duel"),
   ("multi_game_type_9", "Commander Battle"),
   ("multi_game_type_10", "King of the Hill"),
-  
+
   ("multi_game_type_12", "Scene Editing"),
   ("multi_game_types_end", "multi_game_types_end"),
   ("multi_game_type_11", "Battle Royale"),
@@ -576,7 +576,7 @@ operation partners and supporters, who are integral for our success.\
   ("map", "Map:"),
   ("game_type", "Game type:"),
   ("max_number_of_players", "Maximum number of players:"),
-  ("number_of_bots_in_team_reg1", "Number of bots in team {reg1}:"), 
+  ("number_of_bots_in_team_reg1", "Number of bots in team {reg1}:"),
   ("team_reg1_faction", "Team {reg1} nation:"),
   ("enable_valve_anti_cheat", "Enable Valve Anti-cheat (Requires valid Steam account)"),
   ("allow_friendly_fire", "Allow ranged friendly fire"),
@@ -622,7 +622,7 @@ operation partners and supporters, who are integral for our success.\
   ("round_earnings_multiplier", "Round gold bonus (%):"),
   ("allow_player_banners", "Allow individual banners"),
   ("force_default_armor", "Force minimum armor"),
-  
+
   ("reg0", "{!}{reg0}"),
   ("s0_reg0", "{!}{s0} {reg0}"),
   ("s0_s1", "{!}{s0} {s1}"),
@@ -644,10 +644,10 @@ operation partners and supporters, who are integral for our success.\
   ("s1_neutralized_flag_reg0", "{s1} has lost {s0}."),
   ("s1_captured_flag_reg0", "{s1} has captured {s0}!"),
   ("s1_pulling_flag_reg0", "{s1} has started capturing {s0}."),
-  
+
   ("s1_defended_castle", "{s1} defended their fort!"),
   ("s1_captured_castle", "{s1} captured the fort!"),
-  
+
   ("auto_team_balance_in_20_seconds", "Auto-balance will be done in 30 seconds."),
   ("auto_team_balance_next_round", "Auto-balance will be done next round."),
   ("auto_team_balance_done", "Teams have been auto-balanced."),
@@ -722,7 +722,7 @@ operation partners and supporters, who are integral for our success.\
   ("command", "Command:"),
   ("profile_banner_selection_text", "Choose a banner for your profile:"),
   ("use_default_banner", "Use Nation's Banner"),
-  
+
   ("player_name_s1", "- {s1}"),
 
 
@@ -785,23 +785,23 @@ operation partners and supporters, who are integral for our success.\
   ("reg19", "{!}{reg19}"),
   ("reg20", "{!}{reg20}"),
   ("reg21", "{!}{reg21}"),
-  
-  
-  ("s40", "{!}{s40}"), 
-  
+
+
+  ("s40", "{!}{s40}"),
+
   ("s44", "{!}{s44}"),
-  
+
   ("s41", "{!}{s41}"),
   ("s15", "{!}{s15"),
   ("s2_s3", "{!}{s2}^{s3}"),
   ("s1_s2", "{!}{s1} {s2}"),
- 
+
   ("s15_2", "{!}{s15}"),  #patch1115
   ("s13", "{!}{s13}"),
 
   ("s12", "{!}{s12},"),
   ("s12_2", "{!}{s12}."),    #patch1115
-  
+
   ("you", "you"),
   ("we", "we"),
 
@@ -810,13 +810,13 @@ operation partners and supporters, who are integral for our success.\
   ("quick_battle_river_crossing", "River Crossing"),
   ("quick_battle_spanish_village", "Spanish Village"),
   ("quick_battle_strangefields", "Strangefields"),
-  
+
   ("quick_battle_scene_1", "Hills"),
   ("quick_battle_scene_2", "Snowy Plain"),
   ("quick_battle_scene_3", "Woodland"),
   ("quick_battle_scene_4", "Steppe"),
   ("quick_battle_scene_6", "Desert"),
- 
+
   ("map_basic", "Map"),
   ("game_type_basic", "Game Type"),
   ("battle", "Battle"),
@@ -825,17 +825,17 @@ operation partners and supporters, who are integral for our success.\
   ("enemy", "Enemy"),
   ("faction", "Nation"),
   ("start", "Start"),
-  
+
   ("custom_battle", "Custom Battle"),
-    
+
   ("plus", "+"),
   ("minus", "-"),
 
   ("server_name_s0", "Server Name: {s0}"),
   ("map_name_s0", "Map Name: {s0}"),
-  ("game_type_s0", "Game Type: {s0}"),  
+  ("game_type_s0", "Game Type: {s0}"),
   ("remaining_time_s0reg0_s1reg1", "Remaining Time: {s0}{reg0}:{s1}{reg1}"),
-  
+
   ("a_duel_request_is_sent_to_s0", "A duel offer is sent to {s0}."),
   ("s0_offers_a_duel_with_you", "{s0} offers a duel with you."),
   ("your_duel_with_s0_is_cancelled", "Your duel with {s0} is cancelled."),
@@ -847,12 +847,12 @@ operation partners and supporters, who are integral for our success.\
   ("ranged_weapons_are_disallowed", "Ranged weapons are disallowed."),
   ("ranged_weapons_are_allowed", "Ranged weapons are allowed."),
   ("duel_starts_in_reg0_seconds", "Duel starts in {reg0} seconds..."),
-  
+
   # MM
   ("true", "True"),
   ("false", "False"),
   ("teamkilled_s1_s2","{s1} teamkilled {s2}."),
-	("teamkilled_s1_a_bot","{s1} teamkilled a friendly bot."),
+        ("teamkilled_s1_a_bot","{s1} teamkilled a friendly bot."),
   ("kick_server_kills_first_s1_reg5", "{s1} is auto kicked for having {reg5} teamkills, first time."),
   ("kick_server_kills_second_s1_reg5", "{s1} is auto kicked for having {reg5} teamkills, second time."),
   ("ban_server_kills_s1_reg5", "{s1} is auto banned for having {reg5} or more teamkills."),
@@ -908,9 +908,9 @@ operation partners and supporters, who are integral for our success.\
   ("horse_already_has_cannon", "This horse already has a cannon limbered!"),
   ("already_to_many_barricades", "Your team already spawned too many defenses this round."),
   ("already_to_many_ammobox", "Your team already spawned too many ammoboxes this round."),
-  
+
   ("cannon_is_already_in_use", "This cannon is already being used."),
-  
+
   ("already_to_many_players_class_s21", "There are already too many players playing as {s21}. Choose another unit."), # changing this or wanting to use a different line requires a client side change
   ("already_to_many_players_rank_mus", "There are already too many players playing as Musician in this unit. Choose another rank."),
   ("already_to_many_players_rank_srg", "There are already too many players playing as {s21} in this unit. Choose another rank."),
@@ -1087,13 +1087,13 @@ operation partners and supporters, who are integral for our success.\
   ("reset_map_s2", "{s2} Has reset the Map."),
   ("console_command","Admin Console"),
   ("player_kicked_cheating_s2","{s2} Is auto-kicked from the server for cheating."),
-  
+
   #Presentations
   ("next_page", "Next Page"),
   ("auto_assign", "Auto-assign"),
   ("begin", "Begin"),
   ("game_rules", "Game Rules:^"),
-  
+
   #Faction selection
   ("britain_name", "United Kingdom"),
   ("france_name", "French Empire"),
@@ -1101,7 +1101,7 @@ operation partners and supporters, who are integral for our success.\
   ("russia_name", "Russian Empire"),
   ("austria_name", "Austrian Empire"),
   ("rhine_name", "Confederation of the Rhine"),
-  
+
   #Unit Selection
   ("infantry", "Infantry"),
   ("cavalry", "Cavalry"),
@@ -1111,7 +1111,7 @@ operation partners and supporters, who are integral for our success.\
   ("random", "Random"),
   ("howitzer", "Howitzer"),
   ("cannon", "Cannon"),
-  
+
   ### WFAS Bot stuff Begin
   ("all_fire_now", "All Fire Now!"),
   ("left_fire_now", "Left Fire Now!"),
@@ -1122,20 +1122,20 @@ operation partners and supporters, who are integral for our success.\
   ("use_ranged_weapons", "Use Ranged Weapons"),
   ("melee_weapons", "Melee Weapons"),
   ("ranged_weapons", "Ranged Weapons"),
-  
+
   ("formation", "Formation"),
   ("very_tight", "Very Tight"),
   ("tight", "Tight"),
   ("loose", "Loose"),
   ("very_loose", "Very Loose"),
-  
+
   ("form_1_row", "Form 1 Row"),
   ("form_reg0_rows", "Form {reg0} Rows"),
   ### WFAS Bot stuff End
 
   #For Single Player Campaign
   ("confirm_quit_mission","Do you really want to quit the current mission (mission progress will be lost)?"),
-  
+
   #For custom battles
   ("no_troop","Free"),
   ("morning","Morning"),
@@ -1149,7 +1149,7 @@ operation partners and supporters, who are integral for our success.\
   ("fog_thick","Thick"),
   ("fog_amount","Fog Amount:"),
   ("rain_amount","Rain Amount:"),
-  
+
   #Build Props
   ("mm_stakes_construct","Large Chevaux de Frise"),
   ("mm_stakes2_construct","Wooden Stakes"),
@@ -1160,10 +1160,10 @@ operation partners and supporters, who are integral for our success.\
   ("plank_construct","Plank"),
   ("earthwork1_construct","Simple Earthwork"),
   ("explosives_construct","Explosive Crate"),
-  
+
   ("reg6_build_points","Current build points: {reg6}"),
   ("reg7_build_points_cost","Cost: {reg7} Build Points"),
-  
+
   ("repair_prop","Repair"),
   ("destructible_object","Destructible Object"),
   ("build_prop","Construct Object"),
@@ -1171,17 +1171,17 @@ operation partners and supporters, who are integral for our success.\
   ("undig_prop","Undig"),
   ("construct_deconstruct","Construct/Deconstruct"),
   ("ignite","Ignite!"),
-  
+
   ("invalid_flag_selection","Select a flag controlled by your team."),
   ("invalid_prop_select","Not enough build points!"),
   ("invalid_prop_place","You can't place this prop here!"),
   ("invalid_prop_place_2","You have to wait half a second between making props!"),
   ("invalid_prop_place_3","You can't place this prop here and you have to wait half a second between making props!"),
-	
+
   #("sail_brit","Sailor, HMS Neptune"),
   #("sail_fren","Sailor, Intrepide"),
   ("sail_brit","Marine, 1st Battalion - Royal Marines"),#hotfix
-  ("sail_fren","Marine, 24e Bataillon des Equipages"),  
+  ("sail_fren","Marine, 24e Bataillon des Equipages"),
   #Music Tracks
   ("select_track","Select track:"),
   ("music_calls","Command Calls:"),
@@ -1284,7 +1284,7 @@ operation partners and supporters, who are integral for our success.\
   #BAGPIPE
   #Highland
   ("bagpipes_britain_1","All the Blue Bonnets Are O'er the Border"),
-  ("bagpipes_britain_2","Bonnie Dundee"), 
+  ("bagpipes_britain_2","Bonnie Dundee"),
   #Additional
   ("bagpipes_extra_1","Black Bear"),
   ("bagpipes_extra_2","Amazing Grace"),
@@ -1313,8 +1313,8 @@ operation partners and supporters, who are integral for our success.\
   ("organ_tune_6","Wagner - Bridal Chorus"),
   ("organ_tune_7","Bach - Chromatic Fuge"),
   ("organ_tune_8","Bach - Chromatic Fantasia"),
-  
- 
+
+
   # ## CONQUEST FLAG NAMES ###
   #Undefined
   ("flag_reg3","Flag {reg3}"),
@@ -1324,11 +1324,11 @@ operation partners and supporters, who are integral for our success.\
   ("mp_arabian_harbour_flag_3","Port"),
   ("mp_arabian_harbour_flag_4","Lighthouse"),
   ("mp_arabian_harbour_flag_5","Marketplace"),
-  
+
   ("mp_arabian_village_flag_1","Wine Maker's Village"),
   ("mp_arabian_village_flag_2","Farmer's Village"),
   ("mp_arabian_village_flag_3","Fortified Town"),
-  
+
   ("mp_ardennes_flag_1","Ferme du Fresnois"),
   ("mp_ardennes_flag_2","Ferme de la Grange Dimiere"),
   ("mp_ardennes_flag_3","Watchtower"),
@@ -1336,12 +1336,12 @@ operation partners and supporters, who are integral for our success.\
   ("mp_ardennes_flag_5","Ferme de Bray"),
   ("mp_ardennes_flag_6","Dead Forest"),
   ("mp_ardennes_flag_7","Rocks"),
-  
+
   ("mp_avignon_flag_1","Camp"),
   ("mp_avignon_flag_2","Town"),
   ("mp_avignon_flag_3","Mill"),
   ("mp_avignon_flag_4","Village"),
-  
+
   ("mp_borodino_flag_1","Town"),
   ("mp_borodino_flag_2","Village"),
   ("mp_borodino_flag_3","Redoubt"),
@@ -1349,28 +1349,28 @@ operation partners and supporters, who are integral for our success.\
   ("mp_borodino_flag_5","Shevradino"),
   ("mp_borodino_flag_6","Great Redoubt"),
   ("mp_borodino_flag_7","Small Redoubt"),
-  
+
   ("mp_columbia_hill_farm_flag_1","Forest"),
   ("mp_columbia_hill_farm_flag_2","Barn"),
   ("mp_columbia_hill_farm_flag_3","Farmhouse"),
   ("mp_columbia_hill_farm_flag_4","Vineyard"),
-  
+
   ("mp_european_city_flag_1","Church"),
   ("mp_european_city_flag_2","Square"),
   ("mp_european_city_flag_3","Vince's Corner"),
   ("mp_european_city_flag_4","Street"),
-  
+
   ("mp_french_farm_flag_1","Forest"),
   ("mp_french_farm_flag_2","Redoubt"),
   ("mp_french_farm_flag_3","Farm"),
-  
+
   ("mp_hungarian_plains_flag_1","The Weavery"),
   ("mp_hungarian_plains_flag_2","The Town"),
   ("mp_hungarian_plains_flag_3","The Windmill"),
   ("mp_hungarian_plains_flag_4","The Abandoned House"),
   ("mp_hungarian_plains_flag_5","The Shack"),
   ("mp_hungarian_plains_flag_6","The Estate"),
-  
+
   ("mp_landshut_flag_1","Landshut"),
   ("mp_landshut_flag_2","The Road to Abensberg"),
   ("mp_landshut_flag_3","Landshut Outskirts"),
@@ -1378,11 +1378,11 @@ operation partners and supporters, who are integral for our success.\
   ("mp_landshut_flag_5","The Blockhouse"),
   ("mp_landshut_flag_6","The Farm"),
   ("mp_landshut_flag_7","The Crossing"),
-  
+
   ("mp_russian_village_flag_1","Logger's Village"),
   ("mp_russian_village_flag_2","Hunter's Village"),
   ("mp_russian_village_flag_3","russian_village"),
-  
+
   ("mp_minden_flag_1","Basecamp"),
   ("mp_minden_flag_2","Minden"),
   ("mp_minden_flag_3","Hahlen"),
@@ -1392,13 +1392,13 @@ operation partners and supporters, who are integral for our success.\
   ("mp_minden_flag_7","Malbergen Chapel"),
   ("mp_minden_flag_8","Neuland"),
   ("mp_minden_flag_9","Finter Reie"),
-  
+
   ("mp_oaksfield_flag_1","Headquaters  1"),
   ("mp_oaksfield_flag_2","Headquaters  2"),
   ("mp_oaksfield_flag_3","Wheat Farm"),
   ("mp_oaksfield_flag_4","Market"),
   ("mp_oaksfield_flag_5","Oakstown"),
-  
+
   ("mp_quatre_bras_flag_1","Pireaumont"),
   ("mp_quatre_bras_flag_2","Quatre Bras"),
   ("mp_quatre_bras_flag_3","Bossu Woods"),
@@ -1408,7 +1408,7 @@ operation partners and supporters, who are integral for our success.\
   ("mp_river_crossing_flag_1","Redoubt 1"),
   ("mp_river_crossing_flag_2","Redoubt 2"),
   ("mp_river_crossing_flag_3","Town of Martinitz"),
-  
+
   ("mp_roxburgh_flag_1","Fisherman's Market"),
   ("mp_roxburgh_flag_2","Riverside Village"),
   ("mp_roxburgh_flag_3","Lakeside Villa"),
@@ -1416,18 +1416,18 @@ operation partners and supporters, who are integral for our success.\
   ("mp_roxburgh_flag_5","Middleton’s Town"),
   ("mp_roxburgh_flag_6","Shrine"),
   ("mp_roxburgh_flag_7","Lumberjack's Lodge"),
-  
+
   ("mp_schemmerbach_flag_1","Schmmerbach Farm"),
   ("mp_schemmerbach_flag_2","Schemmerbach Bridge"),
   ("mp_schemmerbach_flag_3","River Crossing"),
   ("mp_schemmerbach_flag_4","Hemp Field"),
-  
+
   ("mp_slovenian_village_flag_1","Road to slovenian_village"),
   ("mp_slovenian_village_flag_2","Harbour"),
   ("mp_slovenian_village_flag_3","slovenian_village"),
   ("mp_slovenian_village_flag_4","Forest"),
   ("mp_slovenian_village_flag_5","River"),
-  
+
   ("mp_champs_elysees_flag_1","West Avenue"),
   ("mp_champs_elysees_flag_2","East Avenue"),
   ("mp_champs_elysees_flag_3","South-West Quarter"),
@@ -1435,13 +1435,13 @@ operation partners and supporters, who are integral for our success.\
   ("mp_champs_elysees_flag_5","North-East Quarter"),
   ("mp_champs_elysees_flag_6","North-West Quarter"),
   ("mp_champs_elysees_flag_7","Arc de Triomphe"),
-  
+
   ("mp_fort_vincey_flag_1","Fort Whittington"),
   ("mp_fort_vincey_flag_2","The Small Redoubt"),
   ("mp_fort_vincey_flag_3","The Advanced Redoubt"),
   ("mp_fort_vincey_flag_4","The Trench"),
   ("mp_fort_vincey_flag_5","The Great Redoubt"),
-  
+
   ("mp_swamp_flag_1","The Camp"),
   ("mp_swamp_flag_2","Siegburg"),
   ("mp_swamp_flag_3","The Bridge"),
@@ -1449,7 +1449,7 @@ operation partners and supporters, who are integral for our success.\
   ("mp_swamp_flag_5","Main Road"),
   ("mp_swamp_flag_6","Graveyard"),
   ("mp_swamp_flag_7","Fisherman's House"),
-  
+
   ("mp_walloon_farm_flag_1","East Camp"),
   ("mp_walloon_farm_flag_2","West Camp"),
   ("mp_walloon_farm_flag_3","East Hill"),
@@ -1466,7 +1466,7 @@ operation partners and supporters, who are integral for our success.\
   ("mp_pyramids_flag_7","Island"),
   ("mp_pyramids_flag_8","Outpost"),
   ("mp_pyramids_flag_9","Village"),
-  
+
   ("mp_wissaudorf_flag_1","Main Spawn"),
   ("mp_wissaudorf_flag_2","Main Spawn"),
   ("mp_wissaudorf_flag_3","Forest Lodge"),
@@ -1476,10 +1476,10 @@ operation partners and supporters, who are integral for our success.\
   ("mp_wissaudorf_flag_7","Swamp"),
   ("mp_wissaudorf_flag_8","Outpost"),
   ("mp_wissaudorf_flag_9","Village"),
-  
 
-  
-  
+
+
+
   # Scene making help
   ("scene_making_welcome_message","Welcome to the scene editing gamemode.^"+
                                   "Here you can create new scenes or edit existing ones.^"+
@@ -1499,9 +1499,9 @@ operation partners and supporters, who are integral for our success.\
                                   "^"+
                                   "# Cannon setting props:^"+
                                   "spr_mm_spawn_with_cannon # If added to the map artillery sargeants spawn with the cannon.^"
-                                  ), 
+                                  ),
 
-  
+
   #Tutorial strings
  ("tutorial_info_1","Hell's bells! This is bloody coffee! I said TEEEEAAA!!!... I say! You there! Welcome to the Mount&Blade: Napoleonic Wars tutorial, my good man!^ Now, to begin your training, use the 'WASD' keys to walk to the position indicated by the pointer arrow. You can use the mouse to look around, all the better to spot the French with! Eh? Bleeehaha!"),
  ("tutorial_info_2","See that glorious piece of British engineering in front of you?  Look at the musket  and press 'F' to pick it up!"),
@@ -1529,7 +1529,7 @@ operation partners and supporters, who are integral for our success.\
  ("tutorial_info_24","Finally, look at the back of the barrel until you see the message 'Take Control'. Then press 'F' to take control of the cannon."),
  ("tutorial_info_25","Now you control the cannon sir! Again, use the mouse to aim. Pressing the Left Mouse Button will fire the cannon and pressing the Right Mouse Button will cancel control, but for now, press the LMB to fire."),
  ("tutorial_info_26","This is the end of the tutorial. You now know all the basics of fighting in Mount&Blade: Napoleonic Wars. Press 'Tab' to leave this tutorial when you are ready.^^Good luck on the battlefield, sir! Dismissed for tea and crumpets!"),
-  
+
   #SP mission strings
   ("vienna_1","Crates cleared: {reg0}/{reg1}"),
   ("austerlitz_1_1","Waves defeated: {reg0}/{reg1}"),
@@ -1537,8 +1537,8 @@ operation partners and supporters, who are integral for our success.\
   ("dresden_1_2","Waves defeated: {reg0}/{reg1}"),
   ("dresden_2_1","Squares destroyed: {reg0}/{reg1}"),
   ("dresden_2_2","Lines destroyed: {reg0}/{reg1}"),
-  
-  
+
+
   #SP cutscene texts
   #Vienna
   ("cutscene_vienna_1","The Danube River, the second longest in Europe, divides the Austrian Empire in two. ^\
@@ -1594,7 +1594,7 @@ If you can capture him, his men might lose heart and the figthing ahead will be 
 It is time to attack and capture it."),
   ("cutscene_dresden_2_6","Luckily more cavalry is arriving to support you. ^\
 Use it well and victory will be ours. En avant!"),
-  
+
   # SP Mission briefings.
   # Vienna
   ("mission_briefing_1", "December 1, 1805^\
@@ -1622,7 +1622,7 @@ Well, I should say the only large battle I took part in, and this was almost 5 y
 remember the horrible things I saw that day; it makes my body shake to think of it. ^\
 Luckily, I have been able to conceal my feelings thus far; ^\
 our men despise cowardice, and treat it as treason."),
-  
+
   # Austerlitz
   ("mission_briefing_2", "December 1, 1805^\
 It was a fine respite, but now we march once again. Praise God this will be our final effort! ^\
@@ -1649,7 +1649,7 @@ Well, I should say the only large battle I took part in, and this was almost 5 y
 remember the horrible things I saw that day; it makes my body shake to think of it. ^\
 Luckily, I have been able to conceal my feelings thus far; ^\
 our men despise cowardice, and treat it as treason."),
-  
+
   # Drezden
   ("mission_briefing_3", "August 26, 1813^\
 We are preparing to march on Drezden, where our small garrison was formerly besieged by the far ^\
@@ -1674,7 +1674,7 @@ suffered these past six months. I have tried to forget what horrors we witnessed
 Moscow to Berezina, but the images still come unbidden to my mind. These nightmares shall likely ^\
 pursue me to the end of my days. ^\
 We must win this battle, and this war, that our comrades shall not have died in vain."),
-  
+
   # Shevardino
   ("mission_briefing_4", "September 5, 1812^\
 ^\

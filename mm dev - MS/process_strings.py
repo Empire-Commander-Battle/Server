@@ -24,4 +24,3 @@ def save_python_header():
 print "Exporting strings..."
 save_python_header()
 save_strings(strings)
-  

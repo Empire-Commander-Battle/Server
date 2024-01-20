@@ -15,7 +15,7 @@ def save_party_template_troop(file,troop):
       file.write("0 ")
   else:
     file.write("-1 ")
-    
+
 def save_party_templates():
   file = open(export_dir + "party_templates.txt","w")
   file.write("partytemplatesfile version 1\n")

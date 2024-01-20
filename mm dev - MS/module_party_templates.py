@@ -14,9 +14,9 @@ pmf_is_prisoner = 0x0001
 #  5) Faction
 #  6) Personality. See header_parties.py for an explanation of personality flags.
 #  7) List of stacks. Each stack record is a tuple that contains the following fields:
-#    7.1) Troop-id. 
-#    7.2) Minimum number of troops in the stack. 
-#    7.3) Maximum number of troops in the stack. 
+#    7.1) Troop-id.
+#    7.2) Minimum number of troops in the stack.
+#    7.3) Maximum number of troops in the stack.
 #    7.4) Member flags(optional). Use pmf_is_prisoner to note that this member is a prisoner.
 #     Note: There can be at most 6 stacks.
 ####################################################################################################################
@@ -29,6 +29,6 @@ party_templates = [
     ("hero_party","Hero Party",icon_player,0,fac_commoners,merchant_personality,[]),
 
 ####################################################################################################################
-# Party templates before this point are hard-wired into the game and should not be changed. 
+# Party templates before this point are hard-wired into the game and should not be changed.
 ####################################################################################################################
 ]

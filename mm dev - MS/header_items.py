@@ -156,7 +156,7 @@ iwf_shoot_speed_bits        = 90
 
 iwf_max_ammo_bits           = 100 # use this for shield endurance too?
 iwf_abundance_bits          = 110
-iwf_accuracy_bits           = 16  #reuse leg_armor for accuracy  
+iwf_accuracy_bits           = 16  #reuse leg_armor for accuracy
 #iwf_horse_speed_bits        = 8
 #iwf_horse_maneuver_bits     = 16
 #iwf_horse_charge_bits       = 24
@@ -168,10 +168,10 @@ def weight(x):
   a = int(4.0 * x)
   a = ibf_armor_mask & a
   return (((bignum | a) & ibf_armor_mask) << ibf_weight_bits)
-  
+
 def get_weight(y):
   a = (y >> ibf_weight_bits) & ibf_armor_mask
-  return 0.25 * a 
+  return 0.25 * a
 
 def head_armor(x):
   return (((bignum | x) & ibf_armor_mask) << ibf_head_armor_bits)
@@ -223,10 +223,10 @@ def weapon_length(x):
 
 def shield_width(x):  #actually radius or half-width
   return weapon_length(x)
- 
+
 def shield_height(x):
   return shoot_speed(x)
- 
+
 def get_weapon_length(y):
   return ((y >> iwf_weapon_length_bits) & ibf_10bit_mask)
 
@@ -380,7 +380,7 @@ itc_longsword = itc_dagger | itc_parry_onehanded
 itc_scimitar  = itc_cleaver | itc_parry_onehanded
 
 itc_parry_two_handed = itcf_force_64_bits | itcf_parry_forward_twohanded | itcf_parry_up_twohanded | itcf_parry_right_twohanded | itcf_parry_left_twohanded
-itc_cut_two_handed = itcf_force_64_bits | (itcf_slashright_twohanded | itcf_slashleft_twohanded | itcf_overswing_twohanded | 
+itc_cut_two_handed = itcf_force_64_bits | (itcf_slashright_twohanded | itcf_slashleft_twohanded | itcf_overswing_twohanded |
                                            itcf_horseback_slashright_onehanded|itcf_horseback_slashleft_onehanded)
 itc_greatsword = itc_cut_two_handed |  itcf_thrust_twohanded | itc_parry_two_handed |itcf_thrust_onehanded_lance
 itc_nodachi    = itc_cut_two_handed | itc_parry_two_handed
@@ -404,4 +404,3 @@ itc_musket_melee = itc_parry_polearm|itcf_overswing_musket|itcf_thrust_musket|it
 ixmesh_inventory   = 0x1000000000000000
 ixmesh_flying_ammo = 0x2000000000000000
 ixmesh_carry       = 0x3000000000000000
-

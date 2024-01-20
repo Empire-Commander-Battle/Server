@@ -33,7 +33,7 @@ def save_mission_template_group(file,entry):
     add_tag_use(tag_uses,tag_item,item_override)
     file.write("%d "%(item_override))
   file.write("\n")
-    
+
 def save_mission_templates(variables,variable_uses,tag_uses,quick_strings):
   file = open(export_dir + "mission_templates.txt","w")
   file.write("missionsfile version 1\n")
@@ -67,8 +67,8 @@ save_tag_uses(export_dir,tag_uses)
 save_quick_strings(export_dir,quick_strings)
 
 #print "Finished."
-  
-"""  
+
+"""
   (
     "defense_1",mtf_battle_mode,stand_fast,
     "You wait, your weapons ready, your senses alert. Some of your companions start to sing an old song, trying to forget their fear. You smile and let your thoughts wander away for a second. Then the lookout's cry shatters the melancholy: 'Enemies! They are coming'",

@@ -75,5 +75,5 @@ tracks = [
   ("pachelbel_canon", "pachelbel_canon.ogg", mtf_module_track|mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed|mtf_sit_siege, 0),
   ("saint_saens_danse_macabre", "saint_saens_danse_macabre.ogg", mtf_module_track|mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed|mtf_sit_siege, 0),
   ("rossini_william_tell_overture", "rossini_william_tell_overture.ogg", mtf_module_track|mtf_sit_fight|mtf_sit_multiplayer_fight|mtf_sit_ambushed|mtf_sit_siege, 0),
-  
+
 ]

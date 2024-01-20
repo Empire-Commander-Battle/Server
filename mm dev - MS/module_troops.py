@@ -47,7 +47,7 @@ from ID_scenes import *
 #  town_14  Halmar
 ####################################################################################################################
 
-# Some constant and function declarations to be used below... 
+# Some constant and function declarations to be used below...
 # wp_one_handed () | wp_two_handed () | wp_polearm () | wp_archery () | wp_crossbow () | wp_throwing ()
 def wp(x):
   n = 0
@@ -86,7 +86,7 @@ def wpex(o,w,p,a,c,t):
    n |= wp_throwing(t)
    n |= wp_firearm(30)
    return n
-   
+
 def wp_melee(x):
   n = 0
   r = 10 + int(x / 10)
@@ -289,7 +289,7 @@ troops = [
   ["british_rocket_ai","British Rocketeer","Rocket Artillery",tf_guarantee_all,0,0,fac_britain,
    [itm_british_rocketeer,itm_british_rocketeer_pants,itm_british_rocket_tarleton,itm_br_cavalry_gloves_short,itm_british_light_cav_sabre,itm_rockets],
    def_attrib|level(20),wpex(50,5,50,5,80,5),knows_common|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
-  
+
   ["french_infantry_ai","French Line Infantry","Line Infantry",tf_guarantee_all,0,0,fac_france,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville],
    def_attrib|level(20),wpex(50,5,130,5,120,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -335,7 +335,7 @@ troops = [
   ["french_arty_alt_ai","French Artillerist","Artillery (Howitzer)",tf_guarantee_all,0,0,fac_france,
    [itm_french_art_ranker_body,itm_french_art_ranker_body_alt,itm_french_art_ranker_pants,itm_french_artillery_bearskin_ranker,itm_ramrod,itm_bullets,itm_french_charleville],
    def_attrib|level(20),wpex(50,5,50,5,80,5),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
-  
+
   ["prussian_infantry_ai","Prussian Line Infantry","Line Infantry (Brandenburg)",tf_guarantee_all,0,0,fac_prussia,
    [itm_prussian_infantry_ranker,itm_prussian_infantry_pants,itm_prussian_shako,itm_prussian_shako_2,itm_russian_briquet_1807_black_fake,itm_prussian_potsdam,itm_bullets],
    def_attrib|level(20),wpex(50,5,130,5,120,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -412,7 +412,7 @@ troops = [
   ["russian_arty_alt_ai","Russian Artillerist","Artillery (Howitzer)",tf_guarantee_all,0,0,fac_russia,
    [itm_russian_arty_ranker,itm_rus_arty_pants,itm_rus_arty_shako_ranker,itm_ramrod,itm_bullets,itm_russian_musket_1808],
    def_attrib|level(20),wpex(50,5,50,5,80,5),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
-   
+
   ["austrian_infantry_ai","Austrian Line Infantry","Line Infantry (Austria)",tf_guarantee_all,0,0,fac_austria,
    [itm_austrian_infantry,itm_aus_infantry_ranker,itm_austrian_infantry_pants,itm_bullets,itm_austrian_musket],
    def_attrib|level(20),wpex(50,5,130,5,120,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -449,7 +449,7 @@ troops = [
   ["austrian_arty_alt_ai","Austrian Artillerist","Artillery (Howitzer)",tf_guarantee_all,0,0,fac_austria,
    [itm_austrian_arty,itm_aus_arty_bicorn,itm_austrian_officer_boots,itm_ramrod,itm_bullets,itm_austrian_musket],
    def_attrib|level(20),wpex(50,5,50,5,80,5),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
-   
+
   ["rhine_infantry_bavaria_ai","Bavarian Line Infantry","Bavarian Line Infantry",tf_guarantee_all,0,0,fac_rhine,
    [itm_bavarian_inf_ranker,itm_bavarian_infantry_pants,itm_bavarian_helmet_other_ranks,itm_bullets,itm_prussian_musket_1806,itm_french_briquet_fake],
    def_attrib|level(20),wpex(50,5,130,5,120,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -492,7 +492,7 @@ troops = [
   ["rhine_arty_alt_ai","Bavarian Artillerist","Artillery (Howitzer)",tf_guarantee_all,0,0,fac_rhine,
    [itm_bavarian_artillery_ranker,itm_bavarian_artillery_pants,itm_bavarian_helmet_artillery,itm_ramrod,itm_bullets,itm_prussian_musket_1806],
    def_attrib|level(20),wpex(50,5,50,5,80,5),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
-   
+
 #Multiplayer troops
 
   ### BRITAIN ###
@@ -657,7 +657,7 @@ troops = [
    def_attrib_multiplayer|level(20),wpex(80,5,80,5,130,80),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
   ["british_ship_cannon","Ship Crew","Naval Artillery",tf_guarantee_all,0,0,fac_british_ranks,
    [itm_sailor_pants,itm_british_seaman_hat,itm_british_seaman_hat_2,itm_ramrod,itm_cannon_lighter,itm_british_musician_sword],
-   def_attrib_multiplayer|level(20),wpex(80,5,80,5,130,80),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2], #patch1115 fix 32/1  
+   def_attrib_multiplayer|level(20),wpex(80,5,80,5,130,80),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2], #patch1115 fix 32/1
   ["british_ship_captain","Ship Crew","Post Captain, HMS Neptune",tf_guarantee_all,0,0,fac_british_ranks,
    [itm_british_captain,itm_british_captain_legs,itm_british_captain_hat,itm_british_light_cav_sabre,itm_british_pistol,itm_pistol_ammo,itm_spyglass],
    def_attrib_multiplayer|level(20),wpex(80,5,80,5,50,5),knows_common|knows_ironflesh_3|knows_power_strike_1|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -836,7 +836,7 @@ troops = [
    def_attrib_multiplayer|level(20),wpex(80,5,80,5,130,80),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
   ["french_ship_cannon","Ship Crew","L'Artillerie Navale",tf_guarantee_all,0,0,fac_french_ranks,
    [itm_french_sailor_pants,itm_french_seaman_hat,itm_french_seaman_hat,itm_french_seaman_hat_2,itm_ramrod,itm_cannon_lighter,itm_french_briquet],
-   def_attrib_multiplayer|level(20),wpex(80,5,80,5,130,80),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2], #patch1115 fix 32/2  
+   def_attrib_multiplayer|level(20),wpex(80,5,80,5,130,80),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2], #patch1115 fix 32/2
   ["french_ship_captain","Ship Crew","Capitaine de Vaisseau, Intrepide",tf_guarantee_all,0,0,fac_french_ranks,
    [itm_french_captain,itm_french_captain_pants_blue,itm_french_captain_hat,itm_french_inf_off_sabre,itm_french_officer_pistol,itm_french_pistol_1766,itm_pistol_ammo,itm_spyglass],
    def_attrib_multiplayer|level(20),wpex(80,5,80,5,50,5),knows_common|knows_ironflesh_3|knows_power_strike_1|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -1001,7 +1001,7 @@ troops = [
   ["prussian_blucher","Generalfeldmarschall Gebhard von Blucher","Commander",tf_mounted|tf_guarantee_all,0,0,fac_prussia,
    [itm_prussian_blucher,itm_prussian_blucher_pants,itm_prussian_blucher_hat,itm_russian_guard_sword_1799,itm_heavy_horse_prussia_1,itm_officer_gloves,itm_spyglass],
    def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_5|knows_power_strike_3|knows_athletics_1,swadian_face_middle_1, swadian_face_old_2],
- 
+
   ### RUSSIA ###
   ["russian_partizan","Partizani","Partisan Irregulars",tf_guarantee_all,0,0,fac_russia,
    [itm_rus_partizan1,itm_rus_partizan2,itm_rus_militia_ranker_pants,itm_rus_militia_ranker_pants1,itm_rus_opol_hat_ranker,itm_rus_partisan_hat1,itm_rus_partisan_hat2,itm_rus_partisan_hat3,itm_rus_partisan_hat4,itm_rus_partisan_hat5,itm_rus_opol_hat_ranker,itm_rus_drummer_shako,itm_bullets,itm_russian_dragoon_musket,itm_russian_peasant_fork,itm_russian_peasant_pitchfork,itm_russian_peasant_sap,itm_russian_peasant_kosa,itm_russian_peasant_kosa2,itm_birch_trunk,itm_brokenbottle,itm_russian_peasant_club,itm_russian_peasant_birch_club,itm_russian_peasant_axe,itm_russian_peasant_knife,itm_russian_peasant_serp,itm_russian_peasant_pike,itm_russian_peasant_kuvalda,itm_russian_peasant_2handed_axe,itm_russian_peasant_rogatina,itm_russian_gusarskiy_karabin],
@@ -1011,10 +1011,10 @@ troops = [
    def_attrib_multiplayer|level(20),wpex(50,5,130,5,150,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
   ["russian_opol_nco","Russian Militia","Colour Bearer",tf_guarantee_all,0,0,fac_russian_ranks,
    [itm_russian_militia_officer,itm_rus_militia_off_pants,itm_rus_opol_hat_officer,itm_flag_russia_opolcheniye,itm_russian_briquet_1807],
-   def_attrib_multiplayer|level(20),wpex(80,5,80,5,50,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2], 
+   def_attrib_multiplayer|level(20),wpex(80,5,80,5,50,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
   ["russian_opol_officer","Russian Militia","Officer",tf_guarantee_all,0,0,fac_russian_ranks,
    [itm_russian_militia_officer,itm_rus_militia_off_pants,itm_rus_opol_hat_officer,itm_russian_officer_sword,itm_pistol_ammo,itm_russian_pistol,itm_officer_gloves,itm_spyglass],
-   def_attrib_multiplayer|level(20),wpex(80,5,80,5,50,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],  
+   def_attrib_multiplayer|level(20),wpex(80,5,80,5,50,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
   ["russian_infantry","Simbirskiy Pehotniy Polk","Line Infantry",tf_guarantee_all,0,0,fac_russia,
    [itm_russian_infantry1,itm_rus_infantry_pants1,itm_rus_infantry_pants2,itm_rus_drummer_shako,itm_bullets,itm_russian_musket_1808,itm_russian_briquet_1807],
    def_attrib_multiplayer|level(20),wpex(50,5,130,5,150,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -1149,8 +1149,8 @@ troops = [
    def_attrib_multiplayer|level(20),wpex(70,5,30,5,30,5),knows_common|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
   ["kutuzov","Feldmarshal Mikhail Kutuzov","Commander",tf_mounted|tf_guarantee_all,0,0,fac_russia,
    [itm_kutuzov,itm_rus_kutuzov_pants,itm_kutuzov_hat,itm_russian_guard_sword_1799,itm_heavy_horse_russia,itm_officer_gloves,itm_spyglass],
-   def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_5|knows_power_strike_3|knows_athletics_1,swadian_face_middle_1, swadian_face_old_2],   
-  
+   def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_5|knows_power_strike_3|knows_athletics_1,swadian_face_middle_1, swadian_face_old_2],
+
   ### AUSTRIA ###
   ["austrian_infantry","Infantrie Regiment Erzherzog Rudolf Nr. 14","Line Infantry",tf_guarantee_all,0,0,fac_austria,
    [itm_austrian_infantry,itm_aus_infantry_ranker,itm_austrian_infantry_pants,itm_bullets,itm_austrian_musket],
@@ -1304,9 +1304,9 @@ troops = [
    def_attrib_multiplayer|level(20),wpex(70,5,30,5,30,5),knows_common|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
   ["schwarzenberg","Karl Philipp, Furst zu Schwarzenberg","Commander",tf_mounted|tf_guarantee_all,0,0,fac_austria,
    [itm_austrian_schwarzenberg,itm_austrian_schwarzenberg_pants,itm_aus_shwarzenberg_bicorn,itm_british_heavy_cav_sword,itm_heavy_horse_austria,itm_officer_gloves,itm_spyglass],
-   def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_5|knows_power_strike_3|knows_athletics_1,swadian_face_middle_1, swadian_face_old_2],   
+   def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_5|knows_power_strike_3|knows_athletics_1,swadian_face_middle_1, swadian_face_old_2],
 
-   
+
    ### RHINE ###
   ["rhine_infantry_bavaria","2. Infanterie-Regiment Kronprinz, Bayern","Line Infantry",tf_guarantee_all,0,0,fac_rhine,
    [itm_bavarian_inf_ranker,itm_bavarian_infantry_pants,itm_bavarian_helmet_other_ranks,itm_bullets,itm_prussian_musket_1806,itm_french_briquet],
@@ -1489,9 +1489,9 @@ troops = [
    [itm_saxon_king,itm_bavarian_pants_officer,itm_saxonyking_hat,itm_french_line_cav_sabre,itm_garde_du_corps_horse_rhine_officer,itm_officer_gloves,itm_spyglass],
    def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_5|knows_power_strike_3|knows_athletics_1,swadian_face_middle_1, swadian_face_old_2],
 
-   
-   
-   
+
+
+
   ["british_arty_commander","Royal Foot Artillery","Officer",tf_guarantee_all,0,0,fac_british_ranks,
    [itm_british_artillery_officer,itm_rus_dragoon_pants1,itm_british_artillery_shako_officer,itm_br_cavalry_gloves_short,itm_british_light_cav_sabre,itm_spyglass,itm_ramrod,itm_arty_horse_cannon_british],
    def_attrib_multiplayer|level(20),wpex(80,5,30,5,30,5),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -1528,17 +1528,17 @@ troops = [
   ["rhine_arty_alt_commander","Artillerie, Bayern.","Officer",tf_guarantee_all,0,0,fac_rhine_ranks,
    [itm_bavarian_artillery_officer,itm_bavarian_artillery_pants_officer,itm_bavarian_helmet_artillery_officer,itm_officer_gloves,itm_french_art_off_sword,itm_spyglass,itm_ramrod,itm_arty_horse_howitzer_austrian],
    def_attrib_multiplayer|level(20),wpex(80,5,30,5,30,5),knows_common|knows_riding_1|knows_ironflesh_3|knows_power_strike_2|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
- 
+
   ["multiplayer_end","{!}multiplayer_end","{!}multiplayer_end", 0, 0, 0, fac_austria, [], 0, 0, 0, 0, 0],
-  
-  
+
+
   # Vincenzo begin
   ["admin_dummy","{!}admin_dummy","{!}admin_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["flags_owned_dummy","{!}flags_owned_dummy","{!}flags_owned_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["entrypoints_dummy","{!}flags_owned_dummy","{!}flags_owned_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["entrypoints_per_flag_dummy","{!}entrypoints_per_flag_dummy","{!}entrypoints_per_flag_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["destroyed_props_dummy","{!}destroyed_props_dummy","{!}destroyed_props_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
-  
+
   # Battle royale
   ["royale_item_class_musket_dummy","{!}royale_item_class_musket_dummy","{!}royale_item_class_musket_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["royale_item_class_pistol_dummy","{!}royale_item_class_pistol_dummy","{!}royale_item_class_pistol_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
@@ -1559,7 +1559,7 @@ troops = [
   ["royale_item_class_horse_medium_dummy","{!}royale_item_class_horse_medium_dummy","{!}royale_item_class_horse_medium_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["royale_item_class_horse_heavy_dummy","{!}royale_item_class_horse_heavy_dummy","{!}royale_item_class_horse_heavy_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["royale_item_class_horse_arty_dummy","{!}royale_item_class_horse_arty_dummy","{!}royale_item_class_horse_arty_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
-  
+
   ["scene_name_dummy","{!}scene_name_dummy","{!}scene_name_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["admin_white_list_dummy","{!}admin_white_list_dummy","{!}admin_white_list_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   # Vincenzo end
@@ -1582,8 +1582,8 @@ troops = [
   ["y_size","{!}custom_battle_dummy","{!}custom_battle_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 
 
-  
-  
+
+
 #modder_props:custom_strings
     #   Names of these troops are for holding custom strings.
     #   To use as scene prop button labels, set custom button's var1 to value of 1-40
@@ -1630,8 +1630,8 @@ troops = [
   ["custom_string_39","Use","{!}custom_string_39",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["custom_string_40","Use","{!}custom_string_40",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
   ["custom_strings_end","{!}custom_strings_end","{!}custom_strings_end", 0, 0, 0, fac_austria, [], 0, 0, 0, 0, 0],
-  ["flag_custom_strings_dummy","{!}flag_custom_strings_dummy","{!}flag_custom_strings_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],  
- 
+  ["flag_custom_strings_dummy","{!}flag_custom_strings_dummy","{!}flag_custom_strings_dummy",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
+
 
 #  ["custom_button_1","{!}custom_button_1","{!}custom_button_1",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_2","{!}custom_button_2","{!}custom_button_2",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
@@ -1643,7 +1643,7 @@ troops = [
 #  ["custom_button_8","{!}custom_button_8","{!}custom_button_8",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_9","{!}custom_button_9","{!}custom_button_9",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_10","{!}custom_button_10","{!}custom_button_10",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
-# 
+#
 #  ["custom_button_1_1seconds","{!}custom_button_1_1seconds","{!}custom_button_1_1seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_2_1seconds","{!}custom_button_2_1seconds","{!}custom_button_2_1seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_3_1seconds","{!}custom_button_3_1seconds","{!}custom_button_3_1seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
@@ -1654,7 +1654,7 @@ troops = [
 #  ["custom_button_8_1seconds","{!}custom_button_8_1seconds","{!}custom_button_8_1seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_9_1seconds","{!}custom_button_9_1seconds","{!}custom_button_9_1seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_10_1seconds","{!}custom_button_10_1seconds","{!}custom_button_10_1seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
-#  
+#
 #  ["custom_button_1_4seconds","{!}custom_button_1_4seconds","{!}custom_button_1_4seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_2_4seconds","{!}custom_button_2_4seconds","{!}custom_button_2_4seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_3_4seconds","{!}custom_button_3_4seconds","{!}custom_button_3_4seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
@@ -1665,7 +1665,7 @@ troops = [
 #  ["custom_button_8_4seconds","{!}custom_button_8_4seconds","{!}custom_button_8_4seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_9_4seconds","{!}custom_button_9_4seconds","{!}custom_button_9_4seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_10_4seconds","{!}custom_button_10_4seconds","{!}custom_button_10_4seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
-#  
+#
 #  ["custom_button_1_8seconds","{!}custom_button_1_8seconds","{!}custom_button_1_8seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_2_8seconds","{!}custom_button_2_8seconds","{!}custom_button_2_8seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
 #  ["custom_button_3_8seconds","{!}custom_button_3_8seconds","{!}custom_button_3_8seconds",tf_hero|tf_inactive,0,reserved,fac_neutral,[],def_attrib,0,knows_common,0],
@@ -1691,218 +1691,218 @@ troops = [
 #  ["quick_battle_troop_france_3","Marshal Murat","Marshal",tf_hero,0,0,fac_france,
 #   [itm_french_art_officer_body,itm_french_voltigeur_officer_pants,itm_french_line_cav_sabre,itm_heavy_horse_placeholder,itm_officer_gloves],
 #   def_attrib|level(20),wpex(150,5,30,5,80,5),knows_common|knows_riding_6|knows_ironflesh_5|knows_power_strike_3,0x000000002004400436db6db8cba1bafa00000000001eb6db0000000000000000, swadian_face_old_2],
-  
+
   ["quick_battle_troop_prussia_1","Gebhard von Blucher","General",tf_hero,0,0,fac_prussia,
    [itm_prussian_blucher,itm_prussian_blucher_pants,itm_prussian_blucher_hat,itm_russian_guard_sword_1799,itm_heavy_horse_prussia_1,itm_officer_gloves,itm_spyglass],
    def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_10|knows_power_strike_3,swadian_face_middle_1, swadian_face_old_2],
-  
+
   ["quick_battle_troop_russia_1","Mikhail Kutuzov","General",tf_hero,0,0,fac_russia,
    [itm_kutuzov,itm_rus_kutuzov_pants,itm_kutuzov_hat,itm_russian_guard_sword_1799,itm_heavy_horse_russia,itm_officer_gloves,itm_spyglass],
-   def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_10|knows_power_strike_3,swadian_face_middle_1, swadian_face_old_2],   
-  
+   def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_10|knows_power_strike_3,swadian_face_middle_1, swadian_face_old_2],
+
   ["quick_battle_troop_austria_1","Karl Philipp","General",tf_mounted|tf_guarantee_all,0,0,fac_austria,
    [itm_austrian_schwarzenberg,itm_austrian_schwarzenberg_pants,itm_aus_shwarzenberg_bicorn,itm_british_heavy_cav_sword,itm_heavy_horse_austria,itm_officer_gloves,itm_spyglass],
-   def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_10|knows_power_strike_3,swadian_face_middle_1, swadian_face_old_2],   
-   
+   def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_10|knows_power_strike_3,swadian_face_middle_1, swadian_face_old_2],
+
   ["quick_battle_troop_rhine_1","Friedrich August","General",tf_mounted|tf_guarantee_all,0,0,fac_rhine,
    [itm_french_general_body_boney,itm_french_general_boots,itm_french_nappy_hat,itm_french_line_cav_sabre,itm_carabineer_horse_french_officer,itm_officer_gloves,itm_spyglass],
    def_attrib|level(20),wpex(130,5,30,5,30,5),knows_common|knows_riding_6|knows_ironflesh_5|knows_power_strike_3,swadian_face_middle_1, swadian_face_old_2],
 
    ["quick_battle_troops_end","{!}quick_battle_troops_end","{!}quick_battle_troops_end", 0, 0, 0, fac_austria, [], 0, 0, 0, 0, 0],
 
- 
+
   # Companions
-  
+
   # Infantry
   ["companion_1","Raphael Martin","Raphael Martin",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x0000000fed0c14c3449c0238764b126a00000000000ec70c0000000000000000],
-   
+
   ["companion_2","Clement Bernard","Clement Bernard",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x0000000fcd04408d459c08d52560a89300000000001557620000000000000000],
-   
+
   ["companion_3","Maxim Munnig Schmidt","Maxime Petit",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x00000007fa00149437156eb6938ea8d600000000000616eb0000000000000000],
-   
+
   ["companion_4","Alexandre Durand","Alexandre Durand",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x00000007d71041072716ab34749339b400000000000f248e0000000000000000],
-   
+
   ["companion_5","Antoine Richard","Antoine Richard",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x00000007dd10158228dc6e2b128e349e000000000004b51a0000000000000000],
-   
+
   ["companion_6","Alexis Moreau","Alexis Moreau",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x00000007f000358b491fc9129c912d7500000000000cc8c30000000000000000],
-   
+
   ["companion_7","Jules Dubois","Jules Dubois",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x000000026a044287255d65994a494312000000000011acdc0000000000000000],
-   
+
   ["companion_8","Matteo Robert","Matteo Robert",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x0000000e871022496caa66e72be5d8b5000000000009df1c0000000000000000],
-   
+
   ["companion_9","Julien Laurent","Julien Laurent",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x0000000e841011c2359275ca9e92390b0000000000124acb0000000000000000],
-   
+
   ["companion_10","Samuel Simon","Samuel Simon",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x00000009300852c936948a32be69aa6d00000000001235220000000000000000],
-   
+
   ["companion_11","Noe Michel","Noe Michel",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x0000000d6f040043231c8db524c9dcea00000000000e44d30000000000000000],
-   
+
   ["companion_12","Corentin Leroy","Corentin Leroy",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x00000000121045c854e450b4f5c0993600000000000ac7430000000000000000],
-   
+
   ["companion_13","Jeremy Garcia","Jeremy Garcia",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x00000000210420892f0b65aaa432c695000000000011a52e0000000000000000],
-   
+
   ["companion_14","Charles Lefebvre","Charles Lefebvre",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x000000002c10248244a98a475d39392300000000000cb5740000000000000000],
-   
+
   ["companion_15","Eliott Roux","Eliott Roux",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville,itm_french_briquet],
    def_attrib|level(20),wpex(50,5,130,5,150,5),
    knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,
    0x000000048c0801cc44a34e277c6754ec00000000000fc85a0000000000000000],
-  
-  
+
+
   # Caverly
   ["companion_16","Theo David","Theo David",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000b960054c559e46b5b8cb9d2ce000000000010d92c0000000000000000],
-  
+
   ["companion_17","Romain Bertrand","Romain Bertrand",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000bb80445c8146e843799375cd500000000001337440000000000000000],
-  
+
   ["companion_18","Quentin Fournier","Quentin Fournier",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000ba80843d05731719a5255a8910000000000152d530000000000000000],
-  
+
   ["companion_19","Girard Baptiste","Girard Baptiste",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000dc40c4193492d6e46e197689200000000000dc3550000000000000000],
-  
+
   ["companion_20","Valentin Bonnet","Valentin Bonnet",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000fc404444e5b4a89b65d6dc6ec00000000000916e50000000000000000],
-  
+
   ["companion_21","Nico Kamps","Nicolas Morel",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000d870054463b4b2f5c9e8f66d5000000000018b5250000000000000000],
-  
+
   ["companion_22","Mael Rousseau","Mael Rousseau",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000dae0011102d6452b892f5355c0000000000165cac0000000000000000],
-  
+
   ["companion_23","Pierre Lambert","Pierre Lambert",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x000000097704440f29295268a4b632f3000000000012aaec0000000000000000],
-  
+
   ["companion_24","Marius Blanc","Marius Blanc",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x000000097d0c204726fe70b6fb8a671b00000000000dc28a0000000000000000],
-  
+
   ["companion_25","Remi Thomas","Remi Thomas",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x000000049600544c58e24a35590e87a3000000000009264c0000000000000000],
-  
+
   ["companion_26","Benjamin Aguillon","Benjamin Aguillon",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000d2710310844dd6f559371caf300000000000e170c0000000000000000],
-  
+
   ["companion_27","Maxence Beauregard","Maxence Beauregard",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x00000007850c434845266ec85592d2cd000000000009dcad0000000000000000],
-  
+
   ["companion_28","Axel Lemieux","Axel Lemieux",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x00000007921043c656a32b34c4498714000000000009a2a30000000000000000],
-  
+
   ["companion_29","Jules Plantier","Jules Plantier",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000db30c044f48ed72351a894997000000000009b69c0000000000000000],
-  
+
   ["companion_30","Martin Roche","Martin Roche",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_dragoon_body_ranker,itm_french_dragoon_pants,itm_french_dragoon_helmet,itm_french_dragoon_musket,itm_bullets,itm_french_heavy_cav_sabre_garde,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(110,5,30,5,125,5),
    knows_common|knows_riding_5|knows_ironflesh_3|knows_power_strike_3,
    0x0000000db9082312159536295b653cc600000000001b169c0000000000000000],
-  
+
   ["companions_end","companions_end","companions_end",tf_hero|tf_unmoveable_in_party_window,0,reserved,fac_commoners,
    [itm_french_hussar_shako_ranker,itm_french_light_cav_sabre,itm_dragoon_horse_placeholder],
    def_attrib|level(20),wpex(150,5,30,5,30,5),
    knows_common|knows_riding_6|knows_ironflesh_3|knows_power_strike_3,
    0x0000000db9082312159536295b653cc600000000001b169c0000000000000000],
-  
-  
+
+
   ["walker_french_infantry","Infantryman","Infantry",tf_guarantee_all,0,0,fac_commoners,
    [itm_french_45e_body_ranker,itm_french_voltigeur_officer_pants,itm_french_inf_shako_45_ranker,itm_bullets,itm_french_charleville],
    def_attrib|level(20),wpex(50,5,130,5,120,5),knows_common|knows_ironflesh_3|knows_power_strike_3|knows_athletics_3,swadian_face_middle_1, swadian_face_old_2],
@@ -1923,9 +1923,9 @@ troops = [
    def_attrib|level(4),wp(60),knows_common,man_face_middle_1, man_face_old_2],
   ["walker_peasant_female","Peasant", "Peasants",tf_female|tf_guarantee_all,0,0, fac_commoners,
    [],
-   def_attrib|level(4),wp(60),knows_common, 0x00000000ef00000237dc71b90c31631200000000001e371b0000000000000000, 0x000000050b003004072d51c293a9a70b00000000001dd6a90000000000000000],   
+   def_attrib|level(4),wp(60),knows_common, 0x00000000ef00000237dc71b90c31631200000000001e371b0000000000000000, 0x000000050b003004072d51c293a9a70b00000000001dd6a90000000000000000],
   ["walkers_end","walkers_end","walkers_end",tf_hero, 0,0, fac_commoners,[],def_attrib|level(2),wp(20),knows_inventory_management_10,0],
- 
+
 # Merchants
   ["camp_armorer","Tailor","{!}Armorer",  tf_hero|tf_randomize_face|tf_is_merchant, 0, 0, fac_commoners,
   [itm_french_dragoon_pants,itm_french_artillery_train_shako,itm_french_briquet],
@@ -1937,11 +1937,8 @@ troops = [
   [itm_french_dragoon_pants,itm_french_artillery_train_shako,itm_french_briquet],
   def_attrib|level(5),wp(20),knows_inventory_management_10, man_face_young_1, man_face_older_2],
   ["merchants_end","merchants_end","merchants_end",tf_hero, 0,0, fac_commoners,[],def_attrib|level(2),wp(20),knows_inventory_management_10,0],
-  
+
 ]
 
 
 #Troop upgrade declarations
-
-
-

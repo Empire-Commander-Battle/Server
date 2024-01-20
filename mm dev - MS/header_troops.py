@@ -20,7 +20,7 @@ tf_mounted           = 0x00000400 #Troop's movement speed on map is determined b
 tf_is_merchant       = 0x00001000 #When set, troop does not equip stuff he owns
 tf_randomize_face    = 0x00008000 #randomize face at the beginning of the game.
 
-tf_disable_sounds 	 = 0x00010000 #disable agent related sounds, but not voices. useful for animals
+tf_disable_sounds        = 0x00010000 #disable agent related sounds, but not voices. useful for animals
 
 tf_guarantee_boots            = 0x00100000
 tf_guarantee_armor            = 0x00200000
@@ -30,7 +30,7 @@ tf_guarantee_horse            = 0x01000000
 tf_guarantee_shield           = 0x02000000
 tf_guarantee_ranged           = 0x04000000
 tf_guarantee_polearm          = 0x08000000
-tf_unmoveable_in_party_window = 0x10000000 #Cannot be moved in the party (P-button?) window. 
+tf_unmoveable_in_party_window = 0x10000000 #Cannot be moved in the party (P-button?) window.
 
 # Character attributes...
 ca_strength     = 0
@@ -213,7 +213,7 @@ def level(v):
   if (v > level_mask):
     v = level_mask
   return (bignum|v) << level_bits
-  
+
 def_attrib = str_5 | agi_5 | int_4 | cha_4
 
 # Weapon proficiencies:
@@ -273,7 +273,7 @@ def upgrade(troops,troop1_id,troop2_id):
       cur_troop[13:13] = [0, troop2_no, 0]
     else:
       cur_troop[14:14] = [troop2_no, 0]
-      
+
 
 def upgrade2(troops,troop1_id,troop2_id,troop3_id):
   troop1_no = find_troop(troops,troop1_id)

@@ -21,5 +21,3 @@ fac_prussian_ranks = 19
 fac_russian_ranks = 20
 fac_austrian_ranks = 21
 fac_rhine_ranks = 22
-
-

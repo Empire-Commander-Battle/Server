@@ -22,7 +22,7 @@ scene_outer_terrain_pos = 10
 
 def write_vec(ofile,vec):
   ofile.write(" %f %f %f "%vec)
-  
+
 def write_passage(ofile,scenes,passage):
   scene_no = 0
   found = 0

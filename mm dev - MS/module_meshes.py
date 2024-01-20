@@ -18,7 +18,7 @@ from header_meshes import *
 
 meshes = [
   ("meshes_begin", 0, "empty_mesh", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   ("mp_score_a", 0, "mp_score_a", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("mp_score_b", 0, "mp_score_b", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("load_window", 0, "load_window", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -171,14 +171,14 @@ meshes = [
   ("banner_kingdom_f", 0, "banner4", 0, 0, 0, -90, 0, 0, 1, 1, 1),
   ("banner_f21", 0, "empty_mesh", 0, 0, 0, -90, 0, 0, 1, 1, 1),
 
-  
+
   ("banners_default_a", 0, "banner2", 0, 0, 0, -90, 0, 0, 1, 1, 1),
   ("banners_default_b", 0, "banner5", 0, 0, 0, -90, 0, 0, 1, 1, 1),
   ("banners_default_c", 0, "banner3", 0, 0, 0, -90, 0, 0, 1, 1, 1),
   ("banners_default_d", 0, "banner1", 0, 0, 0, -90, 0, 0, 1, 1, 1),
   ("banners_default_e", 0, "banner4", 0, 0, 0, -90, 0, 0, 1, 1, 1),
   ("banners_default_f", 0, "banner75", 0, 0, 0, -90, 0, 0, 1, 1, 1),
-  
+
   ("troop_label_banner",  0, "troop_label_banner", 0, 0, 0, 0, 0, 0, 10, 10, 10),
 
   ("ui_kingdom_shield_1", 0, "ui_kingdom_shield_a", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -192,7 +192,7 @@ meshes = [
   #("flag_vaegir", 0, "banner_a02", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   #("flag_khergit", 0, "banner_d01", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   #("flag_nord", 0, "banner_a03", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  #("flag_rhodok", 0, "banner_a04", 0, 0, 0, 0, 0, 0, 1, 1, 1),  
+  #("flag_rhodok", 0, "banner_a04", 0, 0, 0, 0, 0, 0, 1, 1, 1),
 
   ("mouse_arrow_down", 0, "mouse_arrow_down", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("mouse_arrow_right", 0, "mouse_arrow_right", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -222,13 +222,13 @@ meshes = [
   ("cb_ui_maps_scene_08", 0, "cb_ui_maps_scene_08", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("cb_ui_maps_scene_09", 0, "cb_ui_maps_scene_09", 0, 0, 0, 0, 0, 0, 1, 1, 1),
 
-  ("ui_kingdom_shield_7", 0, "ui_kingdom_shield_reb", 0, 0, 0, 0, 0, 0, 1, 1, 1),  
+  ("ui_kingdom_shield_7", 0, "ui_kingdom_shield_reb", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("flag_project_rb", 0, "flag_project_rebel", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("flag_project_rb_miss", 0, "flag_project_rebel", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   #MM
   ("ui_kingdom_shield_neutral", 0, "ui_kingdom_shield_neutral", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   ("ui_team_select_shield_aus", 0, "NewUIShieldsMM_Austria", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("ui_team_select_shield_bri", 0, "NewUIShieldsMM_Britain", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("ui_team_select_shield_fra", 0, "NewUIShieldsMM_France", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -237,7 +237,7 @@ meshes = [
   ("ui_team_select_shield_rhi", 0, "NewUIShieldsMM_Rhine", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("ui_team_select_shield_reb", 0, "NewUIShieldsMM_Rebel", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("ui_team_select_shield_neu", 0, "NewUIShieldsMM_Neutral", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   #Construct props stuff
   ("construct_mesh_stakes", 0, "ui_construct_cdf", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("construct_mesh_stakes2", 0, "ui_construct_stakes", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -248,7 +248,7 @@ meshes = [
   ("construct_mesh_plank", 0, "ui_construct_plank", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("construct_mesh_earthwork", 0, "ui_construct_dig", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("construct_mesh_explosives", 0, "ui_construct_crate", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   #Bonus icons
   ("bonus_icon_melee", 0, "bonus_icon_melee", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("bonus_icon_accuracy", 0, "bonus_icon_accuracy", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -256,40 +256,40 @@ meshes = [
   ("bonus_icon_reload", 0, "bonus_icon_reload", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("bonus_icon_artillery", 0, "bonus_icon_artillery", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("bonus_icon_commander", 0, "bonus_icon_commander", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   #Artillery icons
   ("arty_icon_take_ammo", 0, "arty_icon_take_ammo", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("arty_icon_put_ammo", 0, "arty_icon_put_ammo", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("arty_icon_ram", 0, "arty_icon_ram", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("arty_icon_move_up", 0, "arty_icon_move_up", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("arty_icon_take_control", 0, "arty_icon_take_control", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   #Medic icons
   ("medic_icon_heal", 0, "medic_icon_heal", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("medic_icon_medic", 0, "medic_icon_medic", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   #Stuff
   ("item_select_no_select", 0, "cb_ui_title_panel", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("mm_spyglass_ui", 0, "mm_spyglass_ui_mesh", 0, 0, 0, 0, 0, 0, 1, 1, 1),
 
   ("custom_mp_ui_order_button", 0, "mp_ui_order_button", 0, 0, 0, 0, 0, 0, 0.8, 0.6, 0.6),
-  
+
   # Single player stuff
   # Maps
  # ("europe_map_full", 0, "europe_map_full", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   # Backgrounds
  # ("memoir", 0, "memoir", 0, 0, 0, 0, 0, 0, 1, 1, 1),
 #  ("campmenu", 0, "campmenu", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   # Icons
 #  ("battle_icon", 0, "battle_icon", 0, 0, 0, 0, 0, 0, 1, 1, 1),
  # ("french_flag_icon", 0, "french_flag_icon", 0, 0, 0, 0, 0, 0, 1, 1, 1),
 #  ("compass", 0, "compass", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   # On screen indicators
   ("target_plate", 0, "target_plate", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
 
   # Admin panel map selection
   ("scn_mp_floodplain_select", 0, "scn_mp_floodplain_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -317,8 +317,8 @@ meshes = [
   ("scn_mp_dust_select", 0, "scn_mp_dust_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("scn_mp_beach_select", 0, "scn_mp_beach_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("scn_mp_arabian_town_select", 0, "scn_mp_arabian_town_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("scn_mp_ambush_select", 0, "scn_mp_ambush_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),  
-  
+  ("scn_mp_ambush_select", 0, "scn_mp_ambush_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+
   ("scn_mp_arabian_harbour_select", 0, "scn_mp_arabian_harbour_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("scn_mp_arabian_village_select", 0, "scn_mp_arabian_village_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("scn_mp_ardennes_select", 0, "scn_mp_ardennes_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -359,6 +359,6 @@ meshes = [
   ("scn_mp_random_steppe_select", 0, "scn_mp_random_steppe_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("scn_mp_random_desert_select", 0, "scn_mp_random_desert_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("scn_mp_random_snow_select", 0, "scn_mp_random_snow_select", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  
+
   ("meshes_end", 0, "ui_kingdom_shield_neutral", 0, 0, 0, 0, 0, 0, 1, 1, 1),
 ]

@@ -99,7 +99,7 @@ def get_id_value(tag, identifier, tag_uses):
   if (tag_type > -1 and id_no > -1):
     add_tag_use(tag_uses,tag_type,id_no)
   return (tag_type, id_no)
-  
+
 def get_identifier_value(str, tag_uses):
   underscore_pos = string.find(str, "_")
   result = -1
@@ -188,13 +188,13 @@ def add_tag_use(tag_uses, tag_no, object_no):
 #  ensure_tag_use(tag_uses, tag_no, object_no)
 #  tag_uses[tag_no][object_no] = tag_uses[tag_no][object_no] + 1
   pass
-    
+
 def load_tag_uses(export_dir):
   tag_uses = []
   for i in xrange(tags_end):
     sub_tag_uses = []
     tag_uses.append(sub_tag_uses)
-    
+
   try:
     file = open(export_dir + "tag_uses.txt","r")
     var_list = file.readlines()
@@ -265,7 +265,7 @@ def check_varible_not_defined(variable_string,variables_list):
 #    variables_list.append(variable_string)
 #    result = len(variables_list) - 1
 #  return result
-    
+
 def add_variable(variable_string,variables_list,variable_uses):
   found = 0
   for i_t in xrange(len(variables_list)):
@@ -346,7 +346,7 @@ def insert_quick_string_with_auto_id(sentence,quick_strings):
         done = 1
       else:
         i += 1
-    else:      
+    else:
       done = 1
       index = len(quick_strings)
       quick_strings.append([auto_id, sentence])
@@ -459,7 +459,7 @@ def save_statement_block(ofile,statement_name,can_fail_statement,statement_block
       print "WARNING: Local variable never used: " + local_vars[i] + ", at: " + str(statement_name)
     i = i + 1
   if (len(local_vars) > 128):
-	  print "WARNING: Script uses more than 128 local wariables: " + str(statement_name) + "variables count:" + str(len(local_vars))
+          print "WARNING: Script uses more than 128 local wariables: " + str(statement_name) + "variables count:" + str(len(local_vars))
 
 def compile_global_vars(statement_block,variable_list, variable_uses):
   for statement in statement_block:

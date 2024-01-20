@@ -136,7 +136,7 @@ multiplayer_event_return_destructible_prop_spawn_or_destroy   = 119
 multiplayer_event_return_cannon_hit_effect_event              = 120
 multiplayer_event_return_agent_set_item                       = 121
 multiplayer_event_return_on_agent_hit                         = 122
-multiplayer_event_return_current_scene						            = 123  #PATCh1115 15/5  
+multiplayer_event_return_current_scene                                                      = 123  #PATCh1115 15/5
 multiplayer_event_ask_for_custom_poll                         = 124
 #modder_props:
 multiplayer_event_return_custom_string                        = 125 #string assigned to troop
@@ -178,7 +178,7 @@ multiplayer_game_type_headquarters           = 4
 multiplayer_game_type_siege                  = 5
 multiplayer_game_type_duel                   = 6
 multiplayer_game_type_commander              = 7
-multiplayer_game_type_king	                 = 8
+multiplayer_game_type_king                       = 8
 multiplayer_game_type_scene_making           = 9
 multiplayer_num_game_types                   = 10
 multiplayer_game_type_royale                 = 11
@@ -215,7 +215,7 @@ multi_data_flag_owner_end = multi_data_flag_owner_begin + 10 #maximum of 10 flag
 multi_data_flag_original_owner_begin = multi_data_flag_owner_end
 multi_data_flag_original_owner_end = multi_data_flag_original_owner_begin + 10 #maximum of 10 flags per scene
 
-multi_data_flag_players_around_begin = multi_data_flag_original_owner_end 
+multi_data_flag_players_around_begin = multi_data_flag_original_owner_end
 multi_data_flag_players_around_end = multi_data_flag_players_around_begin + 10 #maximum of 10 flags per scene
 multi_data_flag_owned_seconds_begin = multi_data_flag_players_around_end
 multi_data_flag_owned_seconds_end = multi_data_flag_owned_seconds_begin + 10 #maximum of 10 flags per scene
@@ -336,9 +336,9 @@ multi_headquarters_pole_height = 900
 multi_headquarters_flag_height_to_win = 800 #used in sd death mode
 multi_headquarters_flag_initial_height = 100 #used in sd death mode
 multi_headquarters_max_distance_sq_to_raise_flags = 3600 #6m * 6m * 100 = 1600
-multi_headquarters_distance_sq_to_set_flag = 8100 #9m * 9m * 100 = 8100 
-multi_headquarters_distance_sq_to_change_flag = 1600 #4m * 4m * 100 = 1600 
-multi_headquarters_distance_to_change_flag = 400 #4m * 100 =400 
+multi_headquarters_distance_sq_to_set_flag = 8100 #9m * 9m * 100 = 8100
+multi_headquarters_distance_sq_to_change_flag = 1600 #4m * 4m * 100 = 1600
+multi_headquarters_distance_to_change_flag = 400 #4m * 100 =400
 multi_distance_sq_to_use_belfry = 36 #6m * 6m = 36 (there is no * 100 for this one because it uses get_sq_distance_between_positions_in_meters instead of get_sq_distance_between_positions)
 multi_max_sq_dist_between_agents_to_longer_mof_time = 49 #7m * 7m = 49m
 min_allowed_flag_height_difference_to_make_score = 50
@@ -648,7 +648,7 @@ reg63  = opmask_register|63
 
 reg65  = opmask_register|65
 
-spf_all_teams_are_enemy                      = 0x00000001, 
+spf_all_teams_are_enemy                      = 0x00000001,
 spf_is_horseman                              = 0x00000002,
 spf_examine_all_spawn_points                 = 0x00000004,
 spf_team_0_spawn_far_from_entry_32           = 0x00000008,

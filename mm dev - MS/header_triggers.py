@@ -267,7 +267,7 @@ key_xbox_rbumper        = 0xfa
 key_xbox_lbumper        = 0xfb
 key_xbox_ltrigger       = 0xfc
 key_xbox_rtrigger       = 0xfd
-key_xbox_rstick         = 0xfe      
+key_xbox_rstick         = 0xfe
 key_xbox_lstick         = 0xff
 
 
@@ -342,7 +342,7 @@ gk_order_8 = 51
 
 #trigger positions
 #------------------------------------------------------
-trigger_check_pos = 0 
+trigger_check_pos = 0
 trigger_delay_pos = 1
 trigger_rearm_pos = 2
 trigger_conditions_pos = 3

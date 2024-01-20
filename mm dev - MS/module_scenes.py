@@ -12,7 +12,7 @@ from module_constants import *
 #  4) Body name {string}: This is used for indoor scenes only. Use the keyword "none" for outdoor scenes.
 #  5) Min-pos {(float,float)}: minimum (x,y) coordinate. Player can't move beyond this limit.
 #  6) Max-pos {(float,float)}: maximum (x,y) coordinate. Player can't move beyond this limit.
-#  7) Water-level {float}. 
+#  7) Water-level {float}.
 #  8) Terrain code {string}: You can obtain the terrain code by copying it from the terrain generator screen
 #  9) List of other scenes accessible from this scene {list of strings}.
 #     (deprecated. This will probably be removed in future versions of the module system)
@@ -76,10 +76,10 @@ scenes = [
   ("test_scene",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0230817a00028ca300007f4a0000479400161992",
     [],[], "outer_terrain_plain"),
 
-    
+
   ("tutorial",sf_generate,"none", "none", (0,0),(100,100),-100,"0x000000023002a1ba0004210900003ca000006a8900007a7b",
      [],[],"outer_terrain_plain"),
-    
+
 
 # multiplayer
   ("mp_ambush",sf_generate,"none", "none", (0,0),(100,100),-100,"0x000000023002a1ba0004210900003ca000006a8900007a7b",
@@ -253,7 +253,7 @@ scenes = [
   ("mp_outlaws_den_night",sf_generate,"none", "none", (0,0),(100,100),-100,"0x000000023002a1ba0004210900003ca000006a8900007a7b",
      [],[],"outer_terrain_beach"),
   ("mp_pyramids",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001500003e3000fffff0000074800005c49000021c5",
-     [],[],"outer_terrain_none"),	 
+     [],[],"outer_terrain_none"),
   ("mp_quatre_bras",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000330004563000d23480000074800005c49000021c5",
      [],[],"outer_terrain_plain"),
   ("mp_quatre_bras_night",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000330004563000d23480000074800005c49000021c5",
@@ -330,7 +330,7 @@ scenes = [
      [],[],"outer_terrain_plain"),
 
   # # # Randoms
-  
+
   # plain
   ("random_multi_plain_medium",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x00000001394018dd000649920004406900002920000056d7",
     [],[], "outer_terrain_plain"),
@@ -340,7 +340,7 @@ scenes = [
     [],[], "outer_terrain_plain"),
   ("random_multi_plain_large_rain",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x000000013a001853000aa6a40004406900002920001e4f81",
     [],[], "outer_terrain_plain"),
-  
+
   # steppe
   ("random_multi_steppe_medium", sf_generate|sf_randomize|sf_auto_entry_points, "none", "none", (0,0),(100, 100), -0.5, "0x0000000128601ae300063d8f0004406900002920001e4f81",
     [],[], "outer_terrain_steppe"),
@@ -350,7 +350,7 @@ scenes = [
     [],[], "outer_terrain_steppe"),
   ("random_multi_steppe_forest_large", sf_generate|sf_randomize|sf_auto_entry_points, "none", "none", (0,0),(100, 100), -0.5, "0x00000001aa00d8630009fe7f0004406900002920001e4f81",
     [],[], "outer_terrain_steppe"),
-  
+
   # snow
   ("random_multi_snow_medium",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x00000001494018dd000649920004406900002920000056d7",
     [],[], "outer_terrain_snow"),
@@ -368,7 +368,7 @@ scenes = [
     [],[], "outer_terrain_snow"),
   ("random_multi_snow_forest_large_snow",sf_generate|sf_randomize|sf_auto_entry_points,"none", "none", (0,0),(240,240),-0.5,"0x00000001ca001853000aa6a40004406900002920001e4f81",
     [],[], "outer_terrain_snow"),
-  
+
   # Desert
   ("random_multi_desert_medium", sf_generate|sf_randomize|sf_auto_entry_points, "none", "none", (0,0),(100, 100), -0.5, "0x0000000158601ae300063d8f0004406900002920001e4f81",
     [],[], "outer_terrain_desert"),
@@ -472,7 +472,7 @@ scenes = [
   ("mp_custom_map_39",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001300040810005194a0000000000005ae800003c55",
      [],[],"outer_terrain_plain"),
   ("mp_custom_map_40",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001300040810005194a0000000000005ae800003c55",
-     [],[],"outer_terrain_plain"),  
+     [],[],"outer_terrain_plain"),
   ("mp_custom_map_41",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001300040810005194a0000000000005ae800003c55",
      [],[],"outer_terrain_plain"),
   ("mp_custom_map_42",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001300040810005194a0000000000005ae800003c55",
@@ -593,11 +593,11 @@ scenes = [
      [],[],"outer_terrain_plain"),
   ("mp_custom_map_100",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001300040810005194a0000000000005ae800003c55",
      [],[],"outer_terrain_plain"),
-     
+
   ("multiplayer_maps_end",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001300389800003a4ea000058340000637a0000399b",
     [],[],"outer_terrain_plain"),
 
-  
+
   ("quick_battle_french_farm",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000130010e0e0005fd84000011c60000285b00005cbe",
      [],[],"outer_terrain_plain"),
   ("quick_battle_landshut",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000130010e0e00078584000011c60000285b00005cbe",
@@ -608,28 +608,28 @@ scenes = [
      [],[],"outer_terrain_steppe"),
   ("quick_battle_strangefields",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000130010e0e0005fd84000011c60000285b00005cbe",
      [],[],"outer_terrain_plain"),
-  
-  ("quick_battle_scene_1",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000013c665098000769d80000534600001adc00001118", 
+
+  ("quick_battle_scene_1",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000013c665098000769d80000534600001adc00001118",
     [],[], "outer_terrain_plain"),
-  ("quick_battle_scene_2",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000014940095d000649920004406900002920000056d7", 
+  ("quick_battle_scene_2",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000014940095d000649920004406900002920000056d7",
     [],[], "outer_terrain_snow"),
-  ("quick_battle_scene_3",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000001bc6fd0ae000611870000202600001adc0000240e", 
+  ("quick_battle_scene_3",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000001bc6fd0ae000611870000202600001adc0000240e",
     [],[], "outer_terrain_plain"),
-  ("quick_battle_scene_4",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0000000122f00b52000611870000175c00007b5c00003013", 
+  ("quick_battle_scene_4",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0000000122f00b52000611870000175c00007b5c00003013",
     [],[], "outer_terrain_steppe"),
   ("quick_battle_scene_6",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001db034fc50006118500001d4900007f70000073fc",
     [],[],"outer_terrain_desert_b"),
-  
+
   ("quick_battle_maps_end",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000001db034fc50006118500001d4900007f70000073fc",
     [],[],"outer_terrain_plain"),
 
-    
+
   # SP Scenes
 
   # Vienna battles
   ("sp_vienna",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000330004563000d23480000074800005c49000021c5",
     [],[],"outer_terrain_plain"),
-  
+
   # Austerlitz battles
   ("sp_sokolniz",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000330004563000d23480000074800005c49000021c5",
     [],[],"outer_terrain_plain"),
@@ -637,7 +637,7 @@ scenes = [
     [],[],"outer_terrain_plain"),
   ("sp_sokolniz2",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000330004563000d23480000074800005c49000021c5",
     [],[],"outer_terrain_plain"),
-  
+
   # Dresden battles
   ("sp_dresden1",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000330004563000d23480000074800005c49000021c5",
     [],[],"outer_terrain_plain"),
@@ -653,11 +653,11 @@ scenes = [
     [],[],"outer_terrain_plain"),
   ("sp_scene_4",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000330004563000d23480000074800005c49000021c5",
     [],[],"outer_terrain_plain"),
- 
+
   # Camps
   ("sp_camp_austerlitz",sf_generate,"none", "none", (0,0),(100,100),-100,"0x000000023002a1ba0004210900003ca000006a8900007a7b",
     [],[],"outer_terrain_plain"),
   ("sp_camp_dresden",sf_generate,"none", "none", (0,0),(100,100),-100,"0x000000023002a1ba0004210900003ca000006a8900007a7b",
-    [],[],"outer_terrain_plain"),  
- 
+    [],[],"outer_terrain_plain"),
+
 ]

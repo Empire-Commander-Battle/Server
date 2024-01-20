@@ -9,4 +9,3 @@ from header_common import *
 ## map icon flags
 
 mcn_no_shadow      = 0x00000001
-

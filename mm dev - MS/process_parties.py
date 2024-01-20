@@ -29,7 +29,7 @@ def save_parties(parties):
     else:
       menu_no = menu_param
     file.write("%d "%(menu_no))
-    
+
     file.write("%d %d %d %d %d "%(party[4], party[5], party[6], party[6],party[7]))
     ai_behavior_object = 0
     ai_param = party[8]

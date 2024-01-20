@@ -1,10 +1,10 @@
 gtf_overlay = 0x00000001 #deprecated
-gtf_dusty   = 0x00000002 #controls dustiness of the ground for foot dust particle systems 
+gtf_dusty   = 0x00000002 #controls dustiness of the ground for foot dust particle systems
 gtf_has_color  = 0x00000004 #you can overwrite the ambient color of the ground spec (default: 0.61, 0.72, 0.15)
 
 #IMPORTANT NOTE: Ground_specs have dependency on mnodule system and the engine c++ code!
 #                You cannot add new ground types as they are hardcoded in the engine code.
-#                Make sure you have updated your module's header_ground_types.py file 
+#                Make sure you have updated your module's header_ground_types.py file
 
 #arguments:
 #spec_name, flags, material, uv_scale, multitex_material_name, gtf_has_color->color
@@ -24,7 +24,7 @@ ground_specs = [
 
 def write_vec(file,vec):
   file.write(" %f %f %f "%vec)
-  
+
 def save_ground_specs():
   file = open("./ground_specs.txt","w")
   for ground_spec in ground_specs:
@@ -46,7 +46,7 @@ def save_c_header():
   file.write("\n\n")
   file.write("\n#endif\n")
   file.close()
-  
+
 def save_python_header():
   file = open("../mm dev - MS/header_ground_types.py","w")
   for ig in xrange(len(ground_specs)):
@@ -60,4 +60,3 @@ save_ground_specs()
 save_c_header()
 save_python_header()
 #print "Finished."
-  

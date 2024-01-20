@@ -5,7 +5,7 @@
 new_buffer_size_dx7_regular_ffp_static  = 262144
 new_buffer_size_dx7_regular_ffp_dynamic = 262144
 
-new_buffer_size_regular_ffp_static 		=  32768
+new_buffer_size_regular_ffp_static		=  32768
 new_buffer_size_regular_ffp_dynamic     =  32768
 new_buffer_size_regular_static          = 131072
 new_buffer_size_regular_dynamic         =  65536
@@ -485,7 +485,7 @@ inv_hinge1_size_y = 0.09
 
 inv_hinge2_position_x = 0.3105
 inv_hinge2_position_y = 0.565
-inv_hinge2_size_x = 0.045	
+inv_hinge2_size_x = 0.045
 inv_hinge2_size_y = 0.09
 
 inv_hinge3_position_x = 0.6452
@@ -1507,7 +1507,7 @@ initial_version_info_text_color = 0xFF110000
 initial_version_info_highlight_text_color = 0xFFFFDD00
 
 
-#game loading 
+#game loading
 loading_game_logo_position_x = 0.52
 loading_game_logo_position_y = 0.6
 loading_game_logo_size_x = 0.45

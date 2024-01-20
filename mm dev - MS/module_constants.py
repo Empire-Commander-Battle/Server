@@ -1097,6 +1097,3 @@ randomer_const_q2      = 52774  # (store_div,":Q2",":M2",":A2"),
 randomer_const_r1      = 38657  # (store_mod,":R1",":M1",":A1"),
 randomer_const_r2      = 3791   # (store_mod,":R2",":M2",":A2"),
 randomer_const_m1_sub1 = 2147483646
-
-
-

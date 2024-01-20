@@ -296,5 +296,3 @@ script_multiplayer_client_apply_destructible_prop_spawn_or_destroy = 294
 script_multiplayer_client_play_sound_at_pos = 295
 script_multiplayer_server_send_build_points = 296
 script_multiplayer_server_protect_admin_password = 297
-
-

@@ -16,7 +16,7 @@ def save_game_menu_item(ofile,variable_list,variable_uses,menu_item,tag_uses,qui
   if (len(menu_item) > 4):
     door_name = menu_item[4]
   ofile.write(" %s "%(string.replace(door_name," ","_")))
-    
+
 
 def save_game_menus(variable_list,variable_uses,tag_uses,quick_strings):
   ofile = open(export_dir + "menus.txt","w")
