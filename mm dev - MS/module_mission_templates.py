@@ -9607,13 +9607,14 @@ mission_templates = [
          (store_trigger_param_2, ":player_agent"),
          (try_begin),
             (eq, ":order", mm_order_charge),
-            (agent_get_team, ":team", ":player_agent"),
-            (agent_get_division, ":division", ":player_agent"),
+
             # Debug BS
-            (assign, reg22, ":player_agent"),
-            (assign, reg23, ":division"),
-            (assign, reg24, ":team"),
-            (display_message, "@DEBUG: {reg22} on team {reg24} have given charge order to {reg23} division"),
+            # (agent_get_team, ":team", ":player_agent"),
+            # (agent_get_division, ":division", ":player_agent"),
+            # (assign, reg22, ":player_agent"),
+            # (assign, reg23, ":division"),
+            # (assign, reg24, ":team"),
+            # (display_message, "@DEBUG: {reg22} on team {reg24} have given charge order to {reg23} division"),
 
             (agent_get_player_id, ":player_no", ":player_agent"),
             (team_give_order, ":player_no", grc_everyone, mordr_use_melee_weapons),
