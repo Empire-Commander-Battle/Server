@@ -9600,6 +9600,12 @@ mission_templates = [
       multiplayer_server_check_polls,
       multiplayer_server_auto_ff,
 
+      # INQ Patch 2
+      (key_v, 0, 0, [],
+       [
+         (display_message, "@DEBUG V KEY PRESSED")
+       ])
+
       # INQ Patch
       (ti_on_order_issued, 0, 0, [],
         [
