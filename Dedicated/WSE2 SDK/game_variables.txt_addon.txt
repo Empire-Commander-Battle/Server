@@ -1,0 +1,4 @@
+initial_menu_background_position_x = 0.025
+initial_menu_background_position_y = 0.14
+initial_menu_background_size_x = 0.24
+initial_menu_background_size_y = 0.5
