@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 python process_init.py
 python process_global_variables.py
 python process_strings.py
@@ -10,9 +12,6 @@ python process_meshes.py
 python process_sounds.py
 python process_skins.py
 python process_map_icons.py
-#!/bin/sh
-set -e
-
 python process_factions.py
 python process_items.py
 python process_scenes.py
