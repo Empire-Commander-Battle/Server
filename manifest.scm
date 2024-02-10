@@ -6,6 +6,7 @@
  (list "python2"
        "python"
        "openssh"
+       "ripgrep"
        "gnupg"
        "bash"
        "sed"
