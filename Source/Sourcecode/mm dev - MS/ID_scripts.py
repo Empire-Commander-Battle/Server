@@ -296,5 +296,16 @@ script_multiplayer_client_apply_destructible_prop_spawn_or_destroy = 294
 script_multiplayer_client_play_sound_at_pos = 295
 script_multiplayer_server_send_build_points = 296
 script_multiplayer_server_protect_admin_password = 297
+script_wse_multiplayer_message_received = 298
+script_wse_game_saved = 299
+script_wse_savegame_loaded = 300
+script_wse_chat_message_received = 301
+script_wse_console_command_received = 302
+script_wse_get_agent_scale = 303
+script_wse_window_opened = 304
+script_game_missile_dives_into_water = 305
+script_wse_get_server_info = 306
+script_wse_initial_window_start = 307
+script_get_selected_class = 308
 
 

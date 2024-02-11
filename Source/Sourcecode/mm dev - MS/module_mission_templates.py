@@ -9600,8 +9600,8 @@ mission_templates = [
       multiplayer_server_check_polls,
       multiplayer_server_auto_ff,
 	
-      # AUTO MELE PATCH
-      (ti_on_order_issued, 0, 0, []
+      # AUTO MELEE PATCH
+      (ti_on_order_issued, 0, 0, [],
        [
            (store_trigger_param_1, ":order"),
            (store_trigger_param_2, ":player_agent"),
@@ -9611,10 +9611,10 @@ mission_templates = [
             (agent_get_player_id, ":player_no", ":player_agent"),
 
             (call_script, "script_get_selected_class", ":player_no"),
-            (team_give_order, ":player_no", reg0, mordr_use_mele_weapons),
+            (team_give_order, ":player_no", reg0, mordr_use_melee_weapons),
             (set_show_messages, 1),
            (try_end)
-        ])
+        ]),
 
       (ti_server_player_joined, 0, 0, [],
        [
