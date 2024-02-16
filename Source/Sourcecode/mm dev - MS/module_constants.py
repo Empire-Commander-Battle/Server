@@ -1098,5 +1098,25 @@ randomer_const_r1      = 38657  # (store_mod,":R1",":M1",":A1"),
 randomer_const_r2      = 3791   # (store_mod,":R2",":M2",":A2"),
 randomer_const_m1_sub1 = 2147483646
 
+## CUSTOM CONSTANTS
 
+# UNIT
+unit_position = 0
+# if ranks is 0 rows is not and vice versa
+unit_ranks = 1
+unit_rows = 3
 
+unit_spacing = 7
+# 1 is true 0 is false
+unit_rotation_mode = 11
+unit_status = 15
+
+# CLASS
+#class_position = 0
+#class_formation = 1
+#class_spacing = 2
+#class_status = 3
+
+# STATUS
+status_holding = 0
+status_moving = 1

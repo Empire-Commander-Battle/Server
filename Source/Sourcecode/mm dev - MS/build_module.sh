@@ -1,5 +1,10 @@
 #!/bin/sh
 
+SCRIPT=$(realpath "$0")
+SCRIPT_PATH=$(dirname "$SCRIPT")
+
+cd "$SCRIPT_PATH"
+
 set -e
 
 python process_init.py
