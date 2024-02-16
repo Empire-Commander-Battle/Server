@@ -1101,15 +1101,15 @@ randomer_const_m1_sub1 = 2147483646
 ## CUSTOM CONSTANTS
 
 # UNIT
-unit_position = 0
+unit_position = "@positions"
 # if ranks is 0 rows is not and vice versa
-unit_ranks = 1
-unit_rows = 3
+unit_ranks = "@ranks"
+unit_rows = "@rows"
 
-unit_spacing = 7
+unit_spacing = "@spacing"
 # 1 is true 0 is false
-unit_rotation_mode = 11
-unit_status = 15
+unit_rotation_mode = "@rotation"
+unit_status = "@status"
 
 # CLASS
 #class_position = 0
@@ -1120,3 +1120,6 @@ unit_status = 15
 # STATUS
 status_holding = 0
 status_moving = 1
+
+# MENUS
+v_menu_flag = 42

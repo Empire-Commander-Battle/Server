@@ -845,7 +845,7 @@ scripts = [
       (assign, "$g_groupfight_mode", 0),#patch1115 60/1
       (assign, "$g_competitive_score_mode", 0), #G:comp_score:
       (assign, "$g_enable_custom_directional_keys", 0), #set to 1 to enable custom actions on directional keys
-      (assign, "$g_enable_action_v", 0), #set to 1 to enable custom actions on v key
+      (assign, "$g_enable_action_v", 1), #set to 1 to enable custom actions on v key
       (assign, "$g_enable_action_b", 0), #same for b key
       (assign, "$g_number_of_custom_strings", 0), #set to no less than number of custom string troops you intend to use (to reduce number of server messages on player join)
       (assign, "$g_enable_custom_chat", 0), #set to 1 to enable custom chat initiated on O key
@@ -5751,28 +5751,32 @@ scripts = [
               #end drinking
             (else_try),
               (eq, ":action_type", player_action_custom_order_menu_interact),
-              ##custom order menu interaction
-              ##Optional server side feature. uncomment this to enable handling of number key presses in the custom menu
-              ##Here you can either perform any action, or even create a sub menu
-              ##Returned flag set by the server script on creation to identify which menu was used
-              #(store_script_param, ":custom_server_flag", 4),
-              ##key pressed. custom_order_menu_key_1 to custom_order_menu_key_10 for key number press, custom_order_menu_close if closed or custom_order_menu_other_menu_active if another menu is already open on the client
-              #(store_script_param, ":number_key", 5),
+              #custom order menu interaction
+              #Optional server side feature. uncomment this to enable handling of number key presses in the custom menu
+              #Here you can either perform any action, or even create a sub menu
+              #Returned flag set by the server script on creation to identify which menu was used
+              (store_script_param, ":custom_server_flag", 4),
+              #key pressed. custom_order_menu_key_1 to custom_order_menu_key_10 for key number press, custom_order_menu_close if closed or custom_order_menu_other_menu_active if another menu is already open on the client
+              (store_script_param, ":number_key", 5),
               #(assign, reg0, ":custom_server_flag"),
-              #(try_begin),
-              #  (eq, ":number_key", custom_order_menu_other_menu_active),
-              #  #other menu is currently active
-              #  (store_script_param, ":other_menu_custom_server_flag", 6),
-              #  (assign, reg1, ":other_menu_custom_server_flag"),
-              #  (multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@Menu {reg0}: Another menu ({reg1}) is already active"),
+              (try_begin),
+               # (eq, ":number_key", custom_order_menu_other_menu_active),
+               #other menu is currently active
+               # (store_script_param, ":other_menu_custom_server_flag", 6),
+               # (assign, reg1, ":other_menu_custom_server_flag"),
+               # (multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@Menu {reg0}: Another menu ({reg1}) is already active"),
+              # (else_try),
+               (is_between, ":number_key", custom_order_menu_key_1, custom_order_menu_key_end),
+               #(assign, reg1, ":number_key"),
+               #(multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@Menu {reg0}: You pressed {reg1}"),
+               (try_begin),
+                (eq, ":custom_server_flag", v_menu_flag),
+                (call_script, "script_commander_battle_v_menu_interact", ":player_no", ":number_key"),
+               (try_end),
               #(else_try),
-              #  (is_between, ":number_key", custom_order_menu_key_1, custom_order_menu_key_end),
-              #  (assign, reg1, ":number_key"),
-              #  (multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@Menu {reg0}: You pressed {reg1}"),
-              #(else_try),
-              #  (multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@Menu {reg0}: You closed the menu"),
-              #(try_end),
-              ##end custom order menu
+               #(multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@Menu {reg0}: You closed the menu"),
+              (try_end),
+              #end custom order menu
             (else_try),
               (eq,":action_type",player_action_place_rocket),
 
@@ -5860,7 +5864,7 @@ scripts = [
             (else_try),
               #action on V key
               (eq, ":action_type", player_action_key_v),
-              #(multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@V key"),
+              (call_script, "script_commander_battle_create_v_menu", ":player_no"),
             (else_try),
               #action on B key
               (eq, ":action_type", player_action_key_b),
@@ -30496,6 +30500,33 @@ scripts = [
         (call_script, "script_free_player_unit_data", ":player"),
     ]),
 
+    ("commander_battle_create_v_menu", [
+        (store_script_param_1, ":player"),
+
+        (str_store_string, s61, "@1 - Manual rotation"),
+        (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", v_menu_flag, 1),
+    ]),
+
+    ("commander_battle_v_menu_interact", [
+        (store_script_param_1, ":player"),
+        (store_script_param_2, ":number_key"),
+
+        (try_begin),
+            (eq, ":number_key", custom_order_menu_key_1),
+
+            (try_begin),
+                (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
+                (call_script, "script_player_unit_disable_rotation_mode", ":player"),
+
+                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is OFF"),
+            (else_try),
+                (call_script, "script_player_unit_disable_rotation_mode", ":player"),
+
+                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is ON"),
+            (try_end),
+        (try_end),
+    ]),
+
     ("new_player_unit_data", [
         (store_script_param_1, ":player"),
 
@@ -30504,7 +30535,7 @@ scripts = [
         (dict_set_pos, ":unit_data", unit_position, pos0),
         (dict_set_int, ":unit_data", unit_ranks, 0),
         (dict_set_int, ":unit_data", unit_rows, 2),
-        (dict_set_int, ":unit_data", unit_spacing, 200),
+        (dict_set_int, ":unit_data", unit_spacing, 100),
         (dict_set_int, ":unit_data", unit_rotation_mode, 1),
         (dict_set_int, ":unit_data", unit_status, status_moving),
 
@@ -30661,7 +30692,7 @@ scripts = [
         (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
 
         (dict_get_int, ":spacing", ":unit_data", unit_spacing),
-        (val_add, ":spacing", 20),
+        (val_add, ":spacing", 100),
         (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
     ]),
 
@@ -30671,8 +30702,27 @@ scripts = [
         (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
 
         (dict_get_int, ":spacing", ":unit_data", unit_spacing),
-        (val_sub, ":spacing", 20),
-        (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
+
+        (try_begin),
+            (neq|eq, ":spacing", 100),
+            (val_sub, ":spacing", 100),
+            (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
+        (try_end),
+    ]),
+
+    ("player_unit_disable_rotation_mode", [
+        (store_script_param_1, ":player"),
+
+        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        (dict_set_int, ":unit_data", unit_rotation_mode, 0),
+    ]),
+
+    ("player_unit_enable_rotation_mode", [
+        (store_script_param_1, ":player"),
+
+        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        (dict_set_int, ":unit_data", unit_rotation_mode, 1),
+        (dict_set_int, "$player_unit_data_dict", ":player", ":unit_data"),
     ]),
 
     ("player_unit_set_rotation_mode", [
@@ -30681,6 +30731,7 @@ scripts = [
 
         (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
         (dict_set_int, ":unit_data", unit_rotation_mode, ":rotation_mode"),
+        (dict_set_int, "$player_unit_data_dict", ":player", ":unit_data"),
     ]),
 
     ("cf_player_unit_try_rotation_mode", [
