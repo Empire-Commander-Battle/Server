@@ -3,6 +3,7 @@ import os
 # Make sure you use forward slashes (/) and NOT backward slashes (\)
 
 
+#export_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../Output/")
 export_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)),
                           "../../../Dedicated/Modules/Napoleonic Wars/")
 #export_dir = "C:/Program Files (x86)/Mount&Blade Warband/Modules/mm dev/"

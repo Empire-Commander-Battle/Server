@@ -164,6 +164,18 @@ slot_player_revive_pos              = 48 #patch1115 46/16
 slot_player_formation_change              = 49
 slot_player_formation_change_2              = 50
 slot_player_bot_order              = 51
+
+## CUSTOM PLAYER SLOTS
+slot_player_unit_position = 52
+slot_player_unit_ranks = 53
+slot_player_unit_rows = 54
+slot_player_unit_spacing = 55
+slot_player_unit_rotation_mode = 56
+slot_player_unit_status = 57
+# RETARDED NONSENSE REMOVE LATER
+slot_player_unit_position_set_p = 58
+slot_player_unit_position_index = 59
+
 ########################################################
 ##  TEAM SLOTS             #############################
 ########################################################

@@ -30403,8 +30403,10 @@ scripts = [
 
     ("player_unit_clear_scripted_mode__inner", [
         (store_script_param_1, ":agent"),
+        (agent_ai_set_can_crouch, ":agent", 1),
         (agent_clear_scripted_mode, ":agent"),
     ]),
+
     ("player_unit_clear_scripted_mode", [
         (store_script_param_1, ":player"),
         (call_script, "script_map_player_unit", ":player", "script_player_unit_clear_scripted_mode__inner"),
@@ -30437,55 +30439,113 @@ scripts = [
         (call_script, "script_player_unit_get_position", ":player"),
 
         # result is stored in reg0
-        (call_script, "script_player_unit_get_ranks", ":player"),
+        (call_script, "script_player_unit_get_rows", ":player"),
+        (assign, ":rows", reg0),
+
+        # result is stored in reg0
+        (call_script, "script_player_unit_troops_no", ":player"),
+
+        # result is stored in reg0
+        (call_script, "script_rows_to_ranks", ":rows", reg0),
+
+        # ranks -1 "cached"
+        (store_sub, reg1, reg0, 1),
 
         # adjust position so that player is in center front
-        (store_sub, reg1, reg0, 1),
-        (val_mul, reg1, ":soldier_spacing_neg"),
-        (val_div, reg1, 2),
+        (store_sub, reg2, reg0, 1),
+        (val_mul, reg2, ":soldier_spacing_neg"),
+        (val_div, reg2, 2),
 
         # not sure what 0 here does
-        (position_move_x, pos0, reg1, 0),
+        (position_move_x, pos0, reg2, 0),
         (position_move_y, pos0, ":soldier_spacing_neg", 0),
 
-        (assign, reg1, ":soldier_spacing"),
-        (assign, reg2, ":soldier_spacing_neg"),
+        # position indicating start of rank
+        (copy_position, pos1, pos0),
+
+        # X offset
+        (assign, reg2, ":soldier_spacing"),
+
+        (try_begin),
+            (neg|eq, ":rows", 1),
+            (val_mul, reg2, 2),
+        (try_end),
+
+        # Y offset
+        (assign, reg3, ":soldier_spacing_neg"),
+
+        # even row X offset
+        (assign, reg4, ":soldier_spacing"),
 
         # in rank
-        (assign, reg3, 0),
+        (assign, reg5, 0),
 
-        # "reset" value
-        (store_mul, reg4, reg2, reg0),
-        (val_sub, reg4, reg2),
+        # in row
+        (assign, reg6, 1),
 
         (call_script, "script_map_player_unit", ":player", "script_player_unit_form__inner"),
     ]),
     ("player_unit_form__inner", [
         (store_script_param_1, ":agent"),
 
-       # (display_message, "@REG0: {reg0}"),
-       # (display_message, "@REG1: {reg1}"),
-       # (display_message, "@REG2: {reg2}"),
-       # (display_message, "@REG3: {reg3}"),
-       # (display_message, "@REG4: {reg4}"),
+        # (display_message, "@RANKS: {reg0}"),
+        # (display_message, "@RANKS_EVEN: {reg1}"),
+        # (display_message, "@X OFFSET: {reg2}"),
+        # (display_message, "@Y OFFSET: {reg3}"),
+        # (display_message, "@EVEN ROW X OFFSET: {reg4}"),
+        # (display_message, "@RANK: {reg5}"),
+        # (display_message, "@ROW: {reg5}"),
+        # (display_message, "@ODD: {reg5}"),
 
-        (agent_set_scripted_destination_no_attack, ":agent", pos0, 1),
-        (agent_ai_set_can_crouch, ":agent", 0),
+        (val_add, reg5, 1),
 
-        (val_add, reg3, 1),
+        (agent_set_scripted_destination, ":agent", pos0, 1),
+        # (agent_set_scripted_destination_no_attack, ":agent", pos0, 1),
 
         (try_begin),
-            (eq, reg3, reg0),
-            (position_move_x, pos0, reg4, 0),
-            (position_move_y, pos0, reg2, 0),
-            (assign, reg3, 0),
+            (eq, reg6, 1),
+            (display_message, "@CROUCHING"),
+            (agent_ai_set_can_crouch, ":agent", 1),
+            (agent_set_crouch_mode, ":agent", 1),
         (else_try),
-            (position_move_x, pos0, reg1, 0),
+            (agent_ai_set_can_crouch, ":agent", 0),
+            # just to be sure
+            (agent_set_crouch_mode, ":agent", 0),
+        (try_end),
+
+        (store_mod, reg7, reg6, 2),
+        (try_begin),
+            # even row
+            (eq, reg7, 0),
+            (eq, reg5, reg1),
+
+            (position_move_y, pos1, reg3, 0),
+            (copy_position, pos0, pos1),
+
+            (assign, reg5, 0),
+            (val_add, reg6, 1),
+        (else_try),
+            # odd row
+            (eq, reg5, reg0),
+
+            (position_move_y, pos1, reg3, 0),
+            (copy_position, pos0, pos1),
+
+            # next rank is going to be even
+            (position_move_x, pos0, reg4, 0),
+
+            (assign, reg5, 0),
+            (val_add, reg6, 1),
+        (else_try),
+            (position_move_x, pos0, reg2, 0),
         (try_end),
     ]),
 
     ("commander_battle_setup", [
-        (dict_create, "$player_unit_data_dict"),
+        # (dict_create, "$player_unit_data_dict"),
+        (assign, "$player_unit_position_index", 0),
+        # remove 100 later
+        (array_create, "$player_unit_positions", 2, 100),
     ]),
 
     ("commander_battle_player_join", [
@@ -30503,8 +30563,14 @@ scripts = [
     ("commander_battle_create_v_menu", [
         (store_script_param_1, ":player"),
 
-        (str_store_string, s61, "@1 - Manual rotation"),
-        (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", v_menu_flag, 1),
+
+        (try_begin),
+            (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
+            (str_store_string, s61, "@1 Disable manual rotation^2 Reform^3 Checkerboard"),
+        (else_try),
+            (str_store_string, s61, "@1 Enable manual rotation^2 Reform^3 Checkerboard"),
+        (try_end),
+        (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", v_menu_flag, 3),
     ]),
 
     ("commander_battle_v_menu_interact", [
@@ -30520,34 +30586,79 @@ scripts = [
 
                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is OFF"),
             (else_try),
-                (call_script, "script_player_unit_disable_rotation_mode", ":player"),
+                (call_script, "script_player_unit_enable_rotation_mode", ":player"),
 
                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is ON"),
             (try_end),
+        (else_try),
+            (eq, ":number_key", custom_order_menu_key_2),
+
+            (call_script, "script_player_unit_get_rotation_mode", ":player"),
+
+            (try_begin),
+                (eq, reg0, 1),
+                (call_script, "script_player_unit_form", ":player"),
+            (else_try),
+                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation not enabled"),
+            (try_end),
+        (else_try),
+            (eq, ":number_key", custom_order_menu_key_3),
+
+            (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@To be implemented"),
         (try_end),
     ]),
 
     ("new_player_unit_data", [
         (store_script_param_1, ":player"),
 
-        (dict_create, ":unit_data"),
+        # (dict_create, ":unit_data"),
 
-        (dict_set_pos, ":unit_data", unit_position, pos0),
-        (dict_set_int, ":unit_data", unit_ranks, 0),
-        (dict_set_int, ":unit_data", unit_rows, 2),
-        (dict_set_int, ":unit_data", unit_spacing, 100),
-        (dict_set_int, ":unit_data", unit_rotation_mode, 1),
-        (dict_set_int, ":unit_data", unit_status, status_moving),
+        # (dict_set_pos, ":unit_data", unit_position, pos0),
+        # (dict_set_int, ":unit_data", unit_ranks, 0),
+        # (dict_set_int, ":unit_data", unit_rows, 2),
+        # (dict_set_int, ":unit_data", unit_spacing, 100),
+        # (dict_set_int, ":unit_data", unit_rotation_mode, 1),
+        # (dict_set_int, ":unit_data", unit_status, status_moving),
 
-        (dict_set_int, "$player_unit_data_dict", ":player", ":unit_data"),
+        # (player_set_slot, ":player", slot_player_unit_position, pos0),
+        # RETARDED NONSENSE REMOVE LATER
+        (player_set_slot, ":player", slot_player_unit_position_index, "$player_unit_position_index"),
+        (val_add, "$player_unit_position_index", 1),
+
+        (call_script, "script_player_unit_data_set_defaults", ":player"),
+
+         # (dict_set_int, "$player_unit_data_dict", ":player", ":unit_data"),
     ]),
 
     ("free_player_unit_data", [
+        # (store_script_param_1, ":player"),
+
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_free, ":unit_data"),
+        # (dict_erase, "$player_unit_data_dict", ":player"),
+    ]),
+
+    ("player_unit_data_set_defaults", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_free, ":unit_data"),
-        (dict_erase, "$player_unit_data_dict", ":player"),
+        (player_set_slot, ":player", slot_player_unit_position_set_p, 0),
+        (player_set_slot, ":player", slot_player_unit_ranks, 0),
+        (player_set_slot, ":player", slot_player_unit_rows, 2),
+        (player_set_slot, ":player", slot_player_unit_spacing, 100),
+        (player_set_slot, ":player", slot_player_unit_rotation_mode, 0),
+        (player_set_slot, ":player", slot_player_unit_status, status_moving),
+
+        (player_get_slot, reg0, ":player", slot_player_unit_position_set_p),
+        (display_message, "@POSITIONP {reg0}"),
+        (player_get_slot, reg0, ":player", slot_player_unit_ranks),
+        (display_message, "@RANKS {reg0}"),
+        (player_get_slot, reg0, ":player", slot_player_unit_rows),
+        (display_message, "@ROWS {reg0}"),
+        (player_get_slot, reg0, ":player", slot_player_unit_spacing),
+        (display_message, "@SPACING {reg0}"),
+        (player_get_slot, reg0, ":player", slot_player_unit_status),
+        (display_message, "@STATUS {reg0}"),
+
     ]),
 
     # # result in reg0
@@ -30565,8 +30676,17 @@ scripts = [
     ("player_unit_set_position", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_set_pos, ":unit_data", unit_position, pos0),
+        (player_get_slot, ":index", ":player", slot_player_unit_position_index),
+        (array_set_val, "$player_unit_positions", pos0, ":index"),
+
+        # (player_set_slot, ":player", slot_player_unit_position, pos0),
+        # (player_set_slot, ":player", slot_player_unit_position_set_p, 1),
+
+        ### (lua_push_int, ":player"),
+        ### (lua_call, "@player_unit_set_position", 1),
+
+        ## (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        ## (dict_set_pos, ":unit_data", unit_position, pos0),
 
     ]),
 
@@ -30574,15 +30694,24 @@ scripts = [
     ("player_unit_get_position", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        (player_get_slot, ":index", ":player", slot_player_unit_position_index),
+        (array_get_val, pos0, "$player_unit_positions", ":index"),
 
-        (try_begin),
-            (dict_has_key, ":unit_data", unit_position),
-            (dict_get_pos, pos0, ":unit_data", unit_position),
-        (else_try),
-            (player_get_agent_id, ":player_agent", ":player"),
-            (agent_get_position, pos0, ":player_agent"),
-        (try_end),
+        # (lua_push_int, ":player"),
+        # (lua_call, "@player_unit_get_position", 1),
+
+        ## (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+
+        # (try_begin),
+            # (player_get_slot, ":set", ":player", slot_player_unit_position_set_p),
+            # (eq, ":set", 1),
+            # (player_get_slot, pos0, ":player", slot_player_unit_position),
+            ## (dict_has_key, ":unit_data", unit_position),
+            ## (dict_get_pos, pos0, ":unit_data", unit_position),
+        # (else_try),
+            # (player_get_agent_id, ":player_agent", ":player"),
+            # (agent_get_position, pos0, ":player_agent"),
+        # (try_end),
     ]),
 
     # store result in reg0
@@ -30590,6 +30719,13 @@ scripts = [
         (store_script_param_1, ":rows"),
         # :troops_no
         (store_script_param_2, reg0),
+
+        # troop_no = ranks*rows - rows//2
+        # troop_no + rows//2 = ranks*rows
+        # ranks = (troop_no + rows//2)/rows
+
+        (store_div, reg1, ":rows", 2),
+        (val_add, reg0, reg1),
 
         # Ceiling division
         (val_add, reg0, ":rows"),
@@ -30613,25 +30749,31 @@ scripts = [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":rows"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_set_int, ":unit_data", unit_rows, ":rows"),
-        (dict_set_int, ":unit_data", unit_ranks, 0),
+        (player_set_slot, ":player", slot_player_unit_rows, ":rows"),
+        (player_set_slot, ":player", slot_player_unit_ranks, 0),
+
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_set_int, ":unit_data", unit_rows, ":rows"),
+        # (dict_set_int, ":unit_data", unit_ranks, 0),
     ]),
 
     # store result in reg0
     ("player_unit_get_rows", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        #(dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        #(dict_get_int, reg0, ":unit_data", unit_rows),
 
-        (dict_get_int, reg0, ":unit_data", unit_rows),
+        (player_get_slot, reg0, ":player", slot_player_unit_rows),
+
         (try_begin),
             (eq, reg0, 0),
 
             # store result in reg0
             (call_script, "script_player_unit_troops_no", ":player"),
 
-            (dict_get_int, ":ranks", ":unit_data", unit_ranks),
+            #(dict_get_int, ":ranks", ":unit_data", unit_ranks),
+            (player_get_slot, ":ranks", slot_player_unit_ranks),
             #store result in reg 0
             (call_script, "script_ranks_to_rows", ":ranks", reg0),
         (end_try)
@@ -30641,104 +30783,161 @@ scripts = [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":ranks"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_set_int, ":unit_data", unit_ranks, ":ranks"),
-        (dict_set_int, ":unit_data", unit_rows, 0),
+        (player_set_slot, ":player", slot_player_unit_ranks, ":ranks"),
+        (player_set_slot, ":player", slot_player_unit_rows, 0),
+
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_set_int, ":unit_data", unit_ranks, ":ranks"),
+        # (dict_set_int, ":unit_data", unit_rows, 0),
     ]),
 
     # store result in reg0
     ("player_unit_get_ranks", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_get_int, reg0, ":unit_data", unit_ranks),
 
-        (dict_get_int, reg0, ":unit_data", unit_ranks),
+        (player_get_slot, reg0, ":player", slot_player_unit_ranks),
+
         (try_begin),
             (eq, reg0, 0),
 
             # store result in reg0
             (call_script, "script_player_unit_troops_no", ":player"),
 
-            (dict_get_int, ":rows", ":unit_data", unit_rows),
+            (player_get_slot, ":rows", ":player", slot_player_unit_rows),
+            # (dict_get_int, ":rows", ":unit_data", unit_rows),
             #store result in reg0
             (call_script, "script_rows_to_ranks", ":rows", reg0),
-        (end_try)
+        (end_try),
     ]),
 
 
     # store result in reg0
     ("player_unit_get_spacing", [
         (store_script_param_1, ":player"),
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
         # (dict_set_int, ":unit_data", unit_spacing, 200),
 
-        (dict_get_size, reg0, ":unit_data"),
-        (display_message, "@SIZE {reg0}"),
+        # (dict_get_size, reg0, ":unit_data"),
+        # (display_message, "@SIZE {reg0}"),
 
-        (dict_get_int, reg0, ":unit_data", unit_spacing),
+        # (dict_get_int, reg0, ":unit_data", unit_spacing),
+
+        (player_get_slot, reg0, ":player", slot_player_unit_spacing),
     ]),
 
     ("player_unit_set_spacing", [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":spacing"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
+
+        (player_set_slot, ":player", slot_player_unit_spacing, ":spacing"),
     ]),
 
     ("player_unit_increase_spacing", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
 
-        (dict_get_int, ":spacing", ":unit_data", unit_spacing),
+        # (dict_get_int, ":spacing", ":unit_data", unit_spacing),
+
+        (player_get_slot, ":spacing", ":player", slot_player_unit_spacing),
         (val_add, ":spacing", 100),
-        (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
+        (player_set_slot, ":player", slot_player_unit_spacing, ":spacing"),
+
+        # (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
     ]),
 
     ("player_unit_decrease_spacing", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
 
-        (dict_get_int, ":spacing", ":unit_data", unit_spacing),
+        # (dict_get_int, ":spacing", ":unit_data", unit_spacing),
+
+        (player_get_slot, ":spacing", ":player", slot_player_unit_spacing),
 
         (try_begin),
             (neq|eq, ":spacing", 100),
             (val_sub, ":spacing", 100),
-            (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
+            (player_set_slot, ":player", slot_player_unit_spacing, ":spacing"),
+            # (dict_set_int, ":unit_data", unit_spacing, ":spacing"),
         (try_end),
     ]),
 
     ("player_unit_disable_rotation_mode", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_set_int, ":unit_data", unit_rotation_mode, 0),
+        (player_set_slot, ":player", slot_player_unit_rotation_mode, 0),
+
+        ## (lua_push_int, ":player"),
+        ## (lua_call, "@pu_disable_rotation_mode", 1),
+        ## (lua_pop, 1),
+
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_set_int, ":unit_data", unit_rotation_mode, 0),
     ]),
 
     ("player_unit_enable_rotation_mode", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_set_int, ":unit_data", unit_rotation_mode, 1),
-        (dict_set_int, "$player_unit_data_dict", ":player", ":unit_data"),
+        (player_set_slot, ":player", slot_player_unit_rotation_mode, 1),
+
+        ## (lua_push_int, ":player"),
+        ## (lua_call, "@pu_disable_rotation_mode", 1),
+        ## (lua_pop, 1),
+
+       # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+       # (dict_set_int, ":unit_data", unit_rotation_mode, 1),
     ]),
 
     ("player_unit_set_rotation_mode", [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":rotation_mode"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_set_int, ":unit_data", unit_rotation_mode, ":rotation_mode"),
-        (dict_set_int, "$player_unit_data_dict", ":player", ":unit_data"),
+        (player_set_slot, ":player", slot_player_unit_rotation_mode, ":rotation_mode"),
+
+        ## (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        ## (dict_set_int, ":unit_data", unit_rotation_mode, ":rotation_mode"),
+        ## (dict_set_int, "$player_unit_data_dict", ":player", ":unit_data"),
+    ]),
+
+    # result in reg0
+    ("player_unit_get_rotation_mode", [
+        (store_script_param_1, ":player"),
+
+        (player_get_slot, reg0, ":player", slot_player_unit_rotation_mode),
     ]),
 
     ("cf_player_unit_try_rotation_mode", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_get_int, ":rotation", ":unit_data", unit_rotation_mode),
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_get_int, ":rotation", ":unit_data", unit_rotation_mode),
+
+        (player_get_slot, ":rotation", ":player", slot_player_unit_rotation_mode),
+
+        ## (lua_push_int, ":player"),
+        ## (lua_call, "@pu_get_rotation_mode", 1),
+
+        ## (try_for_range, ":i", 0, 10),
+        ##    (lua_to_int, reg1, ":i"),
+        ##    (assign, reg2, ":i"),
+        ##    (display_message, "@LUA STACK {reg1} {reg2}"),
+        ## (try_end),
+
+        ## (lua_get_top, ":index"),
+        ## (lua_to_int, ":rotation", ":index"),
+        ## (lua_pop, 1),
+
+        (assign, reg1, ":rotation"),
+        (assign, reg2, ":rotation"),
+        (display_message, "@ROTATION {reg1} INDEX {reg2}"),
+
         (eq, ":rotation", 1),
     ]),
 
@@ -30746,15 +30945,19 @@ scripts = [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":status"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_set_int, ":unit_data", unit_status, ":status"),
+        (player_set_slot, ":player", slot_player_unit_status, ":status"),
+
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_set_int, ":unit_data", unit_status, ":status"),
     ]),
 
     ("cf_player_unit_try_holding", [
         (store_script_param_1, ":player"),
 
-        (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        (dict_get_int, ":status", ":unit_data", unit_status),
+        # (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
+        # (dict_get_int, ":status", ":unit_data", unit_status),
+
+        (player_get_slot, ":status", ":player", slot_player_unit_status),
 
         (eq, ":status", status_holding),
     ])

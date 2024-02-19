@@ -18,6 +18,7 @@ set_server_name YourSERVERNAME
 
 #setting battle (multiplayer_bt) mode
 set_mission multiplayer_cb
+squad_size 24
 
 #since default team point limit is 300, the line below is necessary for this mode
 set_team_point_limit 10

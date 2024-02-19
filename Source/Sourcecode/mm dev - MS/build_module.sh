@@ -36,5 +36,6 @@ python process_simple_triggers.py
 python process_dialogs.py
 python process_global_variables_unused.py
 python process_postfx.py
+python process_lua.py
 
 rm *.pyc

@@ -9607,6 +9607,7 @@ mission_templates = [
            (store_trigger_param_2, ":player_agent"),
 
            (agent_get_player_id, ":player", ":player_agent"),
+           # just in cause
            (player_is_active, ":player"),
 
            (assign, reg0, ":order"),
@@ -9632,11 +9633,19 @@ mission_templates = [
 
             (agent_get_position, pos0, ":player_agent"),
             (call_script, "script_player_unit_set_position", ":player"),
-
-            (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
             (call_script, "script_player_unit_set_status", ":player", status_holding),
 
-            (call_script, "script_player_unit_form", ":player"),
+            # result in reg0
+            (call_script, "script_player_unit_get_rotation_mode", ":player"),
+
+            (display_message, "@ROTATION MODE STATUS: {reg0}"),
+
+            (try_begin),
+                (eq, reg0, 1),
+                (call_script, "script_player_unit_form", ":player"),
+            (else_try),
+                (call_script, "script_player_unit_clear_scripted_mode", ":player"),
+            (try_end),
            (else_try),
             (is_between, ":order", mordr_form_1_row, mordr_form_5_row + 1),
 
@@ -9678,7 +9687,14 @@ mission_templates = [
          (store_trigger_param_1, ":player_no"),
          (call_script, "script_multiplayer_server_player_joined_common", ":player_no"),
          (call_script, "script_commander_battle_player_join", ":player_no"),
-         ]),
+       ]),
+
+      (ti_after_mission_start, 0, 0, [],
+      [
+          (try_for_players, ":player"),
+              (call_script, "script_player_unit_data_set_defaults", ":player"),
+          (try_end),
+      ]),
 
       (ti_before_mission_start, 0, 0, [],
        [
