@@ -9654,26 +9654,65 @@ mission_templates = [
 
             (call_script, "script_player_unit_set_rows", ":player", reg0),
 
-            (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
-            (call_script, "script_cf_player_unit_try_holding", ":player"),
+            # result in reg0
+            (call_script, "script_player_unit_get_rotation_mode", ":player"),
 
-            (call_script, "script_player_unit_form", ":player"),
+            (try_begin),
+                (eq, reg0, 1),
+                (call_script, "script_cf_player_unit_try_holding", ":player"),
+
+                (call_script, "script_player_unit_form", ":player"),
+            (else_try),
+                (eq, reg0, 0),
+                (call_script, "script_player_unit_clear_scripted_mode", ":player"),
+            (try_end),
            (else_try),
             (eq, ":order", mordr_spread_out),
-            (call_script, "script_player_unit_increase_spacing", ":player"),
 
-            (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
-            (call_script, "script_cf_player_unit_try_holding", ":player"),
+            # Respect no spread for line inf rule
+            (try_begin),
+                (eq, "$g_no_line_inf_spread", 1),
 
-            (call_script, "script_player_unit_form", ":player"),
+                (agent_get_troop_id, ":player_troop_id", ":player_agent"),
+                (troop_get_slot, ":class", ":player_troop_id", slot_troop_class_type),
+                (this_or_next|eq, ":class", multi_troop_class_mm_infantry),
+                (eq, ":class", multi_troop_class_mm_grenadier),
+
+                (display_message, "@CANNOT SPREAD"),
+
+                # do nothing
+            (else_try),
+                (call_script, "script_player_unit_increase_spacing", ":player"),
+
+                # result in reg0
+                (call_script, "script_player_unit_get_rotation_mode", ":player"),
+
+                (try_begin),
+                    (eq, reg0, 1),
+                    (call_script, "script_cf_player_unit_try_holding", ":player"),
+
+                    (call_script, "script_player_unit_form", ":player"),
+                (else_try),
+                    (eq, reg0, 0),
+                    (call_script, "script_player_unit_clear_scripted_mode", ":player"),
+                (try_end),
+            (try_end),
            (else_try),
             (eq, ":order", mordr_stand_closer),
             (call_script, "script_player_unit_decrease_spacing", ":player"),
 
-            (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
-            (call_script, "script_cf_player_unit_try_holding", ":player"),
+             # result in reg0
+            (call_script, "script_player_unit_get_rotation_mode", ":player"),
 
-            (call_script, "script_player_unit_form", ":player"),
+            (try_begin),
+                (eq, reg0, 1),
+                (call_script, "script_cf_player_unit_try_holding", ":player"),
+
+                (call_script, "script_player_unit_form", ":player"),
+            (else_try),
+                (eq, reg0, 0),
+                (call_script, "script_player_unit_clear_scripted_mode", ":player"),
+            (try_end),
            (try_end)
        ]),
 
@@ -9691,9 +9730,13 @@ mission_templates = [
 
       (ti_after_mission_start, 0, 0, [],
       [
-          (try_for_players, ":player"),
-              (call_script, "script_player_unit_data_set_defaults", ":player"),
-          (try_end),
+          (display_message, "@TRIGGER DEBUG"),
+
+          # (try_for_players, ":player"),
+          #    (assign, reg0, ":player"),
+          #    (display_message, "@TEST {reg0}"),
+          #    (call_script, "script_player_unit_data_set_defaults", ":player"),
+          # (try_end),
       ]),
 
       (ti_before_mission_start, 0, 0, [],

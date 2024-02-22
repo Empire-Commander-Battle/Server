@@ -176,6 +176,8 @@ slot_player_unit_status = 57
 slot_player_unit_position_set_p = 58
 slot_player_unit_position_index = 59
 
+slot_player_is_commander = 60
+
 ########################################################
 ##  TEAM SLOTS             #############################
 ########################################################
@@ -1111,17 +1113,6 @@ randomer_const_r2      = 3791   # (store_mod,":R2",":M2",":A2"),
 randomer_const_m1_sub1 = 2147483646
 
 ## CUSTOM CONSTANTS
-
-# UNIT
-unit_position = "@positions"
-# if ranks is 0 rows is not and vice versa
-unit_ranks = "@ranks"
-unit_rows = "@rows"
-
-unit_spacing = "@spacing"
-# 1 is true 0 is false
-unit_rotation_mode = "@rotation"
-unit_status = "@status"
 
 # CLASS
 #class_position = 0

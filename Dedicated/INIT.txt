@@ -34,6 +34,7 @@ set_player_respawn_as_bot 1
 enable_bonuses 1
 
 commander_battle_rambo 1
+commander_battle_no_spread 1
 
 set_kick_voteable 0
 set_ban_voteable 0
