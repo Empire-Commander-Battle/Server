@@ -1126,3 +1126,9 @@ status_moving = 1
 
 # MENUS
 v_menu_flag = 42
+b_menu_flag = 43
+#pick_team_menu_flag = 44
+#pick_player_menu_flag = 45
+# reserve another 13 as 13*8 = 104 ie 1st above 100 which is max number of players that we assume
+#pick_player_submenu_flag_start = 46
+#pick_player_submenu_flag_end = 59

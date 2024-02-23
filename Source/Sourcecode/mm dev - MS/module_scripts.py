@@ -5771,7 +5771,12 @@ scripts = [
                #(multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@Menu {reg0}: You pressed {reg1}"),
                (try_begin),
                 (eq, ":custom_server_flag", v_menu_flag),
+                (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
                 (call_script, "script_commander_battle_v_menu_interact", ":player_no", ":number_key"),
+               # (else_try),
+               #  (eq, ":custom_server_flag", b_menu_flag),
+               #  (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
+               #  (call_script, "script_commander_battle_b_menu_interact", ":player_no", ":number_key"),
                (try_end),
               #(else_try),
                #(multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@Menu {reg0}: You closed the menu"),
@@ -5864,11 +5869,13 @@ scripts = [
             (else_try),
               #action on V key
               (eq, ":action_type", player_action_key_v),
+              (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
               (call_script, "script_commander_battle_create_v_menu", ":player_no"),
             (else_try),
               #action on B key
               (eq, ":action_type", player_action_key_b),
-              #(multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_admin_chat, "@B key"),
+              # (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
+              # (call_script, "script_commander_battle_create_b_menu", ":player_no"),
             (try_end),
           (try_end),
         (else_try),
@@ -6299,17 +6306,10 @@ scripts = [
           (try_end),
         (else_try), #custom_chat:
           (eq, ":event_type", multiplayer_event_send_custom_chat),
+          # COMMANDER CHAT PATCH
 
-              #   Here you will add code that happens on server side
-              #   when player sends a message via custom chat.
-              #   To enable for all by default, set $g_enable_custom_chat to 1 in game_quick_start,
-              #   to enable for individuals send them mod_variable_enable_custom_chat
-              #       Example:
-              # Talk to yourself (in custom color):
-              # (multiplayer_send_3_int_to_player, ":player_no", multiplayer_event_return_mod_variable, mod_variable_custom_string_troop_id, "trp_custom_string_1", 0), #message 1: troop id for which string will be set in next message
-              (multiplayer_send_string_to_player, ":player_no", multiplayer_event_return_custom_string, "@Says {s0}"), #message 2: set string
-              # (multiplayer_send_3_int_to_player, ":player_no", multiplayer_event_show_multiplayer_message, multiplayer_message_type_message_custom_color, "trp_custom_string_1", 0xF0000),
-
+          (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
+          (call_script, "script_commander_chat", ":player_no"),
         (try_end),
       (else_try), # client > server admin command.
         (is_between,":event_type",multiplayer_event_open_admin_panel,multiplayer_event_return_num_bots_in_team),
@@ -30290,8 +30290,17 @@ scripts = [
     # trigger result = anything non-zero suppresses default chat behavior. Server will not even broadcast messages to clients.
     # result string = changes message text for default chat behavior (if not suppressed).
     ("wse_chat_message_received", [
-    #    (store_script_param, ":player_no", 1),
-    #    (store_script_param, ":chat_type", 2),
+        (store_script_param, ":player_no", 1),
+        (store_script_param, ":chat_type", 2),
+
+        (display_message, "@TEST MESSAGE CAPTURE {s0}"),
+
+        # result in reg0
+        (try_begin),
+                (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
+                (call_script, "script_commander_battle_commands", ":player_no", ":chat_type"),
+                (set_trigger_result, reg0),
+        (try_end),
     ]),
 
     #script_wse_console_command_received
@@ -30568,20 +30577,154 @@ scripts = [
         (call_script, "script_free_player_unit_data", ":player"),
     ]),
 
+    # store result in reg0
+    # message in s0
+    ("commander_battle_commands", [
+        (store_script_param_1, ":player"),
+        # (store_script_param_2, ":chat_type"),
+
+        (try_begin),
+                (str_starts_with, s0, "@/commander"),
+
+                (str_split, reg0, s1, s0, "@ ", 1),
+
+                (try_begin),
+                        (ge, reg0, 2),
+
+                        (try_begin),
+                                (str_equals, s2, "@list"),
+
+                                (assign, ":found_any", 0),
+                                (try_for_players, ":cur_player"),
+                                        (player_get_slot, ":commander", ":player", slot_player_is_commander),
+                                        (eq, ":commander", 1),
+
+                                        (str_store_player_username, s3, ":cur_player"),
+
+                                        # skip server player
+                                        (neg|str_equals, s3, "@SERVER"),
+                                        (assign, ":found_any", 1),
+
+                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@{s3}"),
+                                (try_end),
+
+                                (eq, ":found_any", 1),
+                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No commanders"),
+                        (else_try),
+                                (str_equals, s2, "@resign"),
+
+                                (player_get_slot, ":commander", ":player", slot_player_is_commander),
+                                (try_begin),
+                                        (eq, ":commander", 1),
+                                        (player_set_slot, ":player", slot_player_is_commander, 0),
+                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Resigned from commandership"),
+                                (else_try),
+                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Need to be commander to resign from commandership"),
+                                (try_end),
+                        (else_try),
+                                (str_equals, s2, "@set"),
+
+                                (try_begin),
+                                        (player_is_admin, ":player"),
+
+                                        (try_begin),
+                                                (ge, reg0, 3),
+
+                                                (assign, ":exists", 0),
+                                                (try_for_players, ":cur_player"),
+                                                        (str_store_player_username, s4, ":cur_player"),
+                                                        (str_equals, s3, s4),
+                                                        (assign, ":exists", 1),
+
+                                                        (player_get_slot, ":commander", ":cur_player", slot_player_is_commander),
+
+                                                        (try_begin),
+                                                                (eq, ":commander", 1),
+                                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@{s3} is commander already"),
+                                                        (else_try),
+                                                                (player_set_slot, ":player", slot_player_is_commander, 1),
+                                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Appointed {s3} as commander"),
+                                                        (try_end),
+                                                (try_end),
+
+                                                (eq, ":exists", 0),
+                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
+                                        (else_try),
+                                                (call_script, "script_commander_battle_command_commander_help", ":player"),
+                                        (end_try),
+                                (else_try),
+                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Only admin can set commanders"),
+                                (end_try),
+                        (else_try),
+                                (str_equals, s2, "@unset"),
+
+                                (try_begin),
+                                        (player_is_admin, ":player"),
+
+                                        (try_begin),
+                                                (ge, reg0, 3),
+
+                                                (assign, ":exists", 0),
+                                                (try_for_players, ":cur_player"),
+                                                        (str_store_player_username, s4, ":cur_player"),
+                                                        (str_equals, s3, s4),
+                                                        (assign, ":exists", 1),
+
+                                                        (player_get_slot, ":commander", ":cur_player", slot_player_is_commander),
+
+                                                        (try_begin),
+                                                                (eq, ":commander", 1),
+                                                                (player_set_slot, ":player", slot_player_is_commander, 0),
+                                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Demoted player {s3} from commander"),
+                                                        (else_try),
+                                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Player {s3} isn't commander"),
+                                                        (try_end),
+                                                (try_end),
+
+                                                (eq, ":exists", 0),
+                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
+                                        (else_try),
+                                                (call_script, "script_commander_battle_command_commander_help", ":player"),
+                                        (end_try),
+                                (else_try),
+                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Only admin can unset commanders"),
+                                (end_try),
+                        (try_end),
+                (else_try),
+                        (call_script, "script_commander_battle_command_commander_help", ":player"),
+                (try_end),
+                 # Do not display message
+                (assign, reg0, 1),
+        (else_try),
+                # help if no command
+                (str_starts_with, s0, "@/"),
+
+                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/help - displays this message"),
+                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/commander (set|unset <player_name>)|list|resign - manages commanders"),
+
+                # Do not display message
+                (assign, reg0, 1),
+        (else_try),
+                # Display message
+                (assign, reg0, 0),
+        (try_end),
+    ]),
+
+    ("commander_battle_command_commander_help", [
+        (store_script_param_1, ":player"),
+        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/commander (set|unset <player_name>)|list|resign - manages commanders"),
+    ]),
+
     ("commander_battle_create_v_menu", [
         (store_script_param_1, ":player"),
 
         (try_begin),
-            (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
-
-            (try_begin),
                 (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
                 (str_store_string, s61, "@1 Disable manual rotation^2 Reform^3 Checkerboard"),
-            (else_try),
+        (else_try),
                 (str_store_string, s61, "@1 Enable manual rotation^2 Reform^3 Checkerboard"),
-            (try_end),
-            (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", v_menu_flag, 3),
         (try_end),
+        (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", v_menu_flag, 3),
     ]),
 
     ("commander_battle_v_menu_interact", [
@@ -30589,9 +30732,6 @@ scripts = [
         (store_script_param_2, ":number_key"),
 
         (try_begin),
-            (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
-
-            (try_begin),
                 (eq, ":number_key", custom_order_menu_key_1),
 
                 (try_begin),
@@ -30604,7 +30744,7 @@ scripts = [
 
                     (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is ON"),
                 (try_end),
-            (else_try),
+        (else_try),
                 (eq, ":number_key", custom_order_menu_key_2),
 
                 (call_script, "script_player_unit_get_rotation_mode", ":player"),
@@ -30615,11 +30755,54 @@ scripts = [
                 (else_try),
                     (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation not enabled"),
                 (try_end),
-            (else_try),
+        (else_try),
                 (eq, ":number_key", custom_order_menu_key_3),
 
                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@To be implemented"),
+        (try_end),
+    ]),
+
+    # ("commander_battle_create_b_menu", [
+    #     (store_script_param_1, ":player"),
+
+    #     (try_begin),
+    #             (player_is_admin, ":player"),
+
+    #             (str_store_string, s61, "@1 Appoint Commander"),
+    #             (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", b_menu_flag, 1),
+    #     (try_end),
+    # ]),
+
+    # ("commander_battle_b_menu_interact", [
+    #     (store_script_param_1, ":player"),
+    #     (store_script_param_1, ":number_key"),
+
+    #     (try_begin),
+    #             (eq, ":number_key", custom_order_menu_key_1),
+    #     (try_end),
+    # ]),
+
+    ("commander_chat", [
+        (store_script_param_1, ":player"),
+
+        # result in reg0
+        (player_get_slot, ":commander", ":player", slot_player_is_commander),
+        (try_begin),
+            (eq, ":commander", 1),
+
+            (player_get_team_no, ":team", ":player"),
+            (try_for_players, ":player"),
+                (player_is_active, ":player"),
+                (player_get_team_no, ":player_team", ":player"),
+                (eq, ":player_team", ":team"),
+
+                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_admin_chat, "@{s0}"),
+                # (multiplayer_send_3_int_to_player, ":player", multiplayer_event_return_mod_variable, mod_variable_custom_string_troop_id, "trp_custom_string_1", 0), #message 1: troop id for which string will be set in next message
+                # (multiplayer_send_string_to_player, ":player", multiplayer_event_return_custom_string, "@{s0}"), #message 2: set string
+                # (multiplayer_send_3_int_to_player, ":player", multiplayer_event_show_multiplayer_message, multiplayer_message_type_message_custom_color, "trp_custom_string_1", 0xF0000),
             (try_end),
+        (else_try),
+            (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@You are not the commander!"),
         (try_end),
     ]),
 
