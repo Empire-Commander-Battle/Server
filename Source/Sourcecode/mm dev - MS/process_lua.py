@@ -16,7 +16,7 @@ shutil.copytree("lua", lua_dir)
 
 os.mkdir(msfiles_dir)
 
-header_file_regex = re.compile("^header_.*\.py")
+header_file_regex = re.compile("^header_.*\.py$")
 for file_name in os.listdir("."):
     if not header_file_regex.match(file_name):
         continue

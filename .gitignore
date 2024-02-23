@@ -1,2 +1,41 @@
+/wine/*
+/Dedicated/Dumps/**
+/Dedicated/Logs/**
+/Dedicated/rgl_log.txt
 /Dedicated/Modules/Napoleonic Wars/dialog_states.txt
 /Dedicated/Modules/Napoleonic Wars/factions.txt
+/Dedicated/Modules/Napoleonic Wars/actions.txt
+/Dedicated/Modules/Napoleonic Wars/conversation.txt
+/Dedicated/Modules/Napoleonic Wars/dialog_states.txt
+/Dedicated/Modules/Napoleonic Wars/factions.txt
+/Dedicated/Modules/Napoleonic Wars/info_pages.txt
+/Dedicated/Modules/Napoleonic Wars/item_kinds1.txt
+/Dedicated/Modules/Napoleonic Wars/lua/**
+/Dedicated/Modules/Napoleonic Wars/map_icons.txt
+/Dedicated/Modules/Napoleonic Wars/menus.txt
+/Dedicated/Modules/Napoleonic Wars/meshes.txt
+/Dedicated/Modules/Napoleonic Wars/mission_templates.txt
+/Dedicated/Modules/Napoleonic Wars/music.txt
+/Dedicated/Modules/Napoleonic Wars/particle_systems.txt
+/Dedicated/Modules/Napoleonic Wars/parties.txt
+/Dedicated/Modules/Napoleonic Wars/party_templates.txt
+/Dedicated/Modules/Napoleonic Wars/postfx.txt
+/Dedicated/Modules/Napoleonic Wars/presentations.txt
+/Dedicated/Modules/Napoleonic Wars/quests.txt
+/Dedicated/Modules/Napoleonic Wars/quick_strings.txt
+/Dedicated/Modules/Napoleonic Wars/scene_props.txt
+/Dedicated/Modules/Napoleonic Wars/scenes.txt
+/Dedicated/Modules/Napoleonic Wars/scripts.txt
+/Dedicated/Modules/Napoleonic Wars/simple_triggers.txt
+/Dedicated/Modules/Napoleonic Wars/skills.txt
+/Dedicated/Modules/Napoleonic Wars/skins.txt
+/Dedicated/Modules/Napoleonic Wars/sounds.txt
+/Dedicated/Modules/Napoleonic Wars/strings.txt
+/Dedicated/Modules/Napoleonic Wars/tableau_materials.txt
+/Dedicated/Modules/Napoleonic Wars/tag_uses.txt
+/Dedicated/Modules/Napoleonic Wars/triggers.txt
+/Dedicated/Modules/Napoleonic Wars/troops.txt
+/Dedicated/Modules/Napoleonic Wars/variables.txt
+/Dedicated/Modules/Napoleonic Wars/variable_uses.txt
+*.swp
+*.pyc
