@@ -9728,6 +9728,15 @@ mission_templates = [
          (call_script, "script_commander_battle_player_join", ":player_no"),
        ]),
 
+      (ti_after_mission_start, 0, 0, [],
+       [
+	 (display_message, "@TESTING TRIGGERS"),
+
+	 (try_for_players, ":player"),
+             (call_script, "script_player_unit_data_set_defaults", ":player"),
+         (try_end),
+       ]),
+
       (ti_before_mission_start, 0, 0, [],
        [
          (assign, "$g_multiplayer_game_type", multiplayer_game_type_commander),

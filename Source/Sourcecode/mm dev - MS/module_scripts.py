@@ -30293,11 +30293,12 @@ scripts = [
         (store_script_param, ":player_no", 1),
         (store_script_param, ":chat_type", 2),
 
-        (display_message, "@TEST MESSAGE CAPTURE {s0}"),
+        # (display_message, "@TEST MESSAGE CAPTURE {s0}"),
 
         # result in reg0
         (try_begin),
                 (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
+		(eq, ":chat_type", 0),
                 (call_script, "script_commander_battle_commands", ":player_no", ":chat_type"),
                 (set_trigger_result, reg0),
         (try_end),
@@ -30596,7 +30597,7 @@ scripts = [
 
                                 (assign, ":found_any", 0),
                                 (try_for_players, ":cur_player"),
-                                        (player_get_slot, ":commander", ":player", slot_player_is_commander),
+                                        (player_get_slot, ":commander", ":cur_player", slot_player_is_commander),
                                         (eq, ":commander", 1),
 
                                         (str_store_player_username, s3, ":cur_player"),
@@ -30608,8 +30609,14 @@ scripts = [
                                         (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@{s3}"),
                                 (try_end),
 
-                                (eq, ":found_any", 1),
+                                (eq, ":found_any", 0),
                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No commanders"),
+			(else_try),
+				(str_equals, s2, "@reset"),
+				
+				(try_for_players, ":cur_player"),
+					(player_set_slot, ":cur_player", slot_player_is_commander, 0),
+				(try_end),
                         (else_try),
                                 (str_equals, s2, "@resign"),
 
@@ -30642,14 +30649,16 @@ scripts = [
                                                                 (eq, ":commander", 1),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@{s3} is commander already"),
                                                         (else_try),
-                                                                (player_set_slot, ":player", slot_player_is_commander, 1),
+                                                                (player_set_slot, ":cur_player", slot_player_is_commander, 1),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Appointed {s3} as commander"),
                                                         (try_end),
                                                 (try_end),
 
-                                                (eq, ":exists", 0),
-                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
-                                        (else_try),
+						(try_begin),
+                                                	(eq, ":exists", 0),
+                                                	(multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
+                                        	(try_end),
+					(else_try),
                                                 (call_script, "script_commander_battle_command_commander_help", ":player"),
                                         (end_try),
                                 (else_try),
@@ -30674,15 +30683,17 @@ scripts = [
 
                                                         (try_begin),
                                                                 (eq, ":commander", 1),
-                                                                (player_set_slot, ":player", slot_player_is_commander, 0),
+                                                                (player_set_slot, ":cur_player", slot_player_is_commander, 0),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Demoted player {s3} from commander"),
                                                         (else_try),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Player {s3} isn't commander"),
                                                         (try_end),
                                                 (try_end),
-
-                                                (eq, ":exists", 0),
-                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
+						
+						(try_begin),
+                                                	(eq, ":exists", 0),
+                                                	(multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
+						(try_end),
                                         (else_try),
                                                 (call_script, "script_commander_battle_command_commander_help", ":player"),
                                         (end_try),
@@ -30700,7 +30711,7 @@ scripts = [
                 (str_starts_with, s0, "@/"),
 
                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/help - displays this message"),
-                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/commander (set|unset <player_name>)|list|resign - manages commanders"),
+                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/commander (set|unset 'player_name')|list|reset|resign - manages commanders"),
 
                 # Do not display message
                 (assign, reg0, 1),
@@ -30712,7 +30723,7 @@ scripts = [
 
     ("commander_battle_command_commander_help", [
         (store_script_param_1, ":player"),
-        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/commander (set|unset <player_name>)|list|resign - manages commanders"),
+        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/commander (set|unset 'player_name')|list|reset|resign - manages commanders"),
     ]),
 
     ("commander_battle_create_v_menu", [
@@ -30790,13 +30801,15 @@ scripts = [
         (try_begin),
             (eq, ":commander", 1),
 
+	    (str_store_player_username, s1, ":player"),
+
             (player_get_team_no, ":team", ":player"),
             (try_for_players, ":player"),
                 (player_is_active, ":player"),
                 (player_get_team_no, ":player_team", ":player"),
                 (eq, ":player_team", ":team"),
 
-                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_admin_chat, "@{s0}"),
+                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_admin_chat, "@{s1}: {s0}"),
                 # (multiplayer_send_3_int_to_player, ":player", multiplayer_event_return_mod_variable, mod_variable_custom_string_troop_id, "trp_custom_string_1", 0), #message 1: troop id for which string will be set in next message
                 # (multiplayer_send_string_to_player, ":player", multiplayer_event_return_custom_string, "@{s0}"), #message 2: set string
                 # (multiplayer_send_3_int_to_player, ":player", multiplayer_event_show_multiplayer_message, multiplayer_message_type_message_custom_color, "trp_custom_string_1", 0xF0000),
@@ -30831,6 +30844,9 @@ scripts = [
             (player_set_slot, ":player", slot_player_unit_position_index, reg0),
         (try_end),
 
+	# Here so that it is't reseted each round
+        (player_set_slot, ":player", slot_player_is_commander, 0),
+
         (call_script, "script_player_unit_data_set_defaults", ":player"),
 
     ]),
@@ -30860,8 +30876,6 @@ scripts = [
         (player_set_slot, ":player", slot_player_unit_spacing, 100),
         (player_set_slot, ":player", slot_player_unit_rotation_mode, 0),
         (player_set_slot, ":player", slot_player_unit_status, status_moving),
-        # change to 0 later
-        (player_set_slot, ":player", slot_player_is_commander, 1),
 
         # (player_get_slot, reg0, ":player", slot_player_unit_position_set_p),
         # (display_message, "@POSITIONP {reg0}"),
