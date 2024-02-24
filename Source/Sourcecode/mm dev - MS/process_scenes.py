@@ -22,7 +22,7 @@ scene_outer_terrain_pos = 10
 
 def write_vec(ofile,vec):
   ofile.write(" %f %f %f "%vec)
-  
+
 def write_passage(ofile,scenes,passage):
   scene_no = 0
   found = 0
@@ -43,6 +43,7 @@ def write_passage(ofile,scenes,passage):
 
 
 def save_scenes(variables,variable_uses,tag_uses):
+  return
   ofile = open(export_dir + "scenes.txt","w")
   ofile.write("scenesfile version 1\n")
   ofile.write(" %d\n"%len(scenes))
