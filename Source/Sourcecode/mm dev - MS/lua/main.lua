@@ -34,14 +34,16 @@ function on_agent_spawn()
    local player, err = game.agent_get_player_id(0, agent)
    if player == -1 then
 	  -- BOT
-	  log_write(string.format("action: 'spawned bot' troop: '%s' team: '%s' agent: '%s'", troop, team, agent))
+
+	  local group, err = game.agent_get_group(0, agent)
+	  log_write(string.format("action: 'spawned bot' troop: '%s' team: '%s' agent: '%s' group_leader: '%s'", troop, team, agent, group))
    else
 	  -- PLAYER
 	  -- result in s0
 	  game.str_store_player_username(game.const.s0, player)
 	  local username = game.sreg[0]
 
-	  log_write(string.format("action: 'spawned player' username: '%s' troop: '%s' team: '%s' agent: '%s'", username, troop, team, agent))
+	  log_write(string.format("action: 'spawned player' username: '%s' troop: '%s' team: '%s' agent: '%s' player: '%s'", username, troop, team, agent, player))
    end
 end
 
@@ -106,7 +108,7 @@ function on_missile_hit()
    local agent, err = game.store_trigger_param(0, 1)
    local hit_position = game.preg[0]
 
-   log_write(string.format("action: 'missle hit' agent: %s hit_position: %s", agent, hit_position))
+   log_write(string.format("action: 'missile hit' agent: %s hit_position: %s", agent, hit_position))
 end
 
 function on_mission_start()
