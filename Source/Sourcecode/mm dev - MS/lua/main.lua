@@ -1,106 +1,168 @@
--- -- SCRIPTS
+-- SCRIPTS
+script_get_custom_log = game.getScriptNo("get_custom_log")
+script_get_dump = game.getScriptNo("get_dump")
+script_get_multiplayer_game_type = game.getScriptNo("get_multiplayer_game_type")
+-- END SCRIPTS
 
--- script_player_unit_clear_scripted_mode = game.getScriptNo("player_unit_clear_scripted_mode")
--- script_player_unit_set_status = game.getScriptNo("player_unit_set_status")
+-- CUSTOM LOG
+custom_log = io.open("custom_log.txt", "a")
+-- END CUSTOM LOG
 
--- -- END SCRIPTS
-
--- function player_joined()
---    game.display_message("PLAYER JOINED")
--- end
-
--- function order_issued()
---    -- it fails the first time that it is called for some reason....
---    local order, err = game.store_trigger_param(0, 1)
---    local player_agent, err = game.store_trigger_param(0, 2)
-
---    -- game.display_message(string.format("PLAYER AGENT %s", player_agent))
-
---    local player, err = game.agent_get_player_id(0, player_agent)
---    local active, err = game.player_is_active(player)
---    if not active then
---       return
---    end
-
---    game.display_message(string.format("ERR %s", err))
---    game.display_message(string.format("ORDER %s BY %s", order, player))
---    game.display_message(string.format("TEST1 %s", script_player_unit_clear_scripted_mode))
---    game.display_message(string.format("TEST2 %s", script_player_unit_set_status))
---    game.display_message(string.format("TEST3 %s", game.const.grc_everyone))
---    game.display_message(string.format("TEST4 %s", game.const.mordr_use_melee_weapons))
---    game.display_message(string.format("TEST5 %s", game.const.status_moving))
-
---    if order == game.const.mordr_charge then
---       game.display_message("CHARGE ORDER")
-
---       game.display_message(string.format("PLAYER %s", player))
---       game.call_script("script_player_unit_clear_scripted_mode", player)
---       game.display_message("TEST6")
---       game.call_script("script_player_unit_set_status", player, game.const.status_moving)
---       game.display_message("TEST7")
-
---       game.team_give_order(player, game.const.grc_everyone, game.const.mordr_use_melee_weapons)
---       game.set_show_messages(1)
---    end
--- end
-
--- game.addTrigger("mst_multiplayer_cb", game.const.ti_on_order_issued, 0, 0, order_issued)
--- game.addTrigger("mst_multiplayer_cb", game.const.ti_server_player_joined, 0, 0, player_joined)
-
--- p_data_rotation = 0
--- pu_data = {}
-
--- function p_data_get(player)
---    local p_data = pu_data[player]
-
---    if p_data == nil then
---       p_data = {
---	 p_data_rotation: 1
---       }
-
---       pu_data[player] = p_data
---    end
-
---    return p_data
--- end
-
--- function pu_get_rotation_mode(player)
---    local p_data = p_data_get(player)
-
---    game.display_message(string.format("PLAYER %s", player))
-
---    return 1
---    return p_data[p_data_rotation]
--- end
-
-
--- function pu_disable_rotation_mode(player)
---    local p_data = p_data_get(player)
---    p_data[p_data_rotation] = 0
--- end
-
--- function pu_enable_rotation_mode(player)
---    local p_data = p_data_get(player)
---    p_data[p_data_rotation] = 1
--- end
-
-positions = {}
-
-function player_unit_set_position(player)
-   positions[player] = game.preg0
-
-   game.display_message("DEBUG0")
+function log_date()
+   return os.date("%Y.%m.%d %X")
 end
 
-function player_unit_get_position(player)
-   tmp = positions[player]
+function log_write(str)
+   custom_log:write(string.format("[%s]: %s\n", log_date(), str))
+   custom_log:flush()
+end
 
-   game.display_message("DEBUG1")
+function on_agent_spawn()
+   -- result in reg0
+   game.call_script(script_get_custom_log)
+   local custom_log_enabled = game.reg[0]
 
-   if tmp ~= nil then
-	  game.preg0 = positions[player]
+   if custom_log_enabled == 0 then
+	  return
+   end
+
+   local agent, err = game.store_trigger_param(0, 1)
+
+   local team, err = game.agent_get_team(0, agent)
+   local troop, err = game.agent_get_troop_id(0, agent)
+
+   local player, err = game.agent_get_player_id(0, agent)
+   if player == -1 then
+	  -- BOT
+	  log_write(string.format("action: 'spawned bot' troop: '%s' team: '%s' agent: '%s'", troop, team, agent))
    else
-	  agent = game.player_get_agent_id(0, player)
-	  game.preg0 = game.agent_get_position(0, agent),
+	  -- PLAYER
+	  -- result in s0
+	  game.str_store_player_username(game.const.s0, player)
+	  local username = game.sreg[0]
+
+	  log_write(string.format("action: 'spawned player' username: '%s' troop: '%s' team: '%s' agent: '%s'", username, troop, team, agent))
    end
 end
+
+function on_agent_killed_or_wounded()
+   game.display_message("DEBUG KILLED WOUNDED")
+   -- result in reg0
+   game.call_script(script_get_custom_log)
+   local custom_log_enabled = game.reg[0]
+
+   if custom_log_enabled == 0 then
+	  return
+   end
+
+   local agent, err = game.store_trigger_param(0, 1)
+   local dealer_agent, err = game.store_trigger_param(0, 2)
+   local wounded, err = game.store_trigger_param(0, 3)
+
+   if wounded == 1 then
+	  log_write(string.format("action: 'wounded agent' agent: '%s' dealer_agent: '%s'", agent, dealer_agent))
+   else
+	  log_write(string.format("action: 'killed agent' agent: '%s' killer: '%s'", agent, dealer_agent))
+   end
+end
+
+function on_agent_start_reloading()
+   -- result in reg0
+   game.call_script(script_get_custom_log)
+   local custom_log_enabled = game.reg[0]
+
+   if custom_log_enabled == 0 then
+	  return
+   end
+
+   local agent, err = game.store_trigger_param(0, 1)
+
+   log_write(string.format("action: 'agent started reloading' agent: %s", agent))
+end
+
+function on_agent_end_reloading()
+   -- result in reg0
+   game.call_script(script_get_custom_log)
+   local custom_log_enabled = game.reg[0]
+
+   if custom_log_enabled == 0 then
+	  return
+   end
+
+   local agent, err = game.store_trigger_param(0, 1)
+
+   log_write(string.format("action: 'agent ended reloading' agent: %s", agent))
+end
+
+function on_missile_hit()
+   -- result in reg0
+   game.call_script(script_get_custom_log)
+   local custom_log_enabled = game.reg[0]
+
+   if custom_log_enabled == 0 then
+	  return
+   end
+
+   local agent, err = game.store_trigger_param(0, 1)
+   local hit_position = game.preg[0]
+
+   log_write(string.format("action: 'missle hit' agent: %s hit_position: %s", agent, hit_position))
+end
+
+function on_mission_start()
+   -- result in reg0
+   game.call_script(script_get_custom_log)
+   local custom_log_enabled = game.reg[0]
+
+   if custom_log_enabled == 0 then
+	  return
+   end
+
+   game.call_script(script_get_multiplayer_game_type)
+   local game_type = game.reg[0]
+
+   log_write(string.format('Started mission game type %s', game_type))
+end
+
+function dump()
+   -- result in reg0
+   game.call_script(script_get_custom_log)
+   local custom_log_enabled = game.reg[0]
+
+   if custom_log_enabled == 0 then
+	  return
+   end
+
+   -- result in reg0
+   game.call_script(script_get_dump)
+   local dump_enabled = game.reg[0]
+
+   game.display_message(string.format("DUMP %s", dump_enabled))
+
+   if dump_enabled == 0 then
+	  return
+   end
+
+   DUMP_STRING = ''
+   for agent in game.agentsI() do
+	  game.agent_get_position(game.const.pos0, agent)
+	  local pos = game.preg[0]
+
+	  local troop, err = game.agent_get_troop_id(0, agent)
+	  local team, err = game.agent_get_team(0, agent)
+
+	  DUMP_STRING = DUMP_STRING .. string.format("|A:%s P:(%s, %s, %s) TT:%s TE:%s|", agent, pos.o.x, pos.o.y, pos.o.z, troop, team)
+   end
+
+   log_write(string.format("action: 'dump' data: '%s'", DUMP_STRING))
+end
+
+log_write("Server started")
+
+game.addTrigger("mst_multiplayer_cb", game.const.ti_on_agent_spawn, 0, 0, on_agent_spawn)
+game.addTrigger("mst_multiplayer_cb", game.const.ti_on_agent_killed_or_wounded, 0, 0, on_agent_killed_or_wounded)
+game.addTrigger("mst_multiplayer_cb", game.const.ti_on_agent_start_reloading, 0, 0, on_agent_start_reloading)
+game.addTrigger("mst_multiplayer_cb", game.const.ti_on_agent_end_reloading, 0, 0, on_agent_end_reloading)
+game.addTrigger("mst_multiplayer_cb", game.const.ti_on_missile_hit, 0, 0, on_missile_hit)
+game.addTrigger("mst_multiplayer_cb", game.const.ti_after_mission_start, 0, 0, on_mission_start)
+game.addTrigger("mst_multiplayer_cb", 10, 0, 0, dump)

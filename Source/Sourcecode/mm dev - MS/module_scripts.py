@@ -872,6 +872,10 @@ scripts = [
       (assign, "$g_num_custom_maps", 0),#patch1115 64/1
       (assign, "$g_admin_white_list", 0),
 
+      # CUSTOM LOG PATCH
+      (assign, "$g_custom_log", 1), # DISABLE THIS BY DEFAULT
+      (assign, "$g_dump", 1), # DISABLE THIS BY DEFAULT
+
       (assign, "$g_chance_of_falling_off_horse", 0),
       (assign, "$g_damage_from_horse_dying", 100),
 
@@ -7644,10 +7648,10 @@ scripts = [
 
               # MANUAL FACING PATCH
               (try_begin),
-                (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
-                (try_for_players, ":player"),
-                    (call_script, "script_player_unit_data_set_defaults", ":player"),
-                (try_end),
+               (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
+               (try_for_players, ":player"),
+                   (call_script, "script_player_unit_data_set_defaults", ":player"),
+               (try_end),
               (try_end),
 
               # Reset player stats.
@@ -19256,6 +19260,8 @@ scripts = [
       # intialise royale boxes
       (call_script,"script_royale_initialise_boxes"),
 
+      # # MANUAL FACING PATCH
+      # (call_script, "script_commander_battle_reset")
     (try_end),
    ]),
 
@@ -30298,7 +30304,7 @@ scripts = [
         # result in reg0
         (try_begin),
                 (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
-		(eq, ":chat_type", 0),
+                (eq, ":chat_type", 0),
                 (call_script, "script_commander_battle_commands", ":player_no", ":chat_type"),
                 (set_trigger_result, reg0),
         (try_end),
@@ -30566,6 +30572,15 @@ scripts = [
         (array_create, "$free_player_unit_positions_indexes", 0, 0),
     ]),
 
+    # ("commander_battle_round_start", [
+    #  (try_begin),
+    #     (eq, "$g_multiplayer_game_type", multiplayer_game_type_commander),
+    #     (try_for_players, ":player"),
+    #         (call_script, "script_player_unit_data_set_defaults", ":player"),
+    #     (try_end),
+    #  (try_end),
+    # ]),
+
     ("commander_battle_player_join", [
         (store_script_param_1, ":player"),
         (display_message, "@PLAYER JOINED"),
@@ -30611,12 +30626,12 @@ scripts = [
 
                                 (eq, ":found_any", 0),
                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No commanders"),
-			(else_try),
-				(str_equals, s2, "@reset"),
-				
-				(try_for_players, ":cur_player"),
-					(player_set_slot, ":cur_player", slot_player_is_commander, 0),
-				(try_end),
+                        (else_try),
+                                (str_equals, s2, "@reset"),
+
+                                (try_for_players, ":cur_player"),
+                                        (player_set_slot, ":cur_player", slot_player_is_commander, 0),
+                                (try_end),
                         (else_try),
                                 (str_equals, s2, "@resign"),
 
@@ -30654,11 +30669,11 @@ scripts = [
                                                         (try_end),
                                                 (try_end),
 
-						(try_begin),
-                                                	(eq, ":exists", 0),
-                                                	(multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
-                                        	(try_end),
-					(else_try),
+                                                (try_begin),
+                                                        (eq, ":exists", 0),
+                                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
+                                                (try_end),
+                                        (else_try),
                                                 (call_script, "script_commander_battle_command_commander_help", ":player"),
                                         (end_try),
                                 (else_try),
@@ -30689,11 +30704,11 @@ scripts = [
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Player {s3} isn't commander"),
                                                         (try_end),
                                                 (try_end),
-						
-						(try_begin),
-                                                	(eq, ":exists", 0),
-                                                	(multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
-						(try_end),
+
+                                                (try_begin),
+                                                        (eq, ":exists", 0),
+                                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@No such player: {s3}"),
+                                                (try_end),
                                         (else_try),
                                                 (call_script, "script_commander_battle_command_commander_help", ":player"),
                                         (end_try),
@@ -30707,11 +30722,74 @@ scripts = [
                  # Do not display message
                 (assign, reg0, 1),
         (else_try),
+                # enable/disable custom log
+                (str_starts_with, s0, "@/customlog"),
+
+                (str_split, reg0, s1, s0, "@ ", 1),
+
+                (try_begin),
+                        (ge, reg0, 2),
+
+                        (try_begin),
+                                (str_starts_with, s2, "@disable"),
+                                (assign, "$g_custom_log", 0),
+
+                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@DISABLED custom log"),
+                        (else_try),
+                                (str_starts_with, s2, "@enable"),
+                                (assign, "$g_custom_log", 1),
+                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@ENABLED custom log"),
+                        (else_try),
+                                (str_starts_with, s2, "@status"),
+
+                                (try_begin),
+                                        (eq, "$g_custom_log", 1),
+                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@custom log is ON"),
+                                (else_try),
+                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@custom log is OFF"),
+                                (try_end),
+                        (else_try),
+                                (str_starts_with, s2, "@dump"),
+                                (try_begin),
+                                        (ge, reg0, 3),
+
+                                        (try_begin),
+                                                (str_starts_with, s3, "@disable"),
+                                                (assign, "$g_dump", 0),
+
+                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@DISABLED dump"),
+                                        (else_try),
+                                                (str_starts_with, s3, "@enable"),
+                                                (assign, "$g_dump", 1),
+                                                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@ENABLED dump"),
+                                        (else_try),
+                                                (str_starts_with, s3, "@status"),
+
+                                                (try_begin),
+                                                        (eq, "$g_dump", 1),
+                                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@dump is ON"),
+                                                (else_try),
+                                                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@dump is OFF"),
+                                                (try_end),
+                                        (else_try),
+                                                (call_script, "script_commander_battle_command_custom_log", ":player"),
+                                        (try_end),
+                                (else_try),
+                                        (call_script, "script_commander_battle_command_custom_log", ":player"),
+                                (try_end),
+                        (else_try),
+                                (call_script, "script_commander_battle_command_custom_log", ":player"),
+                        (try_end),
+                (else_try),
+                        (call_script, "script_commander_battle_command_custom_log", ":player"),
+                (try_end),
+        (else_try),
                 # help if no command
                 (str_starts_with, s0, "@/"),
 
                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/help - displays this message"),
-                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/commander (set|unset 'player_name')|list|reset|resign - manages commanders"),
+                (call_script, "script_commander_battle_command_commander_help", ":player"),
+                (call_script, "script_commander_battle_command_custom_log", ":player"),
 
                 # Do not display message
                 (assign, reg0, 1),
@@ -30724,6 +30802,11 @@ scripts = [
     ("commander_battle_command_commander_help", [
         (store_script_param_1, ":player"),
         (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/commander (set|unset 'player_name')|list|reset|resign - manages commanders"),
+    ]),
+
+    ("commander_battle_command_custom_log", [
+        (store_script_param_1, ":player"),
+        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@/customlog (dump disable|enable|status)disable|enable|status - manages customlog"),
     ]),
 
     ("commander_battle_create_v_menu", [
@@ -30801,7 +30884,7 @@ scripts = [
         (try_begin),
             (eq, ":commander", 1),
 
-	    (str_store_player_username, s1, ":player"),
+            (str_store_player_username, s1, ":player"),
 
             (player_get_team_no, ":team", ":player"),
             (try_for_players, ":player"),
@@ -30844,7 +30927,7 @@ scripts = [
             (player_set_slot, ":player", slot_player_unit_position_index, reg0),
         (try_end),
 
-	# Here so that it is't reseted each round
+        # Here so that it is't reseted each round
         (player_set_slot, ":player", slot_player_is_commander, 0),
 
         (call_script, "script_player_unit_data_set_defaults", ":player"),
@@ -31114,5 +31197,20 @@ scripts = [
         (player_get_slot, ":status", ":player", slot_player_unit_status),
 
         (eq, ":status", status_holding),
-    ])
+    ]),
+
+    # result in reg0
+    ("get_custom_log", [
+        (assign, reg0, "$g_custom_log"),
+    ]),
+
+    # result in reg0
+    ("get_dump", [
+        (assign, reg0, "$g_dump"),
+    ]),
+
+    # result in reg0
+    ("get_multiplayer_game_type", [
+        (assign, reg0, "$g_multiplayer_game_type"),
+    ]),
 ]

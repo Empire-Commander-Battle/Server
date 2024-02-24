@@ -9719,7 +9719,8 @@ mission_templates = [
       (ti_on_player_exit, 0, 0, [],
        [
         (store_trigger_param_1, ":player"),
-        (call_script, "script_commander_battle_player_leave", ":player")]),
+        (call_script, "script_commander_battle_player_leave", ":player")
+       ]),
 
       (ti_server_player_joined, 0, 0, [],
        [
@@ -9730,11 +9731,23 @@ mission_templates = [
 
       (ti_after_mission_start, 0, 0, [],
        [
-	 (display_message, "@TESTING TRIGGERS"),
+         (display_message, "@TESTING TRIGGERS"),
 
-	 (try_for_players, ":player"),
+         (try_for_players, ":player"),
              (call_script, "script_player_unit_data_set_defaults", ":player"),
          (try_end),
+       ]),
+
+      # CUSTOM LOG PATCH
+      (ti_on_agent_spawn, 0, 0, [],
+       [
+        # PASS
+       ]),
+
+      # CUSTOM LOG PATCH
+      (ti_on_agent_killed_or_wounded, 0, 0, [],
+       [
+           # (display_message, "@TEST"),
        ]),
 
       (ti_before_mission_start, 0, 0, [],
