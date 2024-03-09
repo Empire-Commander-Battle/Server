@@ -122,8 +122,9 @@ add_map mp_custom_map_21
 add_map mp_custom_map_22
 add_map mp_custom_map_23
 add_map mp_custom_map_24
+add_map mp_custom_map_25
 
-custom_maps_enabled 24
+custom_maps_enabled 25
 
 #adding all nations to both sides just to randomize all of them
 #adding less nations will reduce the randomization set (used in set_randomize_factions command)
