@@ -43,7 +43,6 @@ def write_passage(ofile,scenes,passage):
 
 
 def save_scenes(variables,variable_uses,tag_uses):
-  return
   ofile = open(export_dir + "scenes.txt","w")
   ofile.write("scenesfile version 1\n")
   ofile.write(" %d\n"%len(scenes))

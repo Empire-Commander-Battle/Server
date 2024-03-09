@@ -19,7 +19,7 @@ python process_skins.py
 python process_map_icons.py
 python process_factions.py
 python process_items.py
-python process_scenes.py
+#python process_scenes.py
 python process_troops.py
 python process_particle_sys.py
 python process_scene_props.py
