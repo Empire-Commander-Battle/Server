@@ -1,4 +1,5 @@
 /wine/*
+/Dedicated/INIT.txt
 /Dedicated/Dumps/**
 /Dedicated/Logs/**
 /Dedicated/rgl_log.txt
