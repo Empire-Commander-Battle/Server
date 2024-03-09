@@ -39,5 +39,6 @@ add_map mp_custom_map_22
 add_map mp_custom_map_23
 add_map mp_custom_map_24
 add_map mp_custom_map_25
+add_map mp_custom_map_26
 
-custom_maps_enabled 25
+custom_maps_enabled 26
