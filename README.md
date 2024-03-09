@@ -8,8 +8,7 @@ https://www.fsegames.eu/forum/index.php?topic=11836.0
 ```
 ### Building
 ```bash
-cd Source/Sourcecode/mm dev - MS/
-./build_module.sh
+./build.sh
 ```
 
 ### Running server
