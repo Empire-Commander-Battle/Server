@@ -1,6 +1,6 @@
 #WARNING: Make sure that you change the capital values with proper ones.
 #uncomment the line below when you set a valid administrator password
-set_pass_admin hardhotsex
+set_pass_admin novatime
 
 # TO REMOVE LATER FOR TESTING POURPOUSES ONLY
 set_pass empire
