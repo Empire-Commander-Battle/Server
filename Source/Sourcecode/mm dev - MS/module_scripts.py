@@ -30447,123 +30447,230 @@ scripts = [
         (val_add, reg0, 1),
     ]),
 
-
-    ## pos0 is position argument
     ("player_unit_form", [
         (store_script_param_1, ":player"),
 
-        # result is stored in reg0
-        (call_script, "script_player_unit_get_spacing", ":player"),
-        (display_message, "@SPACING {reg0}"),
-
-        (assign, ":soldier_spacing", reg0),
-        (store_mul, ":soldier_spacing_neg", ":soldier_spacing", -1),
-
-        # result is stored in pos0
-        (call_script, "script_player_unit_get_position", ":player"),
-
-        # result is stored in reg0
-        (call_script, "script_player_unit_get_rows", ":player"),
-        (assign, ":rows", reg0),
-
-        # result is stored in reg0
-        (call_script, "script_player_unit_troops_no", ":player"),
-
-        # result is stored in reg0
-        (call_script, "script_rows_to_ranks", ":rows", reg0),
-
-        # ranks -1 "cached"
-        (store_sub, reg1, reg0, 1),
-
-        # adjust position so that player is in center front
-        (store_sub, reg2, reg0, 1),
-        (val_mul, reg2, ":soldier_spacing_neg"),
-        (val_div, reg2, 2),
-
-        # not sure what 0 here does
-        (position_move_x, pos0, reg2, 0),
-        (position_move_y, pos0, ":soldier_spacing_neg", 0),
-
-        # position indicating start of rank
-        (copy_position, pos1, pos0),
-
-        # X offset
-        (assign, reg2, ":soldier_spacing"),
-
         (try_begin),
-            (neg|eq, ":rows", 1),
-            (val_mul, reg2, 2),
-        (try_end),
-
-        # Y offset
-        (assign, reg3, ":soldier_spacing_neg"),
-
-        # even row X offset
-        (assign, reg4, ":soldier_spacing"),
-
-        # in rank
-        (assign, reg5, 0),
-
-        # in row
-        (assign, reg6, 1),
-
-        (call_script, "script_map_player_unit", ":player", "script_player_unit_form__inner"),
-    ]),
-    ("player_unit_form__inner", [
-        (store_script_param_1, ":agent"),
-
-        # (display_message, "@RANKS: {reg0}"),
-        # (display_message, "@RANKS_EVEN: {reg1}"),
-        # (display_message, "@X OFFSET: {reg2}"),
-        # (display_message, "@Y OFFSET: {reg3}"),
-        # (display_message, "@EVEN ROW X OFFSET: {reg4}"),
-        # (display_message, "@RANK: {reg5}"),
-        # (display_message, "@ROW: {reg5}"),
-        # (display_message, "@ODD: {reg5}"),
-
-        (val_add, reg5, 1),
-
-        (agent_set_scripted_destination, ":agent", pos0, 1),
-        # (agent_set_scripted_destination_no_attack, ":agent", pos0, 1),
-
-        # (try_begin),
-        #    (eq, reg6, 1),
-        #    (display_message, "@CROUCHING"),
-        #    (agent_ai_set_can_crouch, ":agent", 1),
-        #    (agent_set_crouch_mode, ":agent", 1),
-        # (else_try),
-        (agent_ai_set_can_crouch, ":agent", 0),
-        #    # just to be sure
-        (agent_set_crouch_mode, ":agent", 0),
-        # (try_end),
-
-        (store_mod, reg7, reg6, 2),
-        (try_begin),
-            # even row
-            (eq, reg7, 0),
-            (eq, reg5, reg1),
-
-            (position_move_y, pos1, reg3, 0),
-            (copy_position, pos0, pos1),
-
-            (assign, reg5, 0),
-            (val_add, reg6, 1),
-        (else_try),
-            # odd row
-            (eq, reg5, reg0),
-
-            (position_move_y, pos1, reg3, 0),
-            (copy_position, pos0, pos1),
-
-            # next rank is going to be even
-            (position_move_x, pos0, reg4, 0),
-
-            (assign, reg5, 0),
-            (val_add, reg6, 1),
-        (else_try),
-            (position_move_x, pos0, reg2, 0),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitForm", 1),
         (try_end),
     ]),
+
+    # ("player_unit_form", [
+    #     (store_script_param_1, ":player"),
+
+    #     # result is stored in pos0
+    #     (call_script, "script_player_unit_get_position", ":player"),
+
+    #     (call_script, "script_player_unit_get_spacing", ":player"),
+    #     (assign, ":soldier_spacing", reg0),
+
+    #     (val_mul, reg0, -1),
+    #     (assign, ":soldier_spacing_neg", reg0),
+
+    #     # fp0 is x, fp1 is y
+    #     (fld_pos_x, fp0, pos0),
+    #     (fld_pos_y, fp1, pos0),
+
+    #     # fp2 is angle
+    #     (position_get_rotation_around_z, reg0, pos0),
+    #     (fld, fp2, reg0),
+
+    #     # pos1 is center
+    #     (copy_position, pos1, pos0),
+    #     (position_move_y, pos1, ":soldier_spacing_neg"),
+
+    #     # fp5 is center.x, fp6 is center.y
+    #     (fld_pos_x, fp5, pos1),
+    #     (fld_pos_y, fp6, pos1),
+
+    #     # fp7 is A, fp8 is B
+    #     (fsub, fp7, fp6, fp1),
+    #     (fsub, fp8, fp0, fp5),
+
+    #     # fp9 is A^2, fp10 is B^2 fp11 is A*B fp12 is A^2 + B^2
+    #     (fmul, fp9, fp7, fp7),
+    #     (fmul, fp10, fp8, fp8),
+    #     (fmul, fp11, fp8, fp7),
+    #     (fadd, fp12, fp9, fp10),
+
+    #     (call_script, "script_map_player_unit", ":player", "script_player_unit_form__inner"),
+    # ]),
+
+    # ("player_unit_form__inner", [
+    #     (store_script_param_1, ":agent"),
+
+    #     (agent_get_position, pos2, ":agent"),
+
+    #     # fp13 is x, fp14 is y
+    #     (fld_pos_x, fp13, pos2),
+    #     (fld_pos_y, fp14, pos2),
+
+    #     # fp15 is projected.x
+    #     (fmul, fp15, fp9, fp13),
+
+    #     (fmul, fp16, fp10, fp5),
+    #     (fadd, fp15, fp15, fp16),
+
+    #     (fsub, fp16, fp14, fp6),
+    #     (fmul, fp16, fp11, fp17),
+    #     (fadd, fp15, fp15, fp16),
+
+    #     (fdiv, fp15, fp12),
+
+    #     # fp16 is projected.y
+    #     (fmul, fp16, fp9, fp6),
+
+    #     (fmul, fp17, fp10, fp14),
+    #     (fadd, fp16, fp16, fp17),
+
+    #     (fsub, fp17, fp13, fp5),
+    #     (fmul, fp17, fp11, fp17),
+    #     (fadd, fp16, fp16, fp17),
+
+    #     (fdiv, fp16, fp12),
+
+    #     # fp17 is projected.x - pos.x
+    #     (fsub, fp17, fp15, fp5),
+    #     (fst, reg1, fp17),
+
+    #     # fp18 is projected.y - pos.y
+    #     (fsub, fp18, fp16, fp6),
+    #     (fst, reg2, fp18),
+
+    #     (fld, fp19, 10),
+    #     (fdiv, fp19, fp19, 2),
+    #     (fdiv, fp19, fp19, 0),
+
+    #     (fst, reg3, fp19),
+
+    #     (display_message, "@TEST {reg3}"),
+
+    #     (display_message, "@X {reg1} Y {reg2}"),
+
+    #     (copy_position, pos3, pos1),
+
+    #     (position_move_x, pos3, reg1, 1),
+    #     (position_move_y, pos3, reg2, 1),
+
+    #     (agent_set_scripted_destination, ":agent", pos3, 1),
+    # ]),
+
+    # ("player_unit_form", [
+    #     (store_script_param_1, ":player"),
+
+    #     # result is stored in reg0
+    #     (call_script, "script_player_unit_get_spacing", ":player"),
+    #     (display_message, "@SPACING {reg0}"),
+
+    #     (assign, ":soldier_spacing", reg0),
+    #     (store_mul, ":soldier_spacing_neg", ":soldier_spacing", -1),
+
+    #     # result is stored in pos0
+    #     (call_script, "script_player_unit_get_position", ":player"),
+
+    #     # result is stored in reg0
+    #     (call_script, "script_player_unit_get_rows", ":player"),
+    #     (assign, ":rows", reg0),
+
+    #     # result is stored in reg0
+    #     (call_script, "script_player_unit_troops_no", ":player"),
+
+    #     # result is stored in reg0
+    #     (call_script, "script_rows_to_ranks", ":rows", reg0),
+
+    #     # ranks -1 "cached"
+    #     (store_sub, reg1, reg0, 1),
+
+    #     # adjust position so that player is in center front
+    #     (store_sub, reg2, reg0, 1),
+    #     (val_mul, reg2, ":soldier_spacing_neg"),
+    #     (val_div, reg2, 2),
+
+    #     # not sure what 0 here does
+    #     (position_move_x, pos0, reg2, 0),
+    #     (position_move_y, pos0, ":soldier_spacing_neg", 0),
+
+    #     # position indicating start of rank
+    #     (copy_position, pos1, pos0),
+
+    #     # X offset
+    #     (assign, reg2, ":soldier_spacing"),
+
+    #     (try_begin),
+    #         (neg|eq, ":rows", 1),
+    #         (val_mul, reg2, 2),
+    #     (try_end),
+
+    #     # Y offset
+    #     (assign, reg3, ":soldier_spacing_neg"),
+
+    #     # even row X offset
+    #     (assign, reg4, ":soldier_spacing"),
+
+    #     # in rank
+    #     (assign, reg5, 0),
+
+    #     # in row
+    #     (assign, reg6, 1),
+
+    #     (call_script, "script_map_player_unit", ":player", "script_player_unit_form__inner"),
+    # ]),
+    # ("player_unit_form__inner", [
+    #     (store_script_param_1, ":agent"),
+
+    #     # (display_message, "@RANKS: {reg0}"),
+    #     # (display_message, "@RANKS_EVEN: {reg1}"),
+    #     # (display_message, "@X OFFSET: {reg2}"),
+    #     # (display_message, "@Y OFFSET: {reg3}"),
+    #     # (display_message, "@EVEN ROW X OFFSET: {reg4}"),
+    #     # (display_message, "@RANK: {reg5}"),
+    #     # (display_message, "@ROW: {reg5}"),
+    #     # (display_message, "@ODD: {reg5}"),
+
+    #     (val_add, reg5, 1),
+
+    #     (agent_set_scripted_destination, ":agent", pos0, 1),
+    #     # (agent_set_scripted_destination_no_attack, ":agent", pos0, 1),
+
+    #     # (try_begin),
+    #     #    (eq, reg6, 1),
+    #     #    (display_message, "@CROUCHING"),
+    #     #    (agent_ai_set_can_crouch, ":agent", 1),
+    #     #    (agent_set_crouch_mode, ":agent", 1),
+    #     # (else_try),
+    #     (agent_ai_set_can_crouch, ":agent", 0),
+    #     #    # just to be sure
+    #     (agent_set_crouch_mode, ":agent", 0),
+    #     # (try_end),
+
+    #     (store_mod, reg7, reg6, 2),
+    #     (try_begin),
+    #         # even row
+    #         (eq, reg7, 0),
+    #         (eq, reg5, reg1),
+
+    #         (position_move_y, pos1, reg3, 0),
+    #         (copy_position, pos0, pos1),
+
+    #         (assign, reg5, 0),
+    #         (val_add, reg6, 1),
+    #     (else_try),
+    #         # odd row
+    #         (eq, reg5, reg0),
+
+    #         (position_move_y, pos1, reg3, 0),
+    #         (copy_position, pos0, pos1),
+
+    #         # next rank is going to be even
+    #         (position_move_x, pos0, reg4, 0),
+
+    #         (assign, reg5, 0),
+    #         (val_add, reg6, 1),
+    #     (else_try),
+    #         (position_move_x, pos0, reg2, 0),
+    #     (try_end),
+    # ]),
 
     ("commander_battle_setup", [
         (assign, "$player_unit_position_index", 0),
@@ -30600,6 +30707,21 @@ scripts = [
         # (store_script_param_2, ":chat_type"),
 
         (try_begin),
+                (str_starts_with, s0, "@/test"),
+                # TO WORK ON LATER
+                (eq, 1, 0),
+                (try_for_agents, ":agent"),
+                    (agent_is_alive, ":agent"),
+                    (agent_is_human, ":agent"),
+                    (agent_get_player_id, ":player_id", ":agent"),
+                    (assign, reg0, ":player_id"),
+
+                    (eq, ":player_id", -1),
+                    (agent_ai_set_can_crouch, ":agent", 1),
+                    #(agent_set_crouch_mode, ":agent", 1),
+                    (agent_set_animation, ":agent", "anim_stand_to_crouch"),
+                (try_end),
+        (else_try),
                 (str_starts_with, s0, "@/commander"),
 
                 (str_split, reg0, s1, s0, "@ ", 1),
@@ -30812,13 +30934,27 @@ scripts = [
     ("commander_battle_create_v_menu", [
         (store_script_param_1, ":player"),
 
+        (display_message, "@NIGGER"),
+
         (try_begin),
                 (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
-                (str_store_string, s61, "@1 Disable manual rotation^2 Reform^3 Checkerboard"),
+                (str_store_string, s0, "@Disable"),
         (else_try),
-                (str_store_string, s61, "@1 Enable manual rotation^2 Reform^3 Checkerboard"),
+                (str_store_string, s0, "@Enable"),
         (try_end),
-        (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", v_menu_flag, 3),
+
+        (try_begin),
+                (player_get_slot, ":checkerboard", ":player", slot_player_unit_checkerboard),
+                (eq, ":checkerboard", 1),
+                (str_store_string, s1, "@Disable"),
+        (else_try),
+               (str_store_string, s1, "@Enable"),
+        (try_end),
+
+        (display_message, "@NIGGER2"),
+
+        (str_store_string, s61, "@1 {s0} manual rotation^2 Fill gaps^3 {s1} Checkerboard^4 Form here"),
+        (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", v_menu_flag, 4),
     ]),
 
     ("commander_battle_v_menu_interact", [
@@ -30826,33 +30962,55 @@ scripts = [
         (store_script_param_2, ":number_key"),
 
         (try_begin),
-                (eq, ":number_key", custom_order_menu_key_1),
+            (player_is_active, ":player"),
 
-                (try_begin),
-                    (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
-                    (call_script, "script_player_unit_disable_rotation_mode", ":player"),
+            (player_get_agent_id, ":player_agent", ":player"),
+            (agent_is_alive, ":player_agent"),
 
-                    (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is OFF"),
-                (else_try),
-                    (call_script, "script_player_unit_enable_rotation_mode", ":player"),
+            (try_begin),
+                    (eq, ":number_key", custom_order_menu_key_1),
 
-                    (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is ON"),
-                (try_end),
-        (else_try),
-                (eq, ":number_key", custom_order_menu_key_2),
+                    (try_begin),
+                        (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
+                        (call_script, "script_player_unit_disable_rotation_mode", ":player"),
 
-                (call_script, "script_player_unit_get_rotation_mode", ":player"),
+                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is OFF"),
+                    (else_try),
+                        (call_script, "script_player_unit_enable_rotation_mode", ":player"),
 
-                (try_begin),
-                    (eq, reg0, 1),
+                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation is ON"),
+                    (try_end),
+            (else_try),
+                    (eq, ":number_key", custom_order_menu_key_2),
+
+                    (call_script, "script_player_unit_get_rotation_mode", ":player"),
+
+                    (try_begin),
+                        (eq, reg0, 1),
+                        (call_script, "script_player_unit_form", ":player"),
+                    (else_try),
+                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation not enabled"),
+                    (try_end),
+            (else_try),
+                    (eq, ":number_key", custom_order_menu_key_3),
+
+                    (player_get_slot, ":checkerboard", ":player", slot_player_unit_checkerboard),
+                    (val_xor, ":checkerboard", 1),
+                    (player_set_slot, ":player", slot_player_unit_checkerboard, ":checkerboard"),
+
+                    (try_begin),
+                            (eq, ":checkerboard", 1),
+                            (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
+
+                            (call_script, "script_player_unit_form", ":player"),
+                    (try_end),
+            (else_try),
+                    (eq, ":number_key", custom_order_menu_key_4),
+
+                    (agent_get_position, pos0, ":player_agent"),
+                    (call_script, "script_player_unit_set_position", ":player"),
                     (call_script, "script_player_unit_form", ":player"),
-                (else_try),
-                    (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation not enabled"),
-                (try_end),
-        (else_try),
-                (eq, ":number_key", custom_order_menu_key_3),
-
-                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@To be implemented"),
+            (try_end),
         (try_end),
     ]),
 
@@ -30889,6 +31047,10 @@ scripts = [
             (player_get_team_no, ":team", ":player"),
             (try_for_players, ":player"),
                 (player_is_active, ":player"),
+
+                (player_get_agent_id, ":player_agent", ":player"),
+                (agent_is_alive, ":player_agent"),
+
                 (player_get_team_no, ":player_team", ":player"),
                 (eq, ":player_team", ":team"),
 
@@ -30912,7 +31074,7 @@ scripts = [
         # (dict_set_int, ":unit_data", unit_rows, 2),
         # (dict_set_int, ":unit_data", unit_spacing, 100),
         # (dict_set_int, ":unit_data", unit_rotation_mode, 1),
-        # (dict_set_int, ":unit_data", unit_status, status_moving),
+        # (dict_set_int, ":unit_data", unit_status, status_following),
 
         # (player_set_slot, ":player", slot_player_unit_position, pos0),
         # RETARDED NONSENSE REMOVE LATER
@@ -30956,9 +31118,10 @@ scripts = [
         (player_set_slot, ":player", slot_player_unit_position_set_p, 0),
         (player_set_slot, ":player", slot_player_unit_ranks, 0),
         (player_set_slot, ":player", slot_player_unit_rows, 2),
-        (player_set_slot, ":player", slot_player_unit_spacing, 100),
-        (player_set_slot, ":player", slot_player_unit_rotation_mode, 0),
+        (player_set_slot, ":player", slot_player_unit_spacing, unit_default_spacing),
+        (player_set_slot, ":player", slot_player_unit_rotation_mode, 1),
         (player_set_slot, ":player", slot_player_unit_status, status_moving),
+        (player_set_slot, ":player", slot_player_unit_checkerboard, 1),
 
         # (player_get_slot, reg0, ":player", slot_player_unit_position_set_p),
         # (display_message, "@POSITIONP {reg0}"),
@@ -31138,7 +31301,8 @@ scripts = [
         (player_get_slot, ":spacing", ":player", slot_player_unit_spacing),
 
         (try_begin),
-            (neq|eq, ":spacing", 100),
+            (gt, ":spacing", 100),
+            (display_message, "@CANNOT DECREASE"),
             (val_sub, ":spacing", 100),
             (player_set_slot, ":player", slot_player_unit_spacing, ":spacing"),
         (try_end),

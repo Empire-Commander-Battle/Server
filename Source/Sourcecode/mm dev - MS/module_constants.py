@@ -68,6 +68,7 @@ slot_agent_god_mode               = 35 #patch1115 54/14
 
 slot_agent_last_rotz              = 36
 slot_agent_last_speed_same_count  = 37
+slot_agent_crouching = 38
 
 ########################################################
 ##  FACTION SLOTS          #############################
@@ -175,6 +176,7 @@ slot_player_unit_status = 57
 # RETARDED NONSENSE REMOVE LATER
 slot_player_unit_position_set_p = 58
 slot_player_unit_position_index = 59
+slot_player_unit_checkerboard = 59
 
 slot_player_is_commander = 60
 
@@ -1122,7 +1124,8 @@ randomer_const_m1_sub1 = 2147483646
 
 # STATUS
 status_holding = 0
-status_moving = 1
+status_charging = 1
+status_following = 2
 
 # MENUS
 v_menu_flag = 42
@@ -1132,3 +1135,5 @@ b_menu_flag = 43
 # reserve another 13 as 13*8 = 104 ie 1st above 100 which is max number of players that we assume
 #pick_player_submenu_flag_start = 46
 #pick_player_submenu_flag_end = 59
+
+unit_default_spacing = 250

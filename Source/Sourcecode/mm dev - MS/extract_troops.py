@@ -19,17 +19,21 @@ OUTFILE = args.outfile
 
 # MAIN
 
+troop_id = 0
 troop_name = 1
+troop_reserved = 5
+troop_faction = 6
 troop_attribs = 8
 troop_profs = 9
 troop_skills = 10
-troop_faction = 6
 
 str_bits = 0
 agi_bits = 8
 int_bits = 16
 cha_bits = 24
 
+# ironflesh to start since it is the most important one
+ironflesh_bits = int(math.log(knows_ironflesh_1, 2))
 trade_bits = int(math.log(knows_trade_1, 2))
 leadership_bits = int(math.log(knows_leadership_1, 2))
 prisoner_management_bits = int(math.log(knows_prisoner_management_1, 2))
@@ -50,11 +54,10 @@ athletics_bits = int(math.log(knows_athletics_1, 2))
 shield_bits = int(math.log(knows_shield_1, 2))
 weapon_master_bits = int(math.log(knows_weapon_master_1, 2))
 power_draw_bits = int(math.log(knows_power_draw_1, 2))
-ironflesh_bits = int(math.log(knows_ironflesh_1, 2))
 
 skills_bits = [
+    ironflesh_bits,
     trade_bits,
-    leadership_bits,
     leadership_bits,
     prisoner_management_bits,
     persuasion_bits,
@@ -74,12 +77,11 @@ skills_bits = [
     shield_bits,
     weapon_master_bits,
     power_draw_bits,
-    ironflesh_bits
 ]
 
 skills_names = [
+    'ironflesh',
     'trade',
-    'leadership',
     'leadership',
     'prisoner_management',
     'persuasion',
@@ -99,7 +101,6 @@ skills_names = [
     'shield',
     'weapon_master',
     'power_draw',
-    'ironflesh'
 ]
 
 def get_attrb(attribs, bits):
@@ -109,15 +110,15 @@ def get_wep_prof(profs, bits):
     return (profs >> bits) & 0x3FF
 
 def get_skill(skills, bits):
-    return int(skills >> bits) & 0xFF
+    return int(skills >> bits) & 0xF
 
 faction_whitelist = {
-    fac_british_ranks: 'Britain',
-    fac_rhine_ranks: 'Rhine',
-    fac_russian_ranks: 'Russia',
-    fac_prussian_ranks: 'Prussia',
-    fac_austrian_ranks: 'Austria',
-    fac_french_ranks: 'France'
+    fac_britain: 'Britain',
+    fac_rhine: 'Rhine',
+    fac_russia: 'Russia',
+    fac_prussia: 'Prussia',
+    fac_austria: 'Austria',
+    fac_france: 'France'
 }
 
 with open(OUTFILE, 'w+') as csvfile:
@@ -139,6 +140,15 @@ with open(OUTFILE, 'w+') as csvfile:
 
     for troop in troops:
         if troop[troop_faction] not in faction_whitelist:
+            continue
+
+        if troop[troop_id][-2:] == 'ai':
+            continue
+
+        if troop[troop_reserved] != 0:
+            continue
+
+        if '!' in troop[troop_name]:
             continue
 
         row = [troop[troop_name]]

@@ -9617,7 +9617,7 @@ mission_templates = [
             (eq, ":order", mordr_charge),
 
             (call_script, "script_player_unit_clear_scripted_mode", ":player"),
-            (call_script, "script_player_unit_set_status", ":player", status_moving),
+            (call_script, "script_player_unit_set_status", ":player", status_charging),
 
             (team_give_order, ":player", grc_everyone, mordr_use_melee_weapons),
             (set_show_messages, 1),
@@ -9625,7 +9625,7 @@ mission_templates = [
             (eq, ":order", mordr_follow),
 
             (call_script, "script_player_unit_clear_scripted_mode", ":player"),
-            (call_script, "script_player_unit_set_status", ":player", status_moving),
+            (call_script, "script_player_unit_set_status", ":player", status_following),
            (else_try),
             (eq, ":order", mordr_hold),
 
@@ -9673,6 +9673,9 @@ mission_templates = [
             (try_begin),
                 (eq, "$g_no_line_inf_spread", 1),
 
+                (player_get_slot, ":spacing", ":player", slot_player_unit_spacing),
+                (ge, ":spacing", unit_default_spacing),
+
                 (agent_get_troop_id, ":player_troop_id", ":player_agent"),
                 (troop_get_slot, ":class", ":player_troop_id", slot_troop_class_type),
                 (this_or_next|eq, ":class", multi_troop_class_mm_infantry),
@@ -9699,6 +9702,7 @@ mission_templates = [
             (try_end),
            (else_try),
             (eq, ":order", mordr_stand_closer),
+
             (call_script, "script_player_unit_decrease_spacing", ":player"),
 
              # result in reg0
