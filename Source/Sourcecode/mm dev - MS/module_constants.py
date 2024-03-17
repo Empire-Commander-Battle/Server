@@ -1122,4 +1122,4 @@ b_menu_flag = 43
 #pick_player_submenu_flag_start = 46
 #pick_player_submenu_flag_end = 59
 
-unit_default_spacing = 200
+unit_default_spacing = 100

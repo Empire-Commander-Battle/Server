@@ -230,7 +230,7 @@ function iter_player_unit(player)
 			game.agent_is_non_player(agent)
 		 then
 
-			local group = game.agent_get_group(agent)
+			local group = game.agent_get_group(0, agent)
 			if group ~= player then
 			   goto cont
 			end
@@ -317,13 +317,13 @@ end
 
 function playerUnitIncreaseSpacing(player)
    spacing = player_unit_data[player].spacing
-   player_unit_data[player].spacing = spacing + 100
+   player_unit_data[player].spacing = spacing + 50
 end
 
 function playerUnitDecreaseSpacing(player)
    if player_unit_data[player].spacing >= 100 then
 	  spacing = player_unit_data[player].spacing
-	  player_unit_data[player].spacing = spacing - 100
+	  player_unit_data[player].spacing = spacing - 50
    end
 end
 
