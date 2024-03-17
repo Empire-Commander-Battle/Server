@@ -166,20 +166,6 @@ slot_player_formation_change              = 49
 slot_player_formation_change_2              = 50
 slot_player_bot_order              = 51
 
-## CUSTOM PLAYER SLOTS
-slot_player_unit_position = 52
-slot_player_unit_ranks = 53
-slot_player_unit_rows = 54
-slot_player_unit_spacing = 55
-slot_player_unit_rotation_mode = 56
-slot_player_unit_status = 57
-# RETARDED NONSENSE REMOVE LATER
-slot_player_unit_position_set_p = 58
-slot_player_unit_position_index = 59
-slot_player_unit_checkerboard = 59
-
-slot_player_is_commander = 60
-
 ########################################################
 ##  TEAM SLOTS             #############################
 ########################################################
@@ -1136,4 +1122,4 @@ b_menu_flag = 43
 #pick_player_submenu_flag_start = 46
 #pick_player_submenu_flag_end = 59
 
-unit_default_spacing = 250
+unit_default_spacing = 200

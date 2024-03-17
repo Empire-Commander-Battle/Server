@@ -30456,227 +30456,11 @@ scripts = [
         (try_end),
     ]),
 
-    # ("player_unit_form", [
-    #     (store_script_param_1, ":player"),
-
-    #     # result is stored in pos0
-    #     (call_script, "script_player_unit_get_position", ":player"),
-
-    #     (call_script, "script_player_unit_get_spacing", ":player"),
-    #     (assign, ":soldier_spacing", reg0),
-
-    #     (val_mul, reg0, -1),
-    #     (assign, ":soldier_spacing_neg", reg0),
-
-    #     # fp0 is x, fp1 is y
-    #     (fld_pos_x, fp0, pos0),
-    #     (fld_pos_y, fp1, pos0),
-
-    #     # fp2 is angle
-    #     (position_get_rotation_around_z, reg0, pos0),
-    #     (fld, fp2, reg0),
-
-    #     # pos1 is center
-    #     (copy_position, pos1, pos0),
-    #     (position_move_y, pos1, ":soldier_spacing_neg"),
-
-    #     # fp5 is center.x, fp6 is center.y
-    #     (fld_pos_x, fp5, pos1),
-    #     (fld_pos_y, fp6, pos1),
-
-    #     # fp7 is A, fp8 is B
-    #     (fsub, fp7, fp6, fp1),
-    #     (fsub, fp8, fp0, fp5),
-
-    #     # fp9 is A^2, fp10 is B^2 fp11 is A*B fp12 is A^2 + B^2
-    #     (fmul, fp9, fp7, fp7),
-    #     (fmul, fp10, fp8, fp8),
-    #     (fmul, fp11, fp8, fp7),
-    #     (fadd, fp12, fp9, fp10),
-
-    #     (call_script, "script_map_player_unit", ":player", "script_player_unit_form__inner"),
-    # ]),
-
-    # ("player_unit_form__inner", [
-    #     (store_script_param_1, ":agent"),
-
-    #     (agent_get_position, pos2, ":agent"),
-
-    #     # fp13 is x, fp14 is y
-    #     (fld_pos_x, fp13, pos2),
-    #     (fld_pos_y, fp14, pos2),
-
-    #     # fp15 is projected.x
-    #     (fmul, fp15, fp9, fp13),
-
-    #     (fmul, fp16, fp10, fp5),
-    #     (fadd, fp15, fp15, fp16),
-
-    #     (fsub, fp16, fp14, fp6),
-    #     (fmul, fp16, fp11, fp17),
-    #     (fadd, fp15, fp15, fp16),
-
-    #     (fdiv, fp15, fp12),
-
-    #     # fp16 is projected.y
-    #     (fmul, fp16, fp9, fp6),
-
-    #     (fmul, fp17, fp10, fp14),
-    #     (fadd, fp16, fp16, fp17),
-
-    #     (fsub, fp17, fp13, fp5),
-    #     (fmul, fp17, fp11, fp17),
-    #     (fadd, fp16, fp16, fp17),
-
-    #     (fdiv, fp16, fp12),
-
-    #     # fp17 is projected.x - pos.x
-    #     (fsub, fp17, fp15, fp5),
-    #     (fst, reg1, fp17),
-
-    #     # fp18 is projected.y - pos.y
-    #     (fsub, fp18, fp16, fp6),
-    #     (fst, reg2, fp18),
-
-    #     (fld, fp19, 10),
-    #     (fdiv, fp19, fp19, 2),
-    #     (fdiv, fp19, fp19, 0),
-
-    #     (fst, reg3, fp19),
-
-    #     (display_message, "@TEST {reg3}"),
-
-    #     (display_message, "@X {reg1} Y {reg2}"),
-
-    #     (copy_position, pos3, pos1),
-
-    #     (position_move_x, pos3, reg1, 1),
-    #     (position_move_y, pos3, reg2, 1),
-
-    #     (agent_set_scripted_destination, ":agent", pos3, 1),
-    # ]),
-
-    # ("player_unit_form", [
-    #     (store_script_param_1, ":player"),
-
-    #     # result is stored in reg0
-    #     (call_script, "script_player_unit_get_spacing", ":player"),
-    #     (display_message, "@SPACING {reg0}"),
-
-    #     (assign, ":soldier_spacing", reg0),
-    #     (store_mul, ":soldier_spacing_neg", ":soldier_spacing", -1),
-
-    #     # result is stored in pos0
-    #     (call_script, "script_player_unit_get_position", ":player"),
-
-    #     # result is stored in reg0
-    #     (call_script, "script_player_unit_get_rows", ":player"),
-    #     (assign, ":rows", reg0),
-
-    #     # result is stored in reg0
-    #     (call_script, "script_player_unit_troops_no", ":player"),
-
-    #     # result is stored in reg0
-    #     (call_script, "script_rows_to_ranks", ":rows", reg0),
-
-    #     # ranks -1 "cached"
-    #     (store_sub, reg1, reg0, 1),
-
-    #     # adjust position so that player is in center front
-    #     (store_sub, reg2, reg0, 1),
-    #     (val_mul, reg2, ":soldier_spacing_neg"),
-    #     (val_div, reg2, 2),
-
-    #     # not sure what 0 here does
-    #     (position_move_x, pos0, reg2, 0),
-    #     (position_move_y, pos0, ":soldier_spacing_neg", 0),
-
-    #     # position indicating start of rank
-    #     (copy_position, pos1, pos0),
-
-    #     # X offset
-    #     (assign, reg2, ":soldier_spacing"),
-
-    #     (try_begin),
-    #         (neg|eq, ":rows", 1),
-    #         (val_mul, reg2, 2),
-    #     (try_end),
-
-    #     # Y offset
-    #     (assign, reg3, ":soldier_spacing_neg"),
-
-    #     # even row X offset
-    #     (assign, reg4, ":soldier_spacing"),
-
-    #     # in rank
-    #     (assign, reg5, 0),
-
-    #     # in row
-    #     (assign, reg6, 1),
-
-    #     (call_script, "script_map_player_unit", ":player", "script_player_unit_form__inner"),
-    # ]),
-    # ("player_unit_form__inner", [
-    #     (store_script_param_1, ":agent"),
-
-    #     # (display_message, "@RANKS: {reg0}"),
-    #     # (display_message, "@RANKS_EVEN: {reg1}"),
-    #     # (display_message, "@X OFFSET: {reg2}"),
-    #     # (display_message, "@Y OFFSET: {reg3}"),
-    #     # (display_message, "@EVEN ROW X OFFSET: {reg4}"),
-    #     # (display_message, "@RANK: {reg5}"),
-    #     # (display_message, "@ROW: {reg5}"),
-    #     # (display_message, "@ODD: {reg5}"),
-
-    #     (val_add, reg5, 1),
-
-    #     (agent_set_scripted_destination, ":agent", pos0, 1),
-    #     # (agent_set_scripted_destination_no_attack, ":agent", pos0, 1),
-
-    #     # (try_begin),
-    #     #    (eq, reg6, 1),
-    #     #    (display_message, "@CROUCHING"),
-    #     #    (agent_ai_set_can_crouch, ":agent", 1),
-    #     #    (agent_set_crouch_mode, ":agent", 1),
-    #     # (else_try),
-    #     (agent_ai_set_can_crouch, ":agent", 0),
-    #     #    # just to be sure
-    #     (agent_set_crouch_mode, ":agent", 0),
-    #     # (try_end),
-
-    #     (store_mod, reg7, reg6, 2),
-    #     (try_begin),
-    #         # even row
-    #         (eq, reg7, 0),
-    #         (eq, reg5, reg1),
-
-    #         (position_move_y, pos1, reg3, 0),
-    #         (copy_position, pos0, pos1),
-
-    #         (assign, reg5, 0),
-    #         (val_add, reg6, 1),
-    #     (else_try),
-    #         # odd row
-    #         (eq, reg5, reg0),
-
-    #         (position_move_y, pos1, reg3, 0),
-    #         (copy_position, pos0, pos1),
-
-    #         # next rank is going to be even
-    #         (position_move_x, pos0, reg4, 0),
-
-    #         (assign, reg5, 0),
-    #         (val_add, reg6, 1),
-    #     (else_try),
-    #         (position_move_x, pos0, reg2, 0),
-    #     (try_end),
-    # ]),
-
     ("commander_battle_setup", [
-        (assign, "$player_unit_position_index", 0),
+        # (assign, "$player_unit_position_index", 0),
         # remove 100 later
-        (array_create, "$player_unit_positions", 2, 100),
-        (array_create, "$free_player_unit_positions_indexes", 0, 0),
+        # (array_create, "$player_unit_positions", 2, 100),
+        # (array_create, "$free_player_unit_positions_indexes", 0, 0),
     ]),
 
     # ("commander_battle_round_start", [
@@ -30734,8 +30518,7 @@ scripts = [
 
                                 (assign, ":found_any", 0),
                                 (try_for_players, ":cur_player"),
-                                        (player_get_slot, ":commander", ":cur_player", slot_player_is_commander),
-                                        (eq, ":commander", 1),
+                                        (call_script, "script_cf_player_is_commander", ":cur_player"),
 
                                         (str_store_player_username, s3, ":cur_player"),
 
@@ -30752,15 +30535,17 @@ scripts = [
                                 (str_equals, s2, "@reset"),
 
                                 (try_for_players, ":cur_player"),
-                                        (player_set_slot, ":cur_player", slot_player_is_commander, 0),
+                                        (call_script, "script_player_set_is_commander", ":cur_player", 0),
                                 (try_end),
                         (else_try),
                                 (str_equals, s2, "@resign"),
 
-                                (player_get_slot, ":commander", ":player", slot_player_is_commander),
+                                (call_script, "script_player_get_is_commander", ":player"),
+                                (assign, ":commander", reg0),
+
                                 (try_begin),
                                         (eq, ":commander", 1),
-                                        (player_set_slot, ":player", slot_player_is_commander, 0),
+                                        (call_script, "script_player_set_is_commander", ":player", 0),
                                         (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Resigned from commandership"),
                                 (else_try),
                                         (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Need to be commander to resign from commandership"),
@@ -30780,13 +30565,14 @@ scripts = [
                                                         (str_equals, s3, s4),
                                                         (assign, ":exists", 1),
 
-                                                        (player_get_slot, ":commander", ":cur_player", slot_player_is_commander),
+                                                        (call_script, "script_player_get_is_commander", ":cur_player"),
+                                                        (assign, ":commander", reg0),
 
                                                         (try_begin),
                                                                 (eq, ":commander", 1),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@{s3} is commander already"),
                                                         (else_try),
-                                                                (player_set_slot, ":cur_player", slot_player_is_commander, 1),
+                                                                (call_script, "script_player_set_is_commander", ":cur_player", 1),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Appointed {s3} as commander"),
                                                         (try_end),
                                                 (try_end),
@@ -30816,11 +30602,12 @@ scripts = [
                                                         (str_equals, s3, s4),
                                                         (assign, ":exists", 1),
 
-                                                        (player_get_slot, ":commander", ":cur_player", slot_player_is_commander),
+                                                        (call_script, "script_player_get_is_commander", ":cur_player"),
+                                                        (assign, ":commander", reg0),
 
                                                         (try_begin),
                                                                 (eq, ":commander", 1),
-                                                                (player_set_slot, ":cur_player", slot_player_is_commander, 0),
+                                                                (call_script, "script_player_set_is_commander", ":cur_player", 0),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Demoted player {s3} from commander"),
                                                         (else_try),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Player {s3} isn't commander"),
@@ -30934,8 +30721,6 @@ scripts = [
     ("commander_battle_create_v_menu", [
         (store_script_param_1, ":player"),
 
-        (display_message, "@NIGGER"),
-
         (try_begin),
                 (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
                 (str_store_string, s0, "@Disable"),
@@ -30944,14 +30729,12 @@ scripts = [
         (try_end),
 
         (try_begin),
-                (player_get_slot, ":checkerboard", ":player", slot_player_unit_checkerboard),
-                (eq, ":checkerboard", 1),
+                (call_script, "script_player_unit_get_checkerboard", ":player"),
+                (eq, reg0, 1),
                 (str_store_string, s1, "@Disable"),
         (else_try),
                (str_store_string, s1, "@Enable"),
         (try_end),
-
-        (display_message, "@NIGGER2"),
 
         (str_store_string, s61, "@1 {s0} manual rotation^2 Fill gaps^3 {s1} Checkerboard^4 Form here"),
         (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", v_menu_flag, 4),
@@ -30987,21 +30770,35 @@ scripts = [
 
                     (try_begin),
                         (eq, reg0, 1),
-                        (call_script, "script_player_unit_form", ":player"),
+
+                        (try_begin),
+                                (call_script, "script_cf_player_unit_try_holding", ":player"),
+
+                                (call_script, "script_player_unit_form", ":player"),
+                        (try_end),
                     (else_try),
                         (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Manual rotation not enabled"),
                     (try_end),
             (else_try),
                     (eq, ":number_key", custom_order_menu_key_3),
 
-                    (player_get_slot, ":checkerboard", ":player", slot_player_unit_checkerboard),
-                    (val_xor, ":checkerboard", 1),
-                    (player_set_slot, ":player", slot_player_unit_checkerboard, ":checkerboard"),
+                    (call_script, "script_player_unit_get_checkerboard", ":player"),
+                    (assign, ":checkerboard", reg0),
 
                     (try_begin),
-                            (eq, ":checkerboard", 1),
+                        (eq, ":checkerboard", 0),
+
+                        (call_script, "script_player_unit_set_checkerboard", ":player", 1),
+                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Enabled checkerboard"),
+                    (else_try),
+                        (call_script, "script_player_unit_set_checkerboard", ":player", 0),
+                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Disabled checkerboard"),
+                    (try_end),
+
+                    (try_begin),
                             (call_script, "script_cf_player_unit_try_rotation_mode", ":player"),
 
+                            (call_script, "script_player_unit_set_status", ":player", status_holding),
                             (call_script, "script_player_unit_form", ":player"),
                     (try_end),
             (else_try),
@@ -31014,33 +30811,19 @@ scripts = [
         (try_end),
     ]),
 
-    # ("commander_battle_create_b_menu", [
-    #     (store_script_param_1, ":player"),
-
-    #     (try_begin),
-    #             (player_is_admin, ":player"),
-
-    #             (str_store_string, s61, "@1 Appoint Commander"),
-    #             (call_script, "script_multiplayer_agent_create_custom_order_menu", ":player", b_menu_flag, 1),
-    #     (try_end),
-    # ]),
-
-    # ("commander_battle_b_menu_interact", [
-    #     (store_script_param_1, ":player"),
-    #     (store_script_param_1, ":number_key"),
-
-    #     (try_begin),
-    #             (eq, ":number_key", custom_order_menu_key_1),
-    #     (try_end),
-    # ]),
-
     ("commander_chat", [
         (store_script_param_1, ":player"),
 
-        # result in reg0
-        (player_get_slot, ":commander", ":player", slot_player_is_commander),
         (try_begin),
-            (eq, ":commander", 1),
+            (call_script, "script_cf_player_is_commander", ":player"),
+
+            (player_get_agent_id, ":player_agent", ":player"),
+
+            (assign, ":alive", 0),
+            (try_begin),
+                (agent_is_alive, ":player_agent"),
+                (assign, ":alive", 1),
+            (try_end),
 
             (str_store_player_username, s1, ":player"),
 
@@ -31048,13 +30831,22 @@ scripts = [
             (try_for_players, ":player"),
                 (player_is_active, ":player"),
 
-                (player_get_agent_id, ":player_agent", ":player"),
-                (agent_is_alive, ":player_agent"),
-
                 (player_get_team_no, ":player_team", ":player"),
                 (eq, ":player_team", ":team"),
 
-                (multiplayer_send_string_to_player, ":player", multiplayer_event_return_admin_chat, "@{s1}: {s0}"),
+                (player_get_agent_id, ":player_agent", ":player"),
+
+                (try_begin),
+                        (eq, ":alive", 0),
+                        (neq|agent_is_alive, ":player_agent"),
+
+                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_admin_chat, "@{s1}: {s0}"),
+                (else_try),
+                        (eq, ":alive", 1),
+                        (agent_is_alive, ":player_agent"),
+
+                        (multiplayer_send_string_to_player, ":player", multiplayer_event_return_admin_chat, "@{s1}: {s0}"),
+                (try_end),
                 # (multiplayer_send_3_int_to_player, ":player", multiplayer_event_return_mod_variable, mod_variable_custom_string_troop_id, "trp_custom_string_1", 0), #message 1: troop id for which string will be set in next message
                 # (multiplayer_send_string_to_player, ":player", multiplayer_event_return_custom_string, "@{s0}"), #message 2: set string
                 # (multiplayer_send_3_int_to_player, ":player", multiplayer_event_show_multiplayer_message, multiplayer_message_type_message_custom_color, "trp_custom_string_1", 0xF0000),
@@ -31067,101 +30859,40 @@ scripts = [
     ("new_player_unit_data", [
         (store_script_param_1, ":player"),
 
-        # (dict_create, ":unit_data"),
-
-        # (dict_set_pos, ":unit_data", unit_position, pos0),
-        # (dict_set_int, ":unit_data", unit_ranks, 0),
-        # (dict_set_int, ":unit_data", unit_rows, 2),
-        # (dict_set_int, ":unit_data", unit_spacing, 100),
-        # (dict_set_int, ":unit_data", unit_rotation_mode, 1),
-        # (dict_set_int, ":unit_data", unit_status, status_following),
-
-        # (player_set_slot, ":player", slot_player_unit_position, pos0),
-        # RETARDED NONSENSE REMOVE LATER
-
         (try_begin),
-            (array_get_dim_size, reg0, "$free_player_unit_positions_indexes", 0),
-            (eq, reg0, 0),
-            (player_set_slot, ":player", slot_player_unit_position_index, "$player_unit_position_index"),
-            (val_add, "$player_unit_position_index", 1),
-        (else_try),
-            (array_pop, reg0, "$free_player_unit_positions_indexes"),
-            (player_set_slot, ":player", slot_player_unit_position_index, reg0),
+                (lua_push_int, ":player"),
+                (lua_call, "@newPlayerUnitData", 1),
         (try_end),
-
-        # Here so that it is't reseted each round
-        (player_set_slot, ":player", slot_player_is_commander, 0),
-
-        (call_script, "script_player_unit_data_set_defaults", ":player"),
-
     ]),
 
     ("free_player_unit_data", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, ":index", ":player", slot_player_unit_position_index),
         (try_begin),
-            (store_add, ":index_plus", ":index", 1),
-            (eq, ":index_plus", "$player_unit_position_index"),
-            (val_sub, "$player_unit_position_index", 1),
-        (else_try),
-            (array_push, "$free_player_unit_positions_indexes", ":index"),
-        (end_try),
+                (lua_push_int, ":player"),
+                (lua_call, "@freePlayerUnitData", 1),
+        (try_end),
+
     ]),
 
     ("player_unit_data_set_defaults", [
         (store_script_param_1, ":player"),
 
-        (assign, reg0, ":player"),
-        (display_message, "@Reseting data for player {reg0}"),
-
-        (player_set_slot, ":player", slot_player_unit_position_set_p, 0),
-        (player_set_slot, ":player", slot_player_unit_ranks, 0),
-        (player_set_slot, ":player", slot_player_unit_rows, 2),
-        (player_set_slot, ":player", slot_player_unit_spacing, unit_default_spacing),
-        (player_set_slot, ":player", slot_player_unit_rotation_mode, 1),
-        (player_set_slot, ":player", slot_player_unit_status, status_moving),
-        (player_set_slot, ":player", slot_player_unit_checkerboard, 1),
-
-        # (player_get_slot, reg0, ":player", slot_player_unit_position_set_p),
-        # (display_message, "@POSITIONP {reg0}"),
-        # (player_get_slot, reg0, ":player", slot_player_unit_ranks),
-        # (display_message, "@RANKS {reg0}"),
-        # (player_get_slot, reg0, ":player", slot_player_unit_rows),
-        # (display_message, "@ROWS {reg0}"),
-        # (player_get_slot, reg0, ":player", slot_player_unit_spacing),
-        # (display_message, "@SPACING {reg0}"),
-        # (player_get_slot, reg0, ":player", slot_player_unit_status),
-        # (display_message, "@STATUS {reg0}"),
-
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitDataSetDefaults", 1),
+        (try_end),
     ]),
-
-    # # result in reg0
-    # ("get_class_data", [
-    #     (store_script_param_1, ":player"),
-
-    #     (call_script, "script_get_selected_class", ":player"),
-    #     (assign, ":selected_class", reg0),
-
-    #     (dict_get_int, ":player_data", "$player_data_dict", ":player"),
-    #     (array_get_val, reg0, ":player_data", ":selected_class"),
-    # ]),
 
     # pos0 is position argument
     ("player_unit_set_position", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, ":index", ":player", slot_player_unit_position_index),
-        (array_set_val, "$player_unit_positions", pos0, ":index"),
-
-        # (player_set_slot, ":player", slot_player_unit_position, pos0),
-        # (player_set_slot, ":player", slot_player_unit_position_set_p, 1),
-
-        ### (lua_push_int, ":player"),
-        ### (lua_call, "@player_unit_set_position", 1),
-
-        ## (dict_get_int, ":unit_data", "$player_unit_data_dict", ":player"),
-        ## (dict_set_pos, ":unit_data", unit_position, pos0),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_push_pos, pos0),
+                (lua_call, "@playerUnitSetPosition", 2),
+        (try_end),
 
     ]),
 
@@ -31169,203 +30900,214 @@ scripts = [
     ("player_unit_get_position", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, ":index", ":player", slot_player_unit_position_index),
-        (array_get_val, pos0, "$player_unit_positions", ":index"),
-   ]),
-
-    # store result in reg0
-    ("rows_to_ranks", [
-        (store_script_param_1, ":rows"),
-        # :troops_no
-        (store_script_param_2, reg0),
-
-        # troop_no <= ranks*rows - floor(rows/2)
-        # troop_no + floor(rows/2) <= ranks*rows
-        # ranks >= (troop_no + floor(rows/2))/rows
-
-        (store_div, reg1, ":rows", 2),
-        (val_add, reg0, reg1),
-
-        # Ceiling division
-        (val_add, reg0, ":rows"),
-        (val_sub, reg0, 1),
-        (val_div, reg0, ":rows"),
-    ]),
-
-    # store result in reg0
-    ("ranks_to_rows", [
-        (store_script_param_1, ":ranks"),
-        # :troops_no
-        (store_script_param_2, reg0),
-
-        # troop_no <= ranks*rows - floor(rows/2)
-        # 1st options rows % 2 == 0
-        # troop_no <= rows*(ranks - 1/2)
-        # troop_no/(ranks - 1/2) <= rows
-
-        # 2nd option rows % 2 == 1
-        # troop_no <= rows*(ranks - 1/2) + 1/2
-        # (troop_no - 1/2)/(ranks - 1/2) <= rows
-
-        (val_mul, reg0, 2),
-        (val_sub, reg0, 1),
-
-        (val_mul, ":ranks", 2),
-        (val_sub, ":ranks", 1),
-
-        # Ceiling division
-        (val_add, reg0, ":ranks"),
-        (val_sub, reg0, 1),
-        (val_div, reg0, ":ranks"),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitGetPosition", 1),
+        (try_end),
     ]),
 
     ("player_unit_set_rows", [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":rows"),
 
-        (player_set_slot, ":player", slot_player_unit_rows, ":rows"),
-        (player_set_slot, ":player", slot_player_unit_ranks, 0),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_push_int, ":rows"),
+                (lua_call, "@playerUnitSetRows", 2),
+        (try_end),
     ]),
 
     # store result in reg0
     ("player_unit_get_rows", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, reg0, ":player", slot_player_unit_rows),
-
         (try_begin),
-            (eq, reg0, 0),
-
-            # store result in reg0
-            (call_script, "script_player_unit_troops_no", ":player"),
-
-            (player_get_slot, ":ranks", slot_player_unit_ranks),
-            #store result in reg 0
-            (call_script, "script_ranks_to_rows", ":ranks", reg0),
-        (end_try)
-    ]),
-
-    ("player_unit_set_ranks", [
-        (store_script_param_1, ":player"),
-        (store_script_param_2, ":ranks"),
-
-        (player_set_slot, ":player", slot_player_unit_ranks, ":ranks"),
-        (player_set_slot, ":player", slot_player_unit_rows, 0),
-
-    ]),
-
-    # store result in reg0
-    ("player_unit_get_ranks", [
-        (store_script_param_1, ":player"),
-
-        (player_get_slot, reg0, ":player", slot_player_unit_ranks),
-
-        (try_begin),
-            (eq, reg0, 0),
-
-            # store result in reg0
-            (call_script, "script_player_unit_troops_no", ":player"),
-
-            (player_get_slot, ":rows", ":player", slot_player_unit_rows),
-            #store result in reg0
-            (call_script, "script_rows_to_ranks", ":rows", reg0),
-        (end_try),
-    ]),
-
-
-    # store result in reg0
-    ("player_unit_get_spacing", [
-        (store_script_param_1, ":player"),
-
-        (player_get_slot, reg0, ":player", slot_player_unit_spacing),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitGetRows", 1),
+        (try_end),
     ]),
 
     ("player_unit_set_spacing", [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":spacing"),
 
-        (player_set_slot, ":player", slot_player_unit_spacing, ":spacing"),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_push_int, ":spacing"),
+                (lua_call, "@playerUnitSetSpacing", 2),
+        (try_end),
+
+    ]),
+
+    # store result in reg0
+    ("player_unit_get_spacing", [
+        (store_script_param_1, ":player"),
+
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitGetSpacing", 1),
+        (try_end),
     ]),
 
     ("player_unit_increase_spacing", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, ":spacing", ":player", slot_player_unit_spacing),
-        (val_add, ":spacing", 100),
-        (player_set_slot, ":player", slot_player_unit_spacing, ":spacing"),
-    ]),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitIncreaseSpacing", 1),
+        (try_end),
+   ]),
 
     ("player_unit_decrease_spacing", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, ":spacing", ":player", slot_player_unit_spacing),
-
         (try_begin),
-            (gt, ":spacing", 100),
-            (display_message, "@CANNOT DECREASE"),
-            (val_sub, ":spacing", 100),
-            (player_set_slot, ":player", slot_player_unit_spacing, ":spacing"),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitDecreaseSpacing", 1),
         (try_end),
     ]),
 
     ("player_unit_disable_rotation_mode", [
         (store_script_param_1, ":player"),
 
-        (player_set_slot, ":player", slot_player_unit_rotation_mode, 0),
+        (assign, reg0, ":player"),
+        (display_message, "@NIGGER {reg0}"),
 
-        # (call_script, "script_player_unit_clear_scripted_mode", ":player"),
-
-        ## (lua_push_int, ":player"),
-        ## (lua_call, "@pu_disable_rotation_mode", 1),
-        ## (lua_pop, 1),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitDisableRotationMode", 1),
+        (try_end),
     ]),
 
     ("player_unit_enable_rotation_mode", [
         (store_script_param_1, ":player"),
 
-        (player_set_slot, ":player", slot_player_unit_rotation_mode, 1),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitEnableRotationMode", 1),
+        (try_end),
    ]),
 
     ("player_unit_set_rotation_mode", [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":rotation_mode"),
 
-        (player_set_slot, ":player", slot_player_unit_rotation_mode, ":rotation_mode"),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_push_int, ":rotation_mode"),
+                (lua_call, "@playerUnitSetRotationMode", 2),
+        (try_end),
     ]),
 
     # result in reg0
     ("player_unit_get_rotation_mode", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, reg0, ":player", slot_player_unit_rotation_mode),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitGetRotationMode", 1),
+        (try_end),
     ]),
 
     ("cf_player_unit_try_rotation_mode", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, ":rotation", ":player", slot_player_unit_rotation_mode),
-
-        (eq, ":rotation", 1),
+        (call_script, "script_player_unit_get_rotation_mode", ":player"),
+        (eq, reg0, 1),
     ]),
 
     ("player_unit_set_status", [
         (store_script_param_1, ":player"),
         (store_script_param_2, ":status"),
 
-        (player_set_slot, ":player", slot_player_unit_status, ":status"),
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_push_int, ":status"),
+                (lua_call, "@playerUnitSetStatus", 2),
+        (try_end),
+    ]),
+
+    # result in reg0
+    ("player_unit_get_status", [
+        (store_script_param_1, ":player"),
+
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_call, "@playerUnitGetStatus", 1),
+        (try_end),
     ]),
 
     ("cf_player_unit_try_holding", [
         (store_script_param_1, ":player"),
 
-        (player_get_slot, ":status", ":player", slot_player_unit_status),
+        (call_script, "script_player_unit_get_status", ":player"),
+        (eq, reg0, status_holding),
+    ]),
 
-        (eq, ":status", status_holding),
+    ("player_set_is_commander", [
+        (store_script_param_1, ":player"),
+        (store_script_param_2, ":is_commander"),
+
+        (try_begin),
+            (lua_push_int, ":player"),
+            (lua_push_int, ":is_commander"),
+            (lua_call, "@playerSetIsCommander", 2),
+        (try_end),
+    ]),
+
+    # result in reg0
+    ("player_get_is_commander", [
+        (store_script_param_1, ":player"),
+
+        (try_begin),
+            (lua_push_int, ":player"),
+            (lua_call, "@playerGetIsCommander", 1),
+        (try_end),
+    ]),
+
+    ("cf_player_is_commander", [
+        (store_script_param_1, ":player"),
+
+        (lua_push_int, ":player"),
+        (lua_call, "@playerIsCommander", 1),
+    ]),
+
+    ("player_unit_set_checkerboard", [
+        (store_script_param_1, ":player"),
+        (store_script_param_2, ":checkerboard"),
+
+        (try_begin),
+                (lua_push_int, ":player"),
+                (lua_push_int, ":checkerboard"),
+
+                (lua_call, "@playerUnitSetCheckerboard", 2),
+        (try_end),
+    ]),
+
+    # result in reg0
+    ("player_unit_get_checkerboard", [
+        (store_script_param_1, ":player"),
+
+        (try_begin),
+                (lua_push_int, ":player"),
+
+                (lua_call, "@playerUnitGetCheckerboard", 1),
+        (try_end),
+    ]),
+
+    ("player_unit_flip_checkerboard", [
+        (store_script_param_1, ":player"),
+
+        (try_begin),
+                (lua_push_int, ":player"),
+
+                (lua_call, "@playerUnitFlipCheckerboard", 1),
+        (try_end),
     ]),
 
     # result in reg0
     ("get_custom_log", [
-        (assign, reg0, "$g_custom_log"),
+        (assign, reg0, "$g_custom_log")
     ]),
 
     # result in reg0

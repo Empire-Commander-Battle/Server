@@ -245,22 +245,202 @@ function iter_player_unit(player)
    end
 end
 
--- FORMATION VARS
-crouch_dict = {}
--- END FORMATION VARS
+-- PLAYER DATA
+player_unit_data = {}
+
+PlayerUnitData = {
+   position_set_p = false,
+   position = nil,
+   rows = 2,
+   spacing = game.const.unit_default_spacing,
+   rotation_mode = true,
+   status = game.const.status_following,
+   checkerboard = true,
+   is_commander = false,
+}
+
+function PlayerUnitData:create(o)
+   o.parent = self
+   return o
+end
+
+function PlayerUnitData:default()
+   return PlayerUnitData:create({
+		 position_set_p = false,
+		 position = nil,
+		 rows = 2,
+		 spacing = game.const.unit_default_spacing,
+		 rotation_mode = true,
+		 status = game.const.status_following,
+		 checkerboard = true,
+		 is_commander = false,
+   })
+end
+
+function newPlayerUnitData(player)
+   player_unit_data[player] = PlayerUnitData:default()
+end
+
+function freePlayerUnitData(player)
+   player_unit_data[player] = nil
+end
+
+function playerUnitDataSetDefaults(player)
+   is_commander = player_unit_data[player].is_commander
+   obj = PlayerUnitData:default()
+   obj.is_commander = is_commander
+end
+
+function playerUnitSetPosition(player, pos)
+   player_unit_data[player].position = pos
+end
+
+function playerUnitGetPosition(player, pos)
+   game.preg[0] = player_unit_data[player].position
+end
+
+function playerUnitSetRows(player, rows)
+   player_unit_data[player].rows = rows
+end
+
+function playerUnitGetRows(player)
+   game.reg[0] = player_unit_data[player].rows
+end
+
+function playerUnitSetSpacing(player, spacing)
+   player_unit_data[player].spacing = spacing
+end
+
+function playerUnitGetSpacing(player)
+   game.reg[0] = player_unit_data[player].spacing
+end
+
+function playerUnitIncreaseSpacing(player)
+   spacing = player_unit_data[player].spacing
+   player_unit_data[player].spacing = spacing + 100
+end
+
+function playerUnitDecreaseSpacing(player)
+   if player_unit_data[player].spacing >= 100 then
+	  spacing = player_unit_data[player].spacing
+	  player_unit_data[player].spacing = spacing - 100
+   end
+end
+
+function playerUnitDisableRotationMode(player)
+   player_unit_data[player].rotation_mode = false
+end
+
+function playerUnitEnableRotationMode(player)
+   player_unit_data[player].rotation_mode = true
+end
+
+function playerUnitSetRotationMode(player, rotation_mode)
+   if rotation_mode == 1 then
+	  player_unit_data[player].rotation_mode = true
+   else
+	  player_unit_data[player].rotation_mode = false
+   end
+end
+
+function playerUnitGetRotationMode(player)
+   if player_unit_data[player].rotation_mode then
+	  game.reg[0] = 1
+   else
+	  game.reg[0] = 0
+   end
+end
+
+function playerUnitSetStatus(player, status)
+   player_unit_data[player].status = status
+end
+
+function playerUnitGetStatus(player)
+   game.reg[0] = player_unit_data[player].status
+end
+
+function playerSetIsCommander(player, is_commander)
+   game.display_message(string.format("%s %s", player, is_commander))
+
+   data = player_unit_data[player]
+
+   for k, v in pairs(data) do
+	  game.display_message(string.format("%s %s", k, v))
+   end
+
+   if is_commander == 1 then
+	  game.display_message("DEBUG1")
+	  data.is_commander = true
+   else
+	  game.display_message("DEBUG2")
+	  data.is_commander = false
+   end
+
+   for k, v in pairs(data) do
+	  game.display_message(string.format("%s %s", k, v))
+   end
+
+   game.display_message(string.format("%s", data.is_commander))
+end
+
+function playerGetIsCommander(player)
+   if player_unit_data[player].is_commander then
+	  game.reg[0] = 1
+   else
+	  game.reg[0] = 0
+   end
+end
+
+function playerIsCommander(player)
+   if not player_unit_data[player].is_commander then
+	  game.fail()
+   end
+end
+
+function playerUnitSetCheckerboard(player, checkerboard)
+   if checkerboard == 1 then
+	  player_unit_data[player].checkerboard = true
+   else
+	  player_unit_data[player].checkerboard = false
+   end
+end
+
+function playerUnitGetCheckerboard(player)
+   if player_unit_data[player].checkerboard then
+	  game.reg[0] = 1
+   else
+	  game.reg[0] = 0
+   end
+end
+
+function playerUnitFlipCheckerboard(player)
+   local checkerboard = player_unit_data[player].checkerboard
+   player_unit_data[player].checkerboard = not checkerboard
+end
+
+-- END PLAYER DATA
 
 -- Functions need to be written in camel case to be callable from warband scripts
 function playerUnitForm(player)
-   game.call_script(script_player_unit_get_spacing, player)
-   local spacing = game.reg[0]/100
+   data = player_unit_data[player]
+
+   local spacing = data.spacing/100
    game.display_message(string.format("spacing: %s", spacing))
 
-   game.call_script(script_player_unit_get_position, player)
-   local w_pos = game.preg[0]
+   game.display_message(string.format("PLAYER %s", player))
+   for k, v in pairs(data) do
+	  game.display_message(string.format("%s %s", k, v))
+   end
+
+   local w_pos = data.position
    local pos = vector2_from_vector3(w_pos.o)
 
    local forward = vector2_from_vector3(w_pos.rot.f)
    local left = vector2:create(-forward.y, forward.x)
+
+   game.display_message(string.format("forward %s %s", forward.x, forward.y))
+   game.display_message(string.format("pos %s %s", pos.x, pos.y))
+   game.display_message(string.format("left %s %s", left.x, left.y))
 
    local cpos = vector2_sub(pos, vector2_smul(forward, spacing))
 
@@ -295,20 +475,49 @@ function playerUnitForm(player)
    table.sort(projection,
 			  function (a, b) return a.dist < b.dist end)
 
-   game.call_script(script_player_unit_get_rows, player)
-   local rows = game.reg[0]
+   local rows = data.rows
+   local checkerboard = data.checkerboard
+
+   if rows == 1 then
+	  checkerboard = false
+   end
+
+   game.display_message(string.format("Checkerboard = %s", checkerboard))
 
    local formation = {}
    local tmp_arr = {}
-   for k, v in pairs(projection) do
-	  v.dist = vector2_vec_distance(vector2_sub(vector2_from_vector3(v.w_pos.o), v.kpos), forward)
 
-	  table.insert(tmp_arr, v)
-	  if #tmp_arr == rows then
-		 table.sort(tmp_arr,
+   if checkerboard then
+	  local odd = true
+
+	  local odd_rows = math.floor(rows/2)
+	  local even_rows = rows - odd_rows
+
+	  for k, v in pairs(projection) do
+		 v.dist = vector2_vec_distance(vector2_sub(vector2_from_vector3(v.w_pos.o), v.kpos), forward)
+
+		 table.insert(tmp_arr, v)
+		 if (odd and #tmp_arr == odd_rows) or (not odd and #tmp_arr == even_rows) then
+			table.sort(tmp_arr,
 					function (a, b) return a.dist > b.dist end)
-		 table.insert(formation, tmp_arr)
-		 tmp_arr = {}
+			table.insert(formation, tmp_arr)
+			tmp_arr = {}
+
+			odd = not odd
+		 end
+	  end
+   else
+	  for k, v in pairs(projection) do
+		 v.dist = vector2_vec_distance(vector2_sub(vector2_from_vector3(v.w_pos.o), v.kpos), forward)
+
+		 table.insert(tmp_arr, v)
+		 if #tmp_arr == rows then
+			table.sort(tmp_arr,
+					   function (a, b) return a.dist > b.dist end)
+			table.insert(formation, tmp_arr)
+			tmp_arr = {}
+
+		 end
 	  end
    end
 
@@ -329,8 +538,16 @@ function playerUnitForm(player)
    --	  end
    -- end
 
-   local move_x = vector2_smul(left, spacing)
-   local move_y = vector2_smul(forward, -spacing)
+   local move_x = nil
+   local move_y = nil
+
+   if checkerboard then
+	  move_x = vector2_smul(left, spacing)
+	  move_y = vector2_smul(forward, -spacing*math.sqrt(3)/2)
+   else
+	  move_x = vector2_smul(left, spacing)
+	  move_y = vector2_smul(forward, -spacing)
+   end
 
    for rank_index, row in pairs(formation) do
 	  for row_index, v in pairs(row) do
@@ -345,8 +562,18 @@ function playerUnitForm(player)
 		 --		game.agent_ai_set_can_crouch(v.agent, 0)
 		 -- end
 
-		 local dest = vector2_add(cpos, vector2_smul(move_x, rank_index - #formation/2 - 0.5))
-		 dest = vector2_add(dest, vector2_smul(move_y, row_index - 1))
+		 local dest = nil
+		 if checkerboard then
+			dest = vector2_add(cpos, vector2_smul(move_x, rank_index - #formation/2 - 0.5))
+			if rank_index % 2 == 0 then
+			   dest = vector2_add(dest, vector2_smul(move_y, 2*row_index - 2))
+			else
+			   dest = vector2_add(dest, vector2_smul(move_y, 2*row_index - 1))
+			end
+		 else
+			dest = vector2_add(cpos, vector2_smul(move_x, rank_index - #formation/2 - 0.5))
+			dest = vector2_add(dest, vector2_smul(move_y, row_index - 1))
+		 end
 
 		 local pos = game.pos.new()
 		 pos.o.x = dest.x

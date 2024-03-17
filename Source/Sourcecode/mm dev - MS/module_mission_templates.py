@@ -9673,8 +9673,8 @@ mission_templates = [
             (try_begin),
                 (eq, "$g_no_line_inf_spread", 1),
 
-                (player_get_slot, ":spacing", ":player", slot_player_unit_spacing),
-                (ge, ":spacing", unit_default_spacing),
+                (call_script, "script_player_unit_get_spacing", ":player"),
+                (ge, reg0, unit_default_spacing),
 
                 (agent_get_troop_id, ":player_troop_id", ":player_agent"),
                 (troop_get_slot, ":class", ":player_troop_id", slot_troop_class_type),
