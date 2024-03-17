@@ -49,7 +49,7 @@ function on_agent_spawn()
 end
 
 function on_agent_killed_or_wounded()
-   game.display_message("DEBUG KILLED WOUNDED")
+   -- game.display_message("DEBUG KILLED WOUNDED")
    -- result in reg0
    game.call_script(script_get_custom_log)
    local custom_log_enabled = game.reg[0]
@@ -253,7 +253,7 @@ PlayerUnitData = {
    position = nil,
    rows = 2,
    spacing = game.const.unit_default_spacing,
-   rotation_mode = true,
+   rotation_mode = false,
    status = game.const.status_following,
    checkerboard = true,
    is_commander = false,
@@ -270,7 +270,7 @@ function PlayerUnitData:default()
 		 position = nil,
 		 rows = 2,
 		 spacing = game.const.unit_default_spacing,
-		 rotation_mode = true,
+		 rotation_mode = false,
 		 status = game.const.status_following,
 		 checkerboard = true,
 		 is_commander = false,
@@ -360,27 +360,27 @@ function playerUnitGetStatus(player)
 end
 
 function playerSetIsCommander(player, is_commander)
-   game.display_message(string.format("%s %s", player, is_commander))
+   -- game.display_message(string.format("%s %s", player, is_commander))
 
    data = player_unit_data[player]
 
-   for k, v in pairs(data) do
-	  game.display_message(string.format("%s %s", k, v))
-   end
+   -- for k, v in pairs(data) do
+   --	  game.display_message(string.format("%s %s", k, v))
+   -- end
 
    if is_commander == 1 then
-	  game.display_message("DEBUG1")
+	  -- game.display_message("DEBUG1")
 	  data.is_commander = true
    else
-	  game.display_message("DEBUG2")
+	  -- game.display_message("DEBUG2")
 	  data.is_commander = false
    end
 
-   for k, v in pairs(data) do
-	  game.display_message(string.format("%s %s", k, v))
-   end
+   --    for k, v in pairs(data) do
+   --	  game.display_message(string.format("%s %s", k, v))
+   --    end
 
-   game.display_message(string.format("%s", data.is_commander))
+   --    game.display_message(string.format("%s", data.is_commander))
 end
 
 function playerGetIsCommander(player)
@@ -425,12 +425,12 @@ function playerUnitForm(player)
    data = player_unit_data[player]
 
    local spacing = data.spacing/100
-   game.display_message(string.format("spacing: %s", spacing))
+   -- game.display_message(string.format("spacing: %s", spacing))
 
-   game.display_message(string.format("PLAYER %s", player))
-   for k, v in pairs(data) do
-	  game.display_message(string.format("%s %s", k, v))
-   end
+   -- game.display_message(string.format("PLAYER %s", player))
+   -- for k, v in pairs(data) do
+   --	  game.display_message(string.format("%s %s", k, v))
+   -- end
 
    local w_pos = data.position
    local pos = vector2_from_vector3(w_pos.o)
@@ -438,9 +438,9 @@ function playerUnitForm(player)
    local forward = vector2_from_vector3(w_pos.rot.f)
    local left = vector2:create(-forward.y, forward.x)
 
-   game.display_message(string.format("forward %s %s", forward.x, forward.y))
-   game.display_message(string.format("pos %s %s", pos.x, pos.y))
-   game.display_message(string.format("left %s %s", left.x, left.y))
+   -- game.display_message(string.format("forward %s %s", forward.x, forward.y))
+   -- game.display_message(string.format("pos %s %s", pos.x, pos.y))
+   -- game.display_message(string.format("left %s %s", left.x, left.y))
 
    local cpos = vector2_sub(pos, vector2_smul(forward, spacing))
 
@@ -482,7 +482,7 @@ function playerUnitForm(player)
 	  checkerboard = false
    end
 
-   game.display_message(string.format("Checkerboard = %s", checkerboard))
+   -- game.display_message(string.format("Checkerboard = %s", checkerboard))
 
    local formation = {}
    local tmp_arr = {}
@@ -528,7 +528,7 @@ function playerUnitForm(player)
 	  tmp_arr = {}
    end
 
-   game.display_message(string.format("len %s spacing %s", #formation, spacing))
+   -- game.display_message(string.format("len %s spacing %s", #formation, spacing))
 
    local crouching_list = {}
    -- crouch_dict[player]
