@@ -30574,6 +30574,7 @@ scripts = [
                                                         (else_try),
                                                                 (call_script, "script_player_set_is_commander", ":cur_player", 1),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Appointed {s3} as commander"),
+                                                                (multiplayer_send_string_to_player, ":cur_player", multiplayer_event_return_inter_admin_chat, "@You have been appointed as commander"),
                                                         (try_end),
                                                 (try_end),
 
@@ -30609,6 +30610,7 @@ scripts = [
                                                                 (eq, ":commander", 1),
                                                                 (call_script, "script_player_set_is_commander", ":cur_player", 0),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Demoted player {s3} from commander"),
+                                                                (multiplayer_send_string_to_player, ":cur_player", multiplayer_event_return_inter_admin_chat, "@You have been demoted from commandership"),
                                                         (else_try),
                                                                 (multiplayer_send_string_to_player, ":player", multiplayer_event_return_inter_admin_chat, "@Player {s3} isn't commander"),
                                                         (try_end),
