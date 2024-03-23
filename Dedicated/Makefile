@@ -1,8 +1,8 @@
 empire_cb:
-	perl -pe 's/\$$MAPS/`cat CB_MAPS_INIT.txt`/ge' INIT_EMPIRE_CB_TEMPLATE.txt > INIT.txt
+	./build_config.py INIT_EMPIRE_CB_TEMPLATE.txt CB_MAPS_INIT.txt
 empire_bt:
-	perl -pe 's/\$$MAPS/`cat ALL_MAPS_INIT.txt`/ge' INIT_EMPIRE_BT_TEMPLATE.txt > INIT.txt
+	./build_config.py INIT_EMPIRE_BT_TEMPLATE.txt ALL_MAPS_INIT.txt
 bagner:
-	perl -pe 's/\$$MAPS/`cat ALL_MAPS_INIT.txt`/ge' INIT_BAGNER_TEMPLATE.txt > INIT.txt
+	./build_config.py INIT_BAGNER_TEMPLATE.txt ALL_MAPS_INIT.txt
 test:
-	perl -pe 's/\$$MAPS/`cat CB_MAPS_INIT.txt`/ge' INIT_TEST_TEMPLATE.txt > INIT.txt
+	./build_config.py INIT_TEST_TEMPLATE.txt ALL_MAPS_INIT.txt

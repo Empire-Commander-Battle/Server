@@ -1,9 +1,9 @@
 #WARNING: Make sure that you change the capital values with proper ones.
 #uncomment the line below when you set a valid administrator password
-set_pass_admin 2137
+set_pass_admin $ADMIN_PASS
 
 # TO REMOVE LATER FOR TESTING POURPOUSES ONLY
-set_pass empire_cb
+set_pass $PASS
 
 #if you have premium members, set a password for them, otherwise delete/comment out the line below
 #uncomment the line below when you set a valid private password
