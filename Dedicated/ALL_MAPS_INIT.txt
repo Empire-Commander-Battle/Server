@@ -42,5 +42,10 @@ add_map mp_custom_map_25
 add_map mp_custom_map_26
 add_map mp_custom_map_27
 add_map mp_custom_map_28
+add_map mp_custom_map_29
+add_map mp_custom_map_30
+add_map mp_custom_map_31
+add_map mp_custom_map_32
+add_map mp_custom_map_33
 
-custom_maps_enabled 28
+custom_maps_enabled 33
