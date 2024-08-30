@@ -48,5 +48,6 @@ add_map mp_custom_map_31
 add_map mp_custom_map_32
 add_map mp_custom_map_33
 add_map mp_custom_map_34
+add_map mp_custom_map_35
 
-custom_maps_enabled 34
+custom_maps_enabled 35

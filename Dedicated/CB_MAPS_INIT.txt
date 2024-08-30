@@ -11,7 +11,7 @@ add_map mp_custom_map_12
 add_map mp_custom_map_15
 add_map mp_custom_map_17
 add_map mp_custom_map_22
-add_map mp_custom_map_23
+add_map mp_custom_map_35
 
-custom_maps_enabled 23
+custom_maps_enabled 35
 
