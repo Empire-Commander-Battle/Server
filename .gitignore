@@ -1,10 +1,11 @@
 /wine/*
-/Dedicated/INIT.txt
 /Dedicated/Dumps/**
 /Dedicated/Logs/**
 /Dedicated/rgl_log.txt
+/Dedicated/INIT.txt
 /Dedicated/ALL_MAPS_INIT.txt
 /Dedicated/CB_MAPS_INIT.txt
+/Dedicated/CONFIG_VARIABLES.txt
 /Dedicated/Modules/Napoleonic Wars/SceneObj/
 /Dedicated/Modules/Napoleonic Wars/scenes.txt
 /Dedicated/Modules/Napoleonic Wars/dialog_states.txt
