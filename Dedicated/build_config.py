@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import re
 import sys
 
@@ -19,6 +20,11 @@ if template_name[1] == '':
 template_name = template_name[0]
 
 variables = []
+
+if not os.path.exists('CONFIG_VARIABLES.txt'):
+    print('CONFIG VARIABLES.txt isn\'t set up')
+    exit(1)
+
 with open('CONFIG_VARIABLES.txt') as f:
     for line in f:
         if line[:-2] == template_name:
