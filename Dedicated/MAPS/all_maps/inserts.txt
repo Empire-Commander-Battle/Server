@@ -1,0 +1,14 @@
+add_map mp_champs_elysees
+add_map mp_champs_elysees_rain
+add_map mp_french_farm
+add_map mp_french_farm_storm
+add_map mp_landshut
+add_map mp_schemmerbach
+add_map mp_spanish_farm
+add_map mp_spanish_village_evening
+add_map mp_strangefields_storm
+add_map random_multi_plain_medium
+add_map random_multi_desert_forest_medium
+add_map random_multi_steppe_medium
+add_map random_multi_snow_medium_snow
+add_map random_multi_desert_medium

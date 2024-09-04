@@ -1,0 +1,4 @@
+scn_empire_cb_map_14 mp_custom_map_14 256 none none 0.000000 0.000000 100.000000 100.000000 -100.000000 0x0000000157c4c4130009fe7f00008bc500008ffd0009b7df
+  0
+  0
+ outer_terrain_desert

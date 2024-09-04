@@ -1,0 +1,4 @@
+scn_empire_cb_map_4 mp_custom_map_4  1792 none none 0.000000 0.000000 240.000000 240.000000 -0.500000 0x300028000003e8fa0000034e00004b34000059be
+  0
+  0
+ outer_terrain_snow

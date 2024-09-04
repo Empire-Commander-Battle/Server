@@ -3,6 +3,10 @@
 /Dedicated/Dumps/**
 /Dedicated/Logs/**
 /Dedicated/rgl_log.txt
+/Dedicated/ALL_MAPS_INIT.txt
+/Dedicated/CB_MAPS_INIT.txt
+/Dedicated/Modules/Napoleonic Wars/SceneObj/
+/Dedicated/Modules/Napoleonic Wars/scenes.txt
 /Dedicated/Modules/Napoleonic Wars/dialog_states.txt
 /Dedicated/Modules/Napoleonic Wars/factions.txt
 /Dedicated/Modules/Napoleonic Wars/actions.txt
