@@ -69,7 +69,7 @@ init_file = args.init_file
 skip_maps = args.skip_maps
 
 scenes_regex = re.compile(r"^scenesfile +version +1 *\n +\d+ *\n(\w+ +\w+ +\d+ +\w+ +\w+ +((|-)\d+\.\d+ +){5}0(x[0-9a-f]+|) *\n( *0 *\n){2} *\w+ *\n)*\w+ +\w+ +\d+ +\w+ +\w+ +((|-)\d+\.\d+ +){5}0(x[0-9a-f]+|) *\n( *0 *\n){2} *\w+ *\n*$")
-code_regex = re.compile(r"^\w+ +\w+ +\d+ +\w+ +\w+ +((|-)\d+\.\d+ +){5}0(x[0-9a-f]+|) *\n( *0 *\n){2} *\w+ *\n*$")
+code_regex = re.compile(r"^(\w+) +\w+ +\d+ +\w+ +\w+ +((|-)\d+\.\d+ +){5}0(x[0-9a-f]+|) *\n( *0 *\n){2} *\w+ *\n*$")
 insert_regex = re.compile(r"^add_map (\w+)$")
 custom_map_regex = re.compile(r"^mp_custom_map_\d+$")
 
@@ -90,14 +90,34 @@ for m in maps:
         print(f"{code_file} isn't a file", file = sys.stderr)
         exit(1)
 
+    fix_it = False
+    code_name = ''
     with open(code_file, "r") as f:
         code = f.read()
 
-        if not code_regex.match(code):
+        rmatch = code_regex.match(code)
+        if not rmatch:
             print(f"{code_file} doesn't follow codefile format", file = sys.stderr)
             exit(1)
 
+        code_name = rmatch.groups()[0]
+        if code_name != m.stem:
+            print(f"actual file name {m.stem} and code name {code_name} are diffrent", file = sys.stderr)
+            if input("Fix it[Y/n]? ") == "Y":
+                fix_it = True
+
         codes.append(code.strip())
+
+    if fix_it:
+        with open(code_file, "w") as f:
+            code = codes.pop()
+
+            code = m.stem + code[len(code_name):]
+            codes.append(code)
+
+            f.write(code)
+
+        print("fixed", file = sys.stderr)
 
 
 inserts_file = maps_dir / "inserts.txt"
@@ -164,11 +184,11 @@ for m in maps:
 
 with open(scenes_output_file, "w+") as f:
     f.write("\n".join(scenes[:2 + skip_maps*4]) + "\n")
-    for i, code in enumerate(codes):
+    for i, (code, m) in enumerate(zip(codes, maps)):
         code_splited = code.split(" ", 2)
         scenes_splited = scenes[2 + (skip_maps + i)*4].split(" ", 2)
 
-        f.write(code_splited[0] + " " + scenes_splited[1] + " " + code_splited[2] + "\n")
+        f.write(m.stem + " " + scenes_splited[1] + " " + code_splited[2] + "\n")
 
     f.write("\n".join(scenes[2 + (skip_maps + len(maps))*4:]))
 
