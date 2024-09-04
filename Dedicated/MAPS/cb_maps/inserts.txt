@@ -1,3 +1,0 @@
-add_map random_multi_plain_large
-add_map random_multi_snow_medium_snow
-add_map random_multi_desert_large
