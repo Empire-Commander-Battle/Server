@@ -1,3 +1,7 @@
+-- IMPORTS
+math = require "math"
+-- END IMPORTS
+
 -- LOG
 -- SCRIPTS
 script_get_custom_log = game.getScriptNo("get_custom_log")
@@ -641,3 +645,20 @@ end
 -- game.addTrigger("mst_multiplayer_cb", game.const.ti_on_agent_killed_or_wounded, 0, 0, formation_agent_killed)
 -- END FORMATION SETUP
 -- END FORMATIONS
+
+-- DISPLAY MESSAGES
+RandomMessages = {
+   "RANDOM 1",
+   "RANDOM 2",
+   "RANDOM 3"
+}
+
+function display_random_message()
+   for player in game.playersl(true) do
+	  game.multiplayer_send_string_to_player(player, game.const.multiplayer_event_send_admin_chat, RandomMessages[math.random(0, #RandomMessages - 1)])
+   end
+end
+
+game.addTrigger("mst_multiplayer_cb", 5, 0, 0, display_random_message)
+
+-- END DISPLAY MESSAGES
