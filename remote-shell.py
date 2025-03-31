@@ -131,10 +131,15 @@ if __name__ == "__main__":
         with RconConnection(args.hostname, args.port, args.secret, args.interval, args.timeout) as connection:
             connection.connect_loop()
 
+            command = ""
             while True:
-                command = input("Input: ")
+                try:
+                    command = input("> ").strip()
+                except EOFError:
+                    print("")
+                    exit(0)
 
-                if len(command) > 0 and command[0] == ':':
+                if len(command) > 0 and command[0] == ":":
                     command = command.split()
                     match command[0]:
                         case ":reconnect":
@@ -146,11 +151,20 @@ if __name__ == "__main__":
                             print(":reconnect - attempts to reconnect")
                             print(":help - displays this message")
                 else:
+                    if command == "exit":
+                        answer = ""
+                        while True:
+                            answer = input("Are you sure? This command will kill the server [Y\\n] ")
+                            if answer == "Y" or answer == "n":
+                                break
+                        if answer == "n":
+                            continue
+
                     answer = connection.command(command)
                     if answer is False:
                         connection.connect_loop()
                     else:
                         print(answer)
     except KeyboardInterrupt:
-        print('')
+        print("")
         exit(0)

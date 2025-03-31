@@ -10,10 +10,10 @@ set_pass $PASS
 #set_pass_private PRIVATEPASS
 
 #use the line below to set a valid server name
-set_server_name Empire_CB_Server
+set_server_name Loyalist Base
 
 #uncomment the line below when you set a valid welcome message
-set_welcome_message Welcome on Empire Commander Battle Server
+set_welcome_message Welcome on Loyalist Base
 
 #Steam must be running in order to use valve anti cheat
 #Also you must use the Steam version of the dedicated server in order to use this option
@@ -39,14 +39,14 @@ auto_horse 1
 squad_size 35
 max_num_bots 500
 
-#setting commander battle (multiplayer_cb) mode
-set_mission multiplayer_cb
+#setting battle (multiplayer_bt) mode
+set_mission multiplayer_bt
 
 #since default team point limit is 300, the line below is necessary for this mode
 set_team_point_limit 10
 
 #setting max players, first one is non-premium member limit, second one is premium member limit
-set_max_players 40 40
+set_max_players 250 250
 set_num_bots_voteable 0
 
 # friendly fire

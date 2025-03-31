@@ -45,3 +45,4 @@
 /Dedicated/Modules/Napoleonic Wars/variable_uses.txt
 *.swp
 *.pyc
+/run-tmp

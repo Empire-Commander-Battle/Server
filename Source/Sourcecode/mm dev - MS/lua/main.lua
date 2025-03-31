@@ -648,17 +648,45 @@ end
 
 -- DISPLAY MESSAGES
 RandomMessages = {
-   "RANDOM 1",
-   "RANDOM 2",
-   "RANDOM 3"
+   "Have you seen event servers with over 150 players, each representing distinguished groups fighting for glory? Now's your chance to join one of the finest regiments in the game! Become part of the Loyalist Corps, a regiment with a rich history, founded on the tropical paradise server and ready to take on any challenge. Experience camaraderie, strategy, and fun as you rise through the ranks. Join us today on Discord: https://discord.gg/2GPHqKNj",
+   "Tip: Strategize with our top-of-the-line rotation script! Strategically position and outmaneuver your opponent by pressing V + 7, making it nearly impossible for them to flank you.",
+   "Join our Discord server to connect with a community of skilled players and improve your game. Whether you're looking to sharpen your tactics or just enjoy the battle, and even join us on commander battle events, this is the place to communicate and grow, join us today! https://discord.gg/usz6y26Y",
+   "All charge or go home - Sun Tzu",
+   "Artylery is useless - Napoleon",
+   "Remember being a turk warants a ban",
+   "Choice between riffles, lancers and anything else is great subsitute for IQ test",
+   "Science is clear on this one rambos are faggots""
 }
+RandomMessagesSeen = {}
 
-function display_random_message()
-   for player in game.playersl(true) do
-	  game.multiplayer_send_string_to_player(player, game.const.multiplayer_event_return_inter_admin_chat, RandomMessages[math.random(0, #RandomMessages - 1)])
-   end
+RandomMessageIndex = 1
+RandomCoolDown = 4
+
+function pick_random_messages()
+        if #RandomMessagesSeen > 0 and RandomMessagesSeen[1][1] == RandomMessageIndex then
+                table.insert(RandomMessages, RandomMessagesSeen[1][2])
+                table.remove(RandomMessagesSeen, 1)
+        end
+
+        local cindex = math.random(1, #RandomMessages)
+        local value = RandomMessages[cindex]
+
+        table.insert(RandomMessagesSeen, {RandomMessageIndex, RandomMessages[cindex]})
+        table.remove(RandomMessages, cindex)
+
+        RandomMessageIndex = (RandomMessageIndex + 1) % RandomCoolDown
+
+        return value
 end
 
-game.addTrigger("mst_multiplayer_cb", 5, 0, 0, display_random_message)
+function display_random_message() 
+	local message = pick_random_messages()
+
+	for player in game.playersI() do
+		game.multiplayer_send_string_to_player(player, game.const.multiplayer_event_return_inter_admin_chat, message)
+	end
+end
+
+game.addTrigger("mst_multiplayer_cb", 300, 0, 0, display_random_message)
 
 -- END DISPLAY MESSAGES

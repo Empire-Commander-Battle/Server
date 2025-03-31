@@ -22,8 +22,8 @@ set_map_time_limit 60
 
 #balance
 use_class_limits 0
-auto_swap 0
-set_auto_team_balance_limit 7
+auto_swap 1
+set_auto_team_balance_limit 2
 commander_battle_no_spread 1
 
 #factions

@@ -8,6 +8,8 @@ Edit file Dedicated/CONFIG_VARIABLES.txt to set passwords
 ./build.sh
 ./run-server.sh
 ```
+### Dependencies
+The only dependency that is not handled with guix for startup time reasons is bwrap
 
 ## Windows setup
 WINDOWS SETUP IS UNTESTED
