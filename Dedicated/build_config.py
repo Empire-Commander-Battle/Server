@@ -27,7 +27,7 @@ if not os.path.exists('CONFIG_VARIABLES.txt'):
 
 with open('CONFIG_VARIABLES.txt') as f:
     for line in f:
-        if line[:-2] == template_name:
+        if line[:-2] == template_name or line[:-2] == "DEFAULT":
             for line in f:
                 if line[0] != '\t':
                     break
