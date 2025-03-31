@@ -10,7 +10,7 @@ set_pass $PASS
 #set_pass_private PRIVATEPASS
 
 #use the line below to set a valid server name
-set_server_name Loyalist Base
+set_server_name Loyalist_Base
 
 #uncomment the line below when you set a valid welcome message
 set_welcome_message Welcome on Loyalist Base
